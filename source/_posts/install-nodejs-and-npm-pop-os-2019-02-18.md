@@ -1,7 +1,7 @@
 ---
-title: Install nodejs and npm in Pop_!OS
+title: Install nodejs and npm in Pop!_OS
 date: 2019-02-18 17:35:13
-tags: Tutorial, Setup, Pop_!OS, nodejs, npm
+tags: Tutorial, Setup, Pop!_OS, nodejs, npm
 ---
 
 Start by updating the packages list by typing:

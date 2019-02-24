@@ -2,6 +2,7 @@
 title: My new laptop - System76 - Galago Pro
 date: 2019-02-20 17:34:56
 tags: Blog, Pop!_OS
+icon: fas fa-laptop-code
 ---
 
 Few days back I got my most awaited laptop Galago Pro from System76. To be honest, I was stalking them for long time. Whenever I think of buying my own personal machine, I go to their site and do window shopping. They have this very nice checkout option where you can select most of the configurations and extend it bit more. I often found myself over there doing the same and at the end after seeing the total price at the bottom, with a sigh, I close my browser.

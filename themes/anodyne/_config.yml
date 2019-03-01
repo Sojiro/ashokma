@@ -11,6 +11,7 @@ menu:
   Home: /
   Archives: /archives
   Tags: /tags
+  About: /About
 
 # Post
 default_post_title: Untitled

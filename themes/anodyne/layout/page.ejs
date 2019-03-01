@@ -4,6 +4,7 @@
     var title = '';
     var isTagIndex = page.type === 'tags' || page.type === 'tag';
     var isCategoryIndex = page.type === 'categories' || page.type === 'category';
+    var isAboutIndex = page.type === 'About';
     if (isTagIndex) {
         items = site.tags;
         title = __('tags');
@@ -22,20 +23,22 @@
 }) %>
 
 
-    <!-- Content -->
-    <div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
-        <div class="content">
-            <div class="mw8 center">
-                <% if (isTagOrCat) { %>
-                    <% items.forEach(function(item){ %>
-                       <%- partial('_partial/tag-category-index', {item: item, isTagIndex: isTagIndex}) %>
-                   <% }) %>
-                <% } else { %>            
-                    <div class="w-100 mw7 fw3 lh-copy post-content">
-                        <!-- Main Post Content -->
-                        <%- page.content %>
-                    </div>
-                <% } %>
-            </div>
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <% if (isTagOrCat) { %>
+                <% items.forEach(function(item){ %>
+                <%- partial('_partial/tag-category-index', {item: item, isTagIndex: isTagIndex}) %>
+                <% }) %>
+            <% } else if (isAboutIndex) { %>
+                <%- partial('_partial/widget-about') %>
+            <% } else { %>
+                <div class="w-100 mw7 fw3 lh-copy post-content">
+                    <!-- Main Post Content -->
+                    <%- page.content %>
+                </div>
+            <% } %>
         </div>
     </div>
+</div>

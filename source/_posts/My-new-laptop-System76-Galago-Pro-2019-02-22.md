@@ -1,7 +1,7 @@
 ---
 title: My new laptop - System76 - Galago Pro
 date: 2019-02-20 17:34:56
-tags: Blog, Pop!_OS
+tags: [Blog, Pop!_OS]
 icon: fas fa-laptop-code
 ---
 

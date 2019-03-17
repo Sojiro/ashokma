@@ -333,3 +333,7 @@ pre .status,
 pre .nginx .title {
   color: #8959a8;
 }
+b,
+strong {
+  font-weight: bold;
+}

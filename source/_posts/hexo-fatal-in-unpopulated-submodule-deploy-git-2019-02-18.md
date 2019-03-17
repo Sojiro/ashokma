@@ -1,7 +1,7 @@
 ---
 title: 'Hexo deploy: Fatal: in unpopulated submodule `.deploy_git`'
 date: 2019-02-18 19:22:23
-tags: Blog, Setup, Hexo
+tags: [Blog, Setup, Hexo]
 icon: fab fa-blogger-b
 ---
 
@@ -9,12 +9,16 @@ Today, I checked out the hexo blog in my new laptop. It threw a fatal error when
 
 First install the relevant dependencies: (I do deployment to `git`)
 
+```
     $ npm install hexo-deployer-git --save
+```
 
 Here comes the universal solution:
 
+```
     $ rm -rf .deploy_git
     $ hexo g
     $ hexo d
+```
 
 > Make sure you do not version the `.deploy_git` folder as it is specific to local environment and setup.

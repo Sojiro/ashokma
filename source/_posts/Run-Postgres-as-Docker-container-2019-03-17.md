@@ -72,7 +72,7 @@ Let's create a local directory to mount as [volume](//docs.docker.com/storage/vo
     $ mkdir -p $HOME/docker/volumes/postgres
 ```
 
-> Tip: `-p` option creates the subdirectories if necessary.
+> **Tip:** `-p` option creates the subdirectories if necessary.
 
 ## Run Postgres as container
 

@@ -1,7 +1,7 @@
 ---
 title: EADDRINUSE - kill process at a specific port
 date: 2019-02-24 13:29:56
-tags: [Blog, Linux, Pop!_OS]
+tags: [Blog, Linux, Pop!_OS, Terminal Usage]
 icon: fab fa-linux
 ---
 

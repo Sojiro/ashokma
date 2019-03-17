@@ -183,7 +183,7 @@
 <p>Let’s create a local directory to mount as <a href="//docs.docker.com/storage/volumes/">volume</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p $HOME/docker/volumes/postgres</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>Tip: <code>-p</code> option creates the subdirectories if necessary.</p>
+<p><strong>Tip:</strong> <code>-p</code> option creates the subdirectories if necessary.</p>
 </blockquote>
 <h2 id="Run-Postgres-as-container"><a href="#Run-Postgres-as-container" class="headerlink" title="Run Postgres as container"></a>Run Postgres as container</h2><p>We can do multiple things (create/run/mount) all at once in the following:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name ashkeys-docker \</span><br><span class="line">    -e POSTGRES_PASSWORD=ashkeys \</span><br><span class="line">    -d -p 5432:5432 \</span><br><span class="line">    -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data  ashkeys_db</span><br></pre></td></tr></table></figure>
@@ -243,6 +243,10 @@
     <h3>Recent Posts</h3>
     
         <p>
+            <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">Linux: how to exclude specific folder during copy </a>
+        </p>
+    
+        <p>
             <a href="/2019/03/17/Linux-How-to-see-the-installed-OS-version-from-terminal/">Linux: How to see the installed OS version from te</a>
         </p>
     
@@ -256,10 +260,6 @@
     
         <p>
             <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">My new laptop - System76 - Galago Pro</a>
-        </p>
-    
-        <p>
-            <a href="/2019/02/18/hexo-fatal-in-unpopulated-submodule-deploy-git/">Hexo deploy: Fatal: in unpopulated submodule `.dep</a>
         </p>
     
 </div>

@@ -4,6 +4,7 @@ tags:
   - Blog
   - Linux
   - Pop!_OS
+  - Terminal Usage
 icon: fab fa-linux
 date: 2019-03-17 16:49:11
 ---

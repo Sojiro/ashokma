@@ -82,7 +82,7 @@ We can do multiple things (create/run/mount) all at once in the following:
     $ docker run --name ashkeys-docker \
         -e POSTGRES_PASSWORD=ashkeys \
         -d -p 5432:5432 \
-        -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data  ashkeys_db
+        -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
 ```
 What are we doing here:
 
@@ -97,16 +97,16 @@ What are we doing here:
  - `-p`
   Bind port 5432 on `localhost` to port 5432 within the container.
  - `-v`
-  Mount $HOME/docker/volumes/postgres on the host machine to the container side volume path /var/lib/postgresql/data created inside the container. This ensures that postgres data persists even after the container is removed.
- - `ashkeys_db`
-  Last one is the database we want to create along with the docker run command.
+  Mount `$HOME/docker/volumes/postgres` on the host machine to the container side volume path `/var/lib/postgresql/data` created inside the container. This ensures that postgres data persists even after the container is removed.
+ - `postgres`
+  Last one is the image from which we want to create the docker container.
 
 ## Connecting to our newly created postgres database
 
 Since our localhost port 5432 is bound to postgres container port, we can directly run our CRUD operations to `localhost:5432`. Lets connect to the database.
 
 ```
-    $ psql -h localhost -U postgres -d ashkeys_db
+    $ psql -h localhost -U postgres -d postgres
 ```
 
 > You might have to install the `psql` as global dependencies using [`npm`](/2019/02/18/install-nodejs-and-npm-pop-os/).

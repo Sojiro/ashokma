@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>How to create users and groups in Linux from the command line | AshKeys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Here’s a quick guide to adding users and groups, and then how to add users to groups, all from the command line on the Linux platform. I want to walk you through the process of:  Creating users Creati">
+<meta name="keywords" content="Linux,Pop!_OS,Terminal Usage,Tutorial,How To">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to create users and groups in Linux from the command line">
+<meta property="og:url" content="http://ashokma.com/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/index.html">
+<meta property="og:site_name" content="AshKeys">
+<meta property="og:description" content="Here’s a quick guide to adding users and groups, and then how to add users to groups, all from the command line on the Linux platform. I want to walk you through the process of:  Creating users Creati">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-23T22:46:49.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to create users and groups in Linux from the command line">
+<meta name="twitter:description" content="Here’s a quick guide to adding users and groups, and then how to add users to groups, all from the command line on the Linux platform. I want to walk you through the process of:  Creating users Creati">
+<meta name="twitter:creator" content="@&#x2F;&#x2F;twitter.com&#x2F;AshokMA9">
+  
+    <link rel="alternate" href="/atom.xml" title="AshKeys" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//github.com/sojiro.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-115413748-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+</html>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1544182531179563",
+    enable_page_level_ads: true
+  });
+</script>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">AshKeys</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ashokma.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-How-to-create-users-and-groups-in-Linux-from-the-command-line" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/" class="article-date">
+  <time datetime="2019-03-23T22:46:49.000Z" itemprop="datePublished">2019-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How to create users and groups in Linux from the command line
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Here’s a quick guide to adding users and groups, and then how to add users to groups, all from the command line on the Linux platform.</p>
+<p>I want to walk you through the process of:</p>
+<ul>
+<li><a href="#Creating-users">Creating users</a></li>
+<li><a href="#Creating-groups">Creating groups</a></li>
+<li><a href="#Adding-users-to-groups">Adding users to groups</a></li>
+</ul>
+<p>Let’s jump in!</p>
+<h2 id="Creating-users"><a href="#Creating-users" class="headerlink" title="Creating users"></a>Creating users</h2><p>For this, we will be making use of the <code>useradd</code> command. This command is pretty flexible and allows you to create users that can login or even users that cannot login (in the case of creating a user for a software installation).</p>
+<p>The basic syntax of the command is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ useradd [options] &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<p>Say, you want to create the user <em>ashokma</em> such that he has a home directory and can log in. If you were to issue the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd ashokma</span><br></pre></td></tr></table></figure>
+<p>The user would be added, without a home directory and can not log in.</p>
+<blockquote>
+<p><strong>From The Manual:</strong> When invoked without the -D option, the useradd command creates a new user account using the values specified on the command line plus the default values from the system.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -m ashokma</span><br></pre></td></tr></table></figure>
+<p>The above command would create the user and also create the user’s home directory to match the username. So if you looked in the <em>/home</em> directory, you would now see <em>ashokma</em>.</p>
+<p>But what about the <em>password</em>? You can do this in two ways simply. If you’ve already created the user, you could issue the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd ashokma</span><br><span class="line"></span><br><span class="line">Enter new UNIX password: </span><br><span class="line">Retype new UNIX password: </span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
+<p>Yes, it is same you set your password or reset it for that matter.</p>
+<p>If you want to do this all in a single step, that command would look like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -m ashokma -p De_Tenken</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> You can remove a user and his home directory using the following command:<br><code>$ sudo userdel -r ashokma</code></p>
+</blockquote>
+<p>If you need to create a user that has no home directory and is locked out from logging in, you can do this with the the following commands:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -M ashokma </span><br><span class="line">$ ​sudo usermod -L ashokma</span><br></pre></td></tr></table></figure>
+<p>The first command creates the user without a home directory and the second command locks the user out of logging in.</p>
+<h2 id="Creating-groups"><a href="#Creating-groups" class="headerlink" title="Creating groups"></a>Creating groups</h2><p>It’s time to create a group. Let’s create the group <em>ashkeys</em>. To do this, you would issue the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo groupadd ashkeys</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> You can delete a group using the following command:<br><code>$ sudo groupdel ashkeys</code></p>
+</blockquote>
+<h2 id="Adding-users-to-groups"><a href="#Adding-users-to-groups" class="headerlink" title="Adding users to groups"></a>Adding users to groups</h2><p>We want to add our new user, <em>ashokma</em>, to the group <em>ashkeys</em>. For this we will take advantage of the <code>usermod</code> command. This command is quite simple to use.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -a -G ashkeys ashokma</span><br></pre></td></tr></table></figure>
+<p>The <code>-a</code> option tells <code>usermod</code> we are appending and the <code>-G</code> option tells usermod we are appending to the group name that follows the option.</p>
+<p>To find out which users are already a member of a group, you can do the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ grep ashokma /etc/group</span><br><span class="line"></span><br><span class="line">ashkeys:x:1001:ashokma</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ashokma.com/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/" data-id="cjtm32skm00060si0qmucv8dy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to change port mapping of a running docker container</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/How-To/">How To</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Journal/">Journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup/">Setup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shukuchi/">Shukuchi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tutorial/">Tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 18.33px;">Blog</a> <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/How-To/" style="font-size: 16.67px;">How To</a> <a href="/tags/Journal/" style="font-size: 10px;">Journal</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/Pop-OS/" style="font-size: 20px;">Pop!_OS</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Setup/" style="font-size: 13.33px;">Setup</a> <a href="/tags/Shukuchi/" style="font-size: 10px;">Shukuchi</a> <a href="/tags/Terminal-Usage/" style="font-size: 16.67px;">Terminal Usage</a> <a href="/tags/Tutorial/" style="font-size: 15px;">Tutorial</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/">How to create users and groups in Linux from the command line</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/">How to change port mapping of a running docker container</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/">How to Change File Ownership &amp; Groups in Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">Linux: how to exclude specific folder during copy in terminal</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/17/Linux-How-to-see-the-installed-OS-version-from-terminal/">Linux: How to see the installed OS version from terminal</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Ashok M A<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -83,6 +83,203 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-How-to-create-users-and-groups-in-Linux-from-the-command-line" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/" class="article-date">
+  <time datetime="2019-03-23T22:46:49.000Z" itemprop="datePublished">2019-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/">How to create users and groups in Linux from the command line</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Here’s a quick guide to adding users and groups, and then how to add users to groups, all from the command line on the Linux platform.</p>
+<p>I want to walk you through the process of:</p>
+<ul>
+<li><a href="#Creating-users">Creating users</a></li>
+<li><a href="#Creating-groups">Creating groups</a></li>
+<li><a href="#Adding-users-to-groups">Adding users to groups</a></li>
+</ul>
+<p>Let’s jump in!</p>
+<h2 id="Creating-users"><a href="#Creating-users" class="headerlink" title="Creating users"></a>Creating users</h2><p>For this, we will be making use of the <code>useradd</code> command. This command is pretty flexible and allows you to create users that can login or even users that cannot login (in the case of creating a user for a software installation).</p>
+<p>The basic syntax of the command is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ useradd [options] &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<p>Say, you want to create the user <em>ashokma</em> such that he has a home directory and can log in. If you were to issue the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd ashokma</span><br></pre></td></tr></table></figure>
+<p>The user would be added, without a home directory and can not log in.</p>
+<blockquote>
+<p><strong>From The Manual:</strong> When invoked without the -D option, the useradd command creates a new user account using the values specified on the command line plus the default values from the system.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -m ashokma</span><br></pre></td></tr></table></figure>
+<p>The above command would create the user and also create the user’s home directory to match the username. So if you looked in the <em>/home</em> directory, you would now see <em>ashokma</em>.</p>
+<p>But what about the <em>password</em>? You can do this in two ways simply. If you’ve already created the user, you could issue the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd ashokma</span><br><span class="line"></span><br><span class="line">Enter new UNIX password: </span><br><span class="line">Retype new UNIX password: </span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
+<p>Yes, it is same you set your password or reset it for that matter.</p>
+<p>If you want to do this all in a single step, that command would look like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -m ashokma -p De_Tenken</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> You can remove a user and his home directory using the following command:<br><code>$ sudo userdel -r ashokma</code></p>
+</blockquote>
+<p>If you need to create a user that has no home directory and is locked out from logging in, you can do this with the the following commands:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -M ashokma </span><br><span class="line">$ ​sudo usermod -L ashokma</span><br></pre></td></tr></table></figure>
+<p>The first command creates the user without a home directory and the second command locks the user out of logging in.</p>
+<h2 id="Creating-groups"><a href="#Creating-groups" class="headerlink" title="Creating groups"></a>Creating groups</h2><p>It’s time to create a group. Let’s create the group <em>ashkeys</em>. To do this, you would issue the command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo groupadd ashkeys</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> You can delete a group using the following command:<br><code>$ sudo groupdel ashkeys</code></p>
+</blockquote>
+<h2 id="Adding-users-to-groups"><a href="#Adding-users-to-groups" class="headerlink" title="Adding users to groups"></a>Adding users to groups</h2><p>We want to add our new user, <em>ashokma</em>, to the group <em>ashkeys</em>. For this we will take advantage of the <code>usermod</code> command. This command is quite simple to use.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -a -G ashkeys ashokma</span><br></pre></td></tr></table></figure>
+<p>The <code>-a</code> option tells <code>usermod</code> we are appending and the <code>-G</code> option tells usermod we are appending to the group name that follows the option.</p>
+<p>To find out which users are already a member of a group, you can do the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ grep ashokma /etc/group</span><br><span class="line"></span><br><span class="line">ashkeys:x:1001:ashokma</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ashokma.com/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/" data-id="cjtm32skm00060si0qmucv8dy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-How-to-change-port-mapping-of-a-running-docker-container" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/" class="article-date">
+  <time datetime="2019-03-23T22:46:44.000Z" itemprop="datePublished">2019-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/">How to change port mapping of a running docker container</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario where our postgreSQL container was mapped to as following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE              PORTS                    NAMES</span><br><span class="line">85261c36bf0e        postgres           0.0.0.0:5433-&gt;5432/tcp   pg-docker</span><br></pre></td></tr></table></figure>
+<p>I was looking for a solution where I can just edit the <em>localhost</em> mapping from <em>5433</em> to <em>5432</em> (which is also the default for postgreSQL).</p>
+<p>Anyways, Now we know what we need, let us take a look at the steps to make it happen.</p>
+<h2 id="Stop-the-container"><a href="#Stop-the-container" class="headerlink" title="Stop the container"></a>Stop the container</h2><p>Since the container is busy bound to port <em>5433</em> which we want to change, we have to stop the container first as following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker stop pg-docker</span><br><span class="line"></span><br><span class="line">pg-docker</span><br></pre></td></tr></table></figure>
+<h2 id="Stop-the-docker-daemon"><a href="#Stop-the-docker-daemon" class="headerlink" title="Stop the docker daemon"></a>Stop the docker daemon</h2><p>Docker daemon is the service which keeps tracks of containers and their configurations in short. As we are going to edit container specific configuration file, we need the daemon to be up and running after our changes. Now, stop the docker daemon:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl stop docker</span><br></pre></td></tr></table></figure>
+<h2 id="Edit-the-container’s-hostconfig-json"><a href="#Edit-the-container’s-hostconfig-json" class="headerlink" title="Edit the container’s hostconfig.json"></a>Edit the container’s <em>hostconfig.json</em></h2><p>Docker keeps container configurations in a file called <em>hostconfig.json</em>. You can find the same file using the following pattern:</p>
+<p><em>/var/lib/docker/containers/<strong>&lt;container_full_hash_id&gt;</strong>/hostconfig.json</em></p>
+<blockquote>
+<p><strong>Tip:</strong> Use the following command to quickly get the full hash id of the container: (ofcourse, docker daemon has to be running)<br><code>$ docker container inspect pg-docker | grep Id</code><br> “Id”: “85261c36bf0e94520012b508f67c7c0c86c0d52953a88f3cad7e06da77b225a0”,</p>
+</blockquote>
+<p>Now, we know where to find <em>hostconfig.json</em> file. In order to update the host mapping, we must edit the file and change the <strong>“HostPort”:”5433”</strong> to our desired port mappings.</p>
+<p>Once we are done editing the file, lets start the docker daemon and the container respectively.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl start docker</span><br><span class="line"></span><br><span class="line">$ docker start pg-docker</span><br><span class="line">pg-docker</span><br></pre></td></tr></table></figure>
+<p>If we take a look at our running docker container now, we see the edited port mappings.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE              PORTS                    NAMES</span><br><span class="line">85261c36bf0e        postgres           0.0.0.0:5432-&gt;5432/tcp   pg-docker</span><br></pre></td></tr></table></figure>
+<p>Yay \O/</p>
+<p>We have just updated our port mappings keeping all our container configurations!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ashokma.com/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/" data-id="cjtm32skl00050si0egqu30z5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-How-to-Change-File-Ownership-Groups-in-Linux" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/" class="article-date">
+  <time datetime="2019-03-23T22:46:25.000Z" itemprop="datePublished">2019-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/">How to Change File Ownership &amp; Groups in Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>File ownership and groups for files are fundamental to the Linux operating system. Every file in Linux is managed by a specific user and a specific group.</p>
+<h2 id="Figure-out-who-owns-the-File-or-Folder-then-use-either-chown-or-chgrp"><a href="#Figure-out-who-owns-the-File-or-Folder-then-use-either-chown-or-chgrp" class="headerlink" title="Figure out who owns the File or Folder, then use either chown or chgrp"></a>Figure out who owns the File or Folder, then use either <code>chown</code> or <code>chgrp</code></h2><p>Display ownership and group information using the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l ./ashokma.com/index.html</span><br><span class="line">drwxr-xr-x   2 root docker   4096 Mar 23 15:23 ./ashokma.com/index.html</span><br></pre></td></tr></table></figure>
+<p>This folder is owned by the <em>root</em> user and belongs to the <em>docker</em> group.</p>
+<h2 id="Changing-the-ownership-of-a-file-using-chown"><a href="#Changing-the-ownership-of-a-file-using-chown" class="headerlink" title="Changing the ownership of a file using chown"></a>Changing the ownership of a file using <code>chown</code></h2><p>You can change the ownership of a specific file using the <code>chown</code> command. For security purposes only, the root user or members of the sudo group may transfer ownership of a file.</p>
+<p>To change the ownership of a file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ chown ashokma ./ashokma.com/index.html</span><br><span class="line"></span><br><span class="line">$ ls -l ./ashokma.com/index.html</span><br><span class="line">drwxr-xr-x   2 ashokma docker   4096 Mar 23 20:23 ./ashokma.com/index.html</span><br></pre></td></tr></table></figure>
+<p>The file <em>index.html</em> is now owned by <em>ashokma</em>. </p>
+<blockquote>
+<p>By default, <code>chown</code> follows symbolic links and changes the owner of the file pointed to by the symbolic link. </p>
+</blockquote>
+<blockquote>
+<p><strong>Tip:</strong> If you wish to change ownership of all files inside a directory, you can use the <code>-R</code> option.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chown -R ashokma ./ashokma.com/</span><br></pre></td></tr></table></figure>
+<h2 id="Changing-the-group-ownership-of-a-file-using-chgrp"><a href="#Changing-the-group-ownership-of-a-file-using-chgrp" class="headerlink" title="Changing the group ownership of a file using chgrp"></a>Changing the group ownership of a file using <code>chgrp</code></h2><p>All users on the system belong to at least one group. You can find out which groups you belong to using the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ groups ashokma</span><br><span class="line">ashokma : ashokma adm sudo docker</span><br></pre></td></tr></table></figure>
+<p>You can then change the group ownership of a specific file using the <code>chgrp</code> command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ chgrp ashokma index.html</span><br><span class="line"></span><br><span class="line">$ ls -l index.html</span><br><span class="line">drwxr-xr-x   2 ashokma ashokma   4096 Mar 23 21:23 index.html</span><br></pre></td></tr></table></figure>
+<p>The file <em>index.html</em> now belongs to the <em>ashokma</em> group.</p>
+<h2 id="Changing-both-the-owner-and-the-group-using-chown"><a href="#Changing-both-the-owner-and-the-group-using-chown" class="headerlink" title="Changing both the owner and the group using chown"></a>Changing both the owner and the group using <code>chown</code></h2><p>You can change both the owner and group of a file using just the <code>chown</code> command.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ chown ashokma:docker index.html</span><br><span class="line"></span><br><span class="line">$ ls -l index.html</span><br><span class="line">drwxr-xr-x   2 ashokma docker    4096 Mar 23 21:23 index.html</span><br></pre></td></tr></table></figure>
+<p>The file <em>index.html</em> is now owned by <em>ashokma</em> and belongs to the <em>docker</em> group.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ashokma.com/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/" data-id="cjtm32skg00020si0akyktklx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Linux-how-to-exclude-specific-folder-during-copy-in-terminal" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/" class="article-date">
@@ -133,10 +330,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/" data-id="cjtk2bvad000108i0cpoh0wqv" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/" data-id="cjtm32sko00070si0fr0vio42" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li></ul>
 
     </footer>
   </div>
@@ -194,10 +391,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/03/17/Linux-How-to-see-the-installed-OS-version-from-terminal/" data-id="cjtk2bvaq000608i0yd363wg1" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/03/17/Linux-How-to-see-the-installed-OS-version-from-terminal/" data-id="cjtm32skv000d0si01ml090hl" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li></ul>
 
     </footer>
   </div>
@@ -284,7 +481,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/03/17/Run-Postgres-as-Docker-container/" data-id="cjtk2bvai000308i0r7xjnvqs" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/03/17/Run-Postgres-as-Docker-container/" data-id="cjtm32skr000a0si007okme25" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Postgres/">Postgres</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Setup/">Setup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li></ul>
@@ -327,7 +524,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/02/24/Address-in-use-kill-process-at-a-specific-port/" data-id="cjtk2bvao000508i0q0oa6r33" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/02/24/Address-in-use-kill-process-at-a-specific-port/" data-id="cjtm32skb00000si0l8hzinhd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li></ul>
@@ -387,7 +584,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/02/20/My-new-laptop-System76-Galago-Pro/" data-id="cjtk2bvas000908i0t25r2acv" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/02/20/My-new-laptop-System76-Galago-Pro/" data-id="cjtm32skq00090si0ki7u5ib6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li></ul>
@@ -433,7 +630,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/02/18/hexo-fatal-in-unpopulated-submodule-deploy-git/" data-id="cjtk2bvar000708i0kq4b48ej" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/02/18/hexo-fatal-in-unpopulated-submodule-deploy-git/" data-id="cjtm32skt000c0si0q9hunnph" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Setup/">Setup</a></li></ul>
@@ -479,7 +676,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/02/18/install-nodejs-and-npm-pop-os/" data-id="cjtk2bvav000c08i03ak8i8sr" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/02/18/install-nodejs-and-npm-pop-os/" data-id="cjtm32skx000f0si0fd1y0qtx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Setup/">Setup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
@@ -491,53 +688,11 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-log" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/17/log/" class="article-date">
-  <time datetime="2019-02-17T20:52:57.000Z" itemprop="datePublished">2019-02-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/17/log/">Weekend ride to Weert</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Today afternoon, I had time to take my Shukuchi out for a ride. It was a warm weather. It does look like we got a short-break from winter. I took motorways until Eindhovan to skip the seen places. As planned from there, I took windy roads to reach Limburg, Belgium. Since it is winter time, it was getting dark soon. I had another hour and a half ride when it was 4 o’clock. I had to give up and turn back home from a near border village called Weert. I really like the village Weert and the individual houses with car port and garages. I remembered the plan that I had initially to buy an individual house with garden and car port or shed for my Shukuchi. So that it will be a workshop afterwards for I have the Shukuchi maintanance. However, I had to settle for an apartment last year. I might buy a new one by selling this apartment later once I have a partner to increase the mortgage budget. Hold that thought!</p>
-<blockquote>
-<p>We do worry about the things we did not have or do. As an aquitance of mine once said, <em>I do not like the could have or should have. Because it never happens</em>.</p>
-</blockquote>
-<p>I rode back home real fast clocking 100Kmph as average on the motorways. It was nice ride overall even though I did not reach my destination as planned.</p>
-<blockquote>
-<p>So I recalled the saying, <em>it is the journey that matters!</em></p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/02/17/log/" data-id="cjtk2bvau000a08i0m2muxa9t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Journal/">Journal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shukuchi/">Shukuchi</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -549,7 +704,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Journal/">Journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup/">Setup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shukuchi/">Shukuchi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tutorial/">Tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/How-To/">How To</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Journal/">Journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Postgres/">Postgres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup/">Setup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shukuchi/">Shukuchi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Terminal-Usage/">Terminal Usage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tutorial/">Tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
     </div>
   </div>
 
@@ -559,7 +714,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Blog/" style="font-size: 20px;">Blog</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Journal/" style="font-size: 10px;">Journal</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Pop-OS/" style="font-size: 20px;">Pop!_OS</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Setup/" style="font-size: 16.67px;">Setup</a> <a href="/tags/Shukuchi/" style="font-size: 10px;">Shukuchi</a> <a href="/tags/Terminal-Usage/" style="font-size: 16.67px;">Terminal Usage</a> <a href="/tags/Tutorial/" style="font-size: 13.33px;">Tutorial</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+      <a href="/tags/Blog/" style="font-size: 18.33px;">Blog</a> <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/How-To/" style="font-size: 16.67px;">How To</a> <a href="/tags/Journal/" style="font-size: 10px;">Journal</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/Pop-OS/" style="font-size: 20px;">Pop!_OS</a> <a href="/tags/Postgres/" style="font-size: 10px;">Postgres</a> <a href="/tags/Setup/" style="font-size: 13.33px;">Setup</a> <a href="/tags/Shukuchi/" style="font-size: 10px;">Shukuchi</a> <a href="/tags/Terminal-Usage/" style="font-size: 16.67px;">Terminal Usage</a> <a href="/tags/Tutorial/" style="font-size: 15px;">Tutorial</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
     </div>
   </div>
 
@@ -581,23 +736,23 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/">How to create users and groups in Linux from the command line</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/">How to change port mapping of a running docker container</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/">How to Change File Ownership &amp; Groups in Linux</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">Linux: how to exclude specific folder during copy in terminal</a>
           </li>
         
           <li>
             <a href="/2019/03/17/Linux-How-to-see-the-installed-OS-version-from-terminal/">Linux: How to see the installed OS version from terminal</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/17/Run-Postgres-as-Docker-container/">Run Postgres as Docker container</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/24/Address-in-use-kill-process-at-a-specific-port/">EADDRINUSE - kill process at a specific port</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">My new laptop - System76 - Galago Pro</a>
           </li>
         
       </ul>

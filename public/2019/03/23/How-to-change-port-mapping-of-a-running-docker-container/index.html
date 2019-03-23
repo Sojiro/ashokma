@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Install nodejs and npm in Pop!_OS | AshKeys</title>
+  <title>How to change port mapping of a running docker container | AshKeys</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Start by updating the packages list by typing: 1$ sudo apt update Install nodejs using the apt package manager: 1$ sudo apt install nodejs npm The Node.js executable from the Ubuntu repositories is na">
-<meta name="keywords" content="Pop!_OS,Tutorial,Setup,nodejs,npm">
+  <meta name="description" content="Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario wher">
+<meta name="keywords" content="Blog,Linux,Pop!_OS,How To,Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Install nodejs and npm in Pop!_OS">
-<meta property="og:url" content="http://ashokma.com/2019/02/18/install-nodejs-and-npm-pop-os/index.html">
+<meta property="og:title" content="How to change port mapping of a running docker container">
+<meta property="og:url" content="http://ashokma.com/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/index.html">
 <meta property="og:site_name" content="AshKeys">
-<meta property="og:description" content="Start by updating the packages list by typing: 1$ sudo apt update Install nodejs using the apt package manager: 1$ sudo apt install nodejs npm The Node.js executable from the Ubuntu repositories is na">
+<meta property="og:description" content="Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario wher">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-17T15:07:58.682Z">
+<meta property="og:updated_time" content="2019-03-23T22:55:57.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Install nodejs and npm in Pop!_OS">
-<meta name="twitter:description" content="Start by updating the packages list by typing: 1$ sudo apt update Install nodejs using the apt package manager: 1$ sudo apt install nodejs npm The Node.js executable from the Ubuntu repositories is na">
+<meta name="twitter:title" content="How to change port mapping of a running docker container">
+<meta name="twitter:description" content="Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario wher">
 <meta name="twitter:creator" content="@&#x2F;&#x2F;twitter.com&#x2F;AshokMA9">
   
     <link rel="alternate" href="/atom.xml" title="AshKeys" type="application/atom+xml">
@@ -86,10 +86,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-install-nodejs-and-npm-pop-os" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-How-to-change-port-mapping-of-a-running-docker-container" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/02/18/install-nodejs-and-npm-pop-os/" class="article-date">
-  <time datetime="2019-02-18T16:35:13.000Z" itemprop="datePublished">2019-02-18</time>
+    <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/" class="article-date">
+  <time datetime="2019-03-23T22:46:44.000Z" itemprop="datePublished">2019-03-23</time>
 </a>
     
   </div>
@@ -100,7 +100,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Install nodejs and npm in Pop!_OS
+      How to change port mapping of a running docker container
     </h1>
   
 
@@ -108,22 +108,34 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Start by updating the packages list by typing:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update</span><br></pre></td></tr></table></figure>
-<p>Install <code>nodejs</code> using the <code>apt</code> package manager:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install nodejs npm</span><br></pre></td></tr></table></figure>
-<p>The Node.js executable from the Ubuntu repositories is named <code>nodejs</code> instead of node because of a conflict with another package.</p>
-<p>To launch the <a href="//www.tutorialspoint.com/nodejs/nodejs_repl_terminal.htm">REPL Terminal</a>: (Pressing <code>Ctrl + C</code> twice exits!)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nodejs</span><br></pre></td></tr></table></figure>
-<p>To verify the installation execute the following command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v &amp;&amp; npm -v</span><br></pre></td></tr></table></figure>
+        <p>Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario where our <a href="/2019/03/17/Run-Postgres-as-Docker-container/">postgreSQL container</a> was mapped to as following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE              PORTS                    NAMES</span><br><span class="line">85261c36bf0e        postgres           0.0.0.0:5433-&gt;5432/tcp   pg-docker</span><br></pre></td></tr></table></figure>
+<p>I was looking for a solution where I can just edit the <em>localhost</em> mapping from <em>5433</em> to <em>5432</em> (which is also the default for postgreSQL).</p>
+<p>Anyways, Now we know what we need, let us take a look at the steps to make it happen.</p>
+<h2 id="Stop-the-container"><a href="#Stop-the-container" class="headerlink" title="Stop the container"></a>Stop the container</h2><p>Since the container is busy bound to port <em>5433</em> which we want to change, we have to stop the container first as following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker stop pg-docker</span><br><span class="line"></span><br><span class="line">pg-docker</span><br></pre></td></tr></table></figure>
+<h2 id="Stop-the-docker-daemon"><a href="#Stop-the-docker-daemon" class="headerlink" title="Stop the docker daemon"></a>Stop the docker daemon</h2><p>Docker daemon is the service which keeps tracks of containers and their configurations in short. As we are going to edit container specific configuration file, we need the daemon to be up and running after our changes. Now, stop the docker daemon:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl stop docker</span><br></pre></td></tr></table></figure>
+<h2 id="Edit-the-container’s-hostconfig-json"><a href="#Edit-the-container’s-hostconfig-json" class="headerlink" title="Edit the container’s hostconfig.json"></a>Edit the container’s <em>hostconfig.json</em></h2><p>Docker keeps container configurations in a file called <em>hostconfig.json</em>. You can find the same file using the following pattern:</p>
+<p><em>/var/lib/docker/containers/<strong>&lt;container_full_hash_id&gt;</strong>/hostconfig.json</em></p>
+<blockquote>
+<p><strong>Tip:</strong> Use the following command to quickly get the full hash id of the container: (ofcourse, docker daemon has to be running)<br><code>$ docker container inspect pg-docker | grep Id</code><br> “Id”: “85261c36bf0e94520012b508f67c7c0c86c0d52953a88f3cad7e06da77b225a0”,</p>
+</blockquote>
+<p>Now, we know where to find <em>hostconfig.json</em> file. In order to update the host mapping, we must edit the file and change the <strong>“HostPort”:”5433”</strong> to our desired port mappings.</p>
+<p>Once we are done editing the file, lets start the docker daemon and the container respectively.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl start docker</span><br><span class="line"></span><br><span class="line">$ docker start pg-docker</span><br><span class="line">pg-docker</span><br></pre></td></tr></table></figure>
+<p>If we take a look at our running docker container now, we see the edited port mappings.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE              PORTS                    NAMES</span><br><span class="line">85261c36bf0e        postgres           0.0.0.0:5432-&gt;5432/tcp   pg-docker</span><br></pre></td></tr></table></figure>
+<p>Yay \O/</p>
+<p>We have just updated our port mappings keeping all our container configurations!</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/02/18/install-nodejs-and-npm-pop-os/" data-id="cjtm3fsdn000fipi0u88zqlad" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/" data-id="cjtm3fsda0005ipi0lrtw37ql" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Setup/">Setup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tutorial/">Tutorial</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li></ul>
 
     </footer>
   </div>
@@ -131,19 +143,19 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2019/02/18/hexo-fatal-in-unpopulated-submodule-deploy-git/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Hexo deploy: Fatal: in unpopulated submodule `.deploy_git`
+          How to create users and groups in Linux from the command line
         
       </div>
     </a>
   
   
-    <a href="/2019/02/17/log/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Weekend ride to Weert</div>
+      <div class="article-nav-title">How to Change File Ownership &amp; Groups in Linux</div>
     </a>
   
 </nav>

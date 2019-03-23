@@ -2,6 +2,7 @@
 title: 'Linux: how to exclude specific folder during copy in terminal'
 tags:
   - Blog
+  - How To
   - Linux
   - Pop!_OS
   - Terminal Usage

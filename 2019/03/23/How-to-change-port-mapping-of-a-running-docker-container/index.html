@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="AshKeys">
 <meta property="og:description" content="Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario wher">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-23T22:46:44.624Z">
+<meta property="og:updated_time" content="2019-03-23T22:55:57.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to change port mapping of a running docker container">
 <meta name="twitter:description" content="Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario wher">
@@ -108,7 +108,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario where our postgreSQL container was mapped to as following:</p>
+        <p>Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario where our <a href="/2019/03/17/Run-Postgres-as-Docker-container/">postgreSQL container</a> was mapped to as following:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE              PORTS                    NAMES</span><br><span class="line">85261c36bf0e        postgres           0.0.0.0:5433-&gt;5432/tcp   pg-docker</span><br></pre></td></tr></table></figure>
 <p>I was looking for a solution where I can just edit the <em>localhost</em> mapping from <em>5433</em> to <em>5432</em> (which is also the default for postgreSQL).</p>
 <p>Anyways, Now we know what we need, let us take a look at the steps to make it happen.</p>
@@ -132,7 +132,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ashokma.com/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/" data-id="cjtm32skl00050si0egqu30z5" class="article-share-link">Share</a>
+      <a data-url="http://ashokma.com/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/" data-id="cjtm3fsda0005ipi0lrtw37ql" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/How-To/">How To</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pop-OS/">Pop!_OS</a></li></ul>

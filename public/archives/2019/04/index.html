@@ -124,9 +124,22 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">2019/4</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns"></p>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
+                         
         </div>
     </div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var random = JSON.parse(this.responseText);
+                document.getElementById("quote").outerHTML = `${random.quote}`;
+                document.getElementById("author").outerHTML = `${random.author}`;
+            }
+        };
+        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
+        xmlhttp.send();
+    </script>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
@@ -190,19 +203,6 @@
     </div>
 </a>
             
-                <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Linux: how to exclude specific folder during copy in terminal<span>
-        </span></span></div>
-    </div>
-</a>
-            
                 <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-20 black-50">
@@ -212,19 +212,6 @@
         </div>
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy">How to create users and groups in Linux from the command line<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Feb 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">My new laptop - System76 - Galago Pro<span>
         </span></span></div>
     </div>
 </a>
@@ -242,6 +229,19 @@
     </div>
 </a>
             
+                <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-20 black-50">
+            
+                <span class="f4 fw3 lh-copy">Mar 2019</span> 
+            
+        </div>
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy">Linux: how to exclude specific folder during copy in terminal<span>
+        </span></span></div>
+    </div>
+</a>
+            
                 <a href="/2019/03/17/Run-Postgres-as-Docker-container/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-20 black-50">
@@ -251,6 +251,32 @@
         </div>
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy">Run Postgres as Docker container<span>
+        </span></span></div>
+    </div>
+</a>
+            
+                <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-20 black-50">
+            
+                <span class="f4 fw3 lh-copy">Feb 2019</span> 
+            
+        </div>
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy">My new laptop - System76 - Galago Pro<span>
+        </span></span></div>
+    </div>
+</a>
+            
+                <a href="/2019/02/18/hexo-fatal-in-unpopulated-submodule-deploy-git/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-20 black-50">
+            
+                <span class="f4 fw3 lh-copy">Feb 2019</span> 
+            
+        </div>
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy">Hexo deploy: Fatal: in unpopulated submodule `.deploy_git`<span>
         </span></span></div>
     </div>
 </a>
@@ -277,19 +303,6 @@
         </div>
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy">Weekend ride to Weert<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/02/18/hexo-fatal-in-unpopulated-submodule-deploy-git/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Feb 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Hexo deploy: Fatal: in unpopulated submodule `.deploy_git`<span>
         </span></span></div>
     </div>
 </a>

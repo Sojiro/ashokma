@@ -122,9 +122,31 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">AshKeys</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
+             
+                <i class="fas fa-quote-left"></i>
+                <p class="f4 fw3 tc tc-m tl-ns" id="quote">
+                </p>
+                <i class="fas fa-quote-right"></i>
+                <div class="pt4 pl7">
+                    <i class="fas fa-pen-fancy"></i>
+                    <span id="author"></span>
+                </div>
+                         
         </div>
     </div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var random = JSON.parse(this.responseText);
+                document.getElementById("quote").outerHTML = `${random.quote}`;
+                document.getElementById("author").outerHTML = `${random.author}`;
+            }
+        };
+        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
+        xmlhttp.send();
+    </script>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">

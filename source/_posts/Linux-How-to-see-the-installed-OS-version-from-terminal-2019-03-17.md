@@ -6,10 +6,9 @@ tags:
   - Linux
   - Pop!_OS
   - Terminal Usage
-icon: fab fa-linux
+icon: fas fa-terminal
 date: 2019-03-17 16:49:11
 ---
-
 
 ## Just open the os-release file
 
@@ -42,7 +41,7 @@ Since I have a [System76 Galago Pro](/2019/02/20/My-new-laptop-System76-Galago-P
 
 > The information you see always depends on your machine's manufacturer. However, the properties are same across linux distributions.
 
-## Others: 
+## Others:
 
 ### 1. `lsb_release` command
 
@@ -61,7 +60,8 @@ outputs something like:
     Release:	18.10
     Codename:	cosmic
 ```
-As I chose the Ubuntu flavoured [System76 Pop!_OS](//system76.com/pop), I do not have any LSB modules to be shown.
+
+As I chose the Ubuntu flavoured [System76 Pop!\_OS](//system76.com/pop), I do not have any LSB modules to be shown.
 
 ### 2. `hostnamectl` command
 
@@ -70,6 +70,7 @@ Use hostnamectl command to **query and change** the system hostname and related 
 ```
     $ hostnamectl status
 ```
+
 or just
 
 ```
@@ -105,11 +106,11 @@ to see all available options:
 ```
     $ uname -a
 
-    Linux 
-    pop-os 
-    4.18.0-16-generic 
-    #17pop0-Ubuntu 
-    SMP 
+    Linux
+    pop-os
+    4.18.0-16-generic
+    #17pop0-Ubuntu
+    SMP
     Fri Mar 8 17:52:57 UTC 2019 (last updated timestamp)
     x86_64 x86_64 x86_64 GNU/Linux
 ```

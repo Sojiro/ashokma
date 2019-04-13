@@ -6,10 +6,9 @@ tags:
   - Linux
   - Pop!_OS
   - Terminal Usage
-icon: fab fa-linux
+icon: fas fa-terminal
 date: 2019-03-17 18:34:00
 ---
-
 
 It is fun and fast to work with terminals in linux. I remember staring at the unnecessary fancy GUI progress bars in Windows. Ugh! I still wonder who would want to see the information that is being displayed in the fancy GUI progress bars. With the latest ones they even added a graph progress bar (O_o o_O) WHY?!?
 
@@ -67,12 +66,12 @@ When we supply the `-r`, `cp` command tries to copy everything recursively under
 
 I do not want these `.git/objects` which are repository specific being copied. Now, we need to write a small query command excluding the directory we want:
 
-```    
+```
     $ cp -r `ls --ignore=.*` /home/ashokma/public_html/
 ```
 
 > `--ignore` takes [shell pattern](//www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html), so here it ignores the following folders for me: `.git`, `./`, `../`
 
----------------------
+---
 
-> **Tip:** Prefer `rsync` over `cp` in case you want to copy a bunch and also want to copy to remote host as I do mostly for my blog. With the help of `rsync daemon`, it only copies the files those have changes. It works as it was named, it synchronizes the files to keep them update. ^_^
+> **Tip:** Prefer `rsync` over `cp` in case you want to copy a bunch and also want to copy to remote host as I do mostly for my blog. With the help of `rsync daemon`, it only copies the files those have changes. It works as it was named, it synchronizes the files to keep them update. ^\_^

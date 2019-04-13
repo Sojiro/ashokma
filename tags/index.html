@@ -125,9 +125,22 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">All tags</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns"></p>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
+                         
         </div>
     </div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var random = JSON.parse(this.responseText);
+                document.getElementById("quote").outerHTML = `${random.quote}`;
+                document.getElementById("author").outerHTML = `${random.author}`;
+            }
+        };
+        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
+        xmlhttp.send();
+    </script>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
@@ -206,6 +219,22 @@
     </div>
 </a>
                 
+                <a href="/tags/Mosquitto/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Mosquitto<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/MQTT/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#MQTT<span>
+        </span></span></div>
+    </div>
+</a>
+                
                 <a href="/tags/Setup/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
@@ -214,18 +243,10 @@
     </div>
 </a>
                 
-                <a href="/tags/nodejs/">
+                <a href="/tags/Hexo/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#nodejs<span>
-        </span></span></div>
-    </div>
-</a>
-                
-                <a href="/tags/npm/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#npm<span>
+            <span class="f4 fw3 lh-copy mh4">#Hexo<span>
         </span></span></div>
     </div>
 </a>
@@ -246,10 +267,18 @@
     </div>
 </a>
                 
-                <a href="/tags/Hexo/">
+                <a href="/tags/nodejs/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Hexo<span>
+            <span class="f4 fw3 lh-copy mh4">#nodejs<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/npm/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#npm<span>
         </span></span></div>
     </div>
 </a>

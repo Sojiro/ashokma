@@ -122,9 +122,31 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">AshKeys</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
+             
+                <i class="fas fa-quote-left"></i>
+                <p class="f4 fw3 tc tc-m tl-ns" id="quote">
+                </p>
+                <i class="fas fa-quote-right"></i>
+                <div class="pl6 pl7-l pt4">
+                    <i class="fas fa-pen-fancy"></i>
+                    <span id="author"></span>
+                </div>
+                         
         </div>
     </div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var random = JSON.parse(this.responseText);
+                document.getElementById("quote").outerHTML = `${random.quote}`;
+                document.getElementById("author").outerHTML = `${random.author}`;
+            }
+        };
+        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
+        xmlhttp.send();
+    </script>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
@@ -136,6 +158,44 @@
 <div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
     <div class="content">
         <div class="mw8 center">
+            
+                <a href="/2019/04/13/How-to-publish-and-subscribe-to-a-topic-in-mosquitto/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2019-04-13</span> 
+                
+                
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Blog/'; return false;">#Blog</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Linux/'; return false;">#Linux</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/How-To/'; return false;">#How To</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Docker/'; return false;">#Docker</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Mosquitto/'; return false;">#Mosquitto</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/MQTT/'; return false;">#MQTT</span>
+                
+            </div>
+            <span class="f3 fw3 lh-copy">How to publish and subscribe to a topic in mosquitto<span>
+        </span></span></div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fas fa-terminal"></i>
+        </div>
+    </div>
+</a>
+            
+                <a href="/2019/04/13/Run-eclipse-mosquitto-as-docker-container/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2019-04-13</span> 
+                
+                
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Tutorial/'; return false;">#Tutorial</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Docker/'; return false;">#Docker</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Mosquitto/'; return false;">#Mosquitto</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/MQTT/'; return false;">#MQTT</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Setup/'; return false;">#Setup</span>
+                
+            </div>
+            <span class="f3 fw3 lh-copy">Run eclipse-mosquitto as docker container<span>
+        </span></span></div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fab fa-docker"></i>
+        </div>
+    </div>
+</a>
             
                 <a href="/2019/04/01/How-to-configure-PostgreSQL-to-accept-all-incoming-connections/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
@@ -227,7 +287,7 @@
             <span class="f3 fw3 lh-copy">Linux: how to exclude specific folder during copy in terminal<span>
         </span></span></div>
         <div class="dtc v-mid w-10 f1 black-50 tr">
-            <i class="fab fa-linux"></i>
+            <i class="fas fa-terminal"></i>
         </div>
     </div>
 </a>
@@ -246,7 +306,7 @@
             <span class="f3 fw3 lh-copy">Linux: How to see the installed OS version from terminal<span>
         </span></span></div>
         <div class="dtc v-mid w-10 f1 black-50 tr">
-            <i class="fab fa-linux"></i>
+            <i class="fas fa-terminal"></i>
         </div>
     </div>
 </a>
@@ -285,44 +345,6 @@
         </span></span></div>
         <div class="dtc v-mid w-10 f1 black-50 tr">
             <i class="fab fa-linux"></i>
-        </div>
-    </div>
-</a>
-            
-                <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
-        <div class="dtc v-mid w-90 black-70">
-            <div>
-                
-                    <span class="f5 fw3 lh-copy pr4">2019-02-20</span> 
-                
-                
-                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Blog/'; return false;">#Blog</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span>
-                
-            </div>
-            <span class="f3 fw3 lh-copy">My new laptop - System76 - Galago Pro<span>
-        </span></span></div>
-        <div class="dtc v-mid w-10 f1 black-50 tr">
-            <i class="fas fa-laptop-code"></i>
-        </div>
-    </div>
-</a>
-            
-                <a href="/2019/02/18/hexo-fatal-in-unpopulated-submodule-deploy-git/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
-        <div class="dtc v-mid w-90 black-70">
-            <div>
-                
-                    <span class="f5 fw3 lh-copy pr4">2019-02-18</span> 
-                
-                
-                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Blog/'; return false;">#Blog</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Setup/'; return false;">#Setup</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Hexo/'; return false;">#Hexo</span>
-                
-            </div>
-            <span class="f3 fw3 lh-copy">Hexo deploy: Fatal: in unpopulated submodule `.deploy_git`<span>
-        </span></span></div>
-        <div class="dtc v-mid w-10 f1 black-50 tr">
-            <i class="fab fa-blogger-b"></i>
         </div>
     </div>
 </a>

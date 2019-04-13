@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="Sometimes, you might want to connect to your test or acceptance environment databases. Mostly for we might want to test our local changes with real-ti">
+    <meta name="description" content="Eclipse Mosquitto - A quick intro:Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 3.1">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to configure PostgreSQL to accept all incoming connections">
+    <meta property="og:title" content="Run eclipse-mosquitto as docker container">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>How to configure PostgreSQL to accept all incoming connections - AshKeys</title>
+    <title>Run eclipse-mosquitto as docker container - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -123,8 +123,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to configure PostgreSQL to accept all incoming connections</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-04-01</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Run eclipse-mosquitto as docker container</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-04-13</p>
                          
         </div>
     </div>
@@ -157,33 +157,48 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Postgres/">#Postgres</a>
+                                <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Sometimes, you might want to connect to your test or acceptance environment databases. Mostly for we might want to test our local changes with real-time data instead of mock data. Or simply you do not want to set a local database up. ^_^</p>
-<p>For these cases and people who are interested in connecting their application to non-development environment database, we are going to look at how to enable postgres to listen to all incoming connections.</p>
-<h2 id="Edit-the-postgresql-conf-file"><a href="#Edit-the-postgresql-conf-file" class="headerlink" title="Edit the postgresql.conf file:"></a>Edit the <code>postgresql.conf</code> file:</h2><p>We have to edit the <strong>CONNECTIONS AND AUTHENTICATION</strong> section in <strong><code>postgresql.conf</code></strong> file as follows:<br>You will find this file under your volume directory. Since I <a href="/2019/03/17/Run-Postgres-as-Docker-container/">run postgresql as docker container</a>, it is in <code>/home/ashokma/docker/volumes/postgres/postgresql.conf</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#------------------------------------------------------------------------------</span><br><span class="line"># CONNECTIONS AND AUTHENTICATION</span><br><span class="line">#------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># - Connection Settings -</span><br><span class="line"></span><br><span class="line">listen_addresses = &apos;*&apos;</span><br><span class="line">                                        # comma-separated list of addresses;</span><br><span class="line">                                        # defaults to &apos;localhost&apos;; use &apos;*&apos; for all</span><br><span class="line">                                        # (change requires restart)</span><br></pre></td></tr></table></figure>
-<p>Once restarted, we can expect to listen to all ips. Yes, it will listen and you get proper not authenticated exception on trying to connect to database instead of a confusing connection refused &gt;_O</p>
+                    <h2 id="Eclipse-Mosquitto-A-quick-intro"><a href="#Eclipse-Mosquitto-A-quick-intro" class="headerlink" title="Eclipse Mosquitto - A quick intro:"></a>Eclipse Mosquitto - A quick intro:</h2><p>Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 3.1 and 3.1.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers.</p>
+<p>The MQTT protocol provides a lightweight method of carrying out messaging using a publish/subscribe model. This makes it suitable for Internet of Things messaging such as with low power sensors or mobile devices such as phones, embedded computers or microcontrollers.</p>
+<h2 id="Pull-the-docker-image"><a href="#Pull-the-docker-image" class="headerlink" title="Pull the docker image."></a>Pull the docker image.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull eclipse-mosquitto</span><br></pre></td></tr></table></figure>
+<p>This is will pull the latest docker image of <code>eclipse-mosquitto</code>.</p>
+<p>Once the necessary image has been downloaded, you can verify it using,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker images</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>Tip: It is okay to listen to all addresses if you are sure you are not expecting a DDoS to it. At least, in this way people know the DB is up but they do not have permissions!</p>
+<p><strong>Tip:</strong> Read the <a href="//docs.docker.com/samples/library/eclipse-mosquitto/">official docker documentation</a> to understand more in detail.</p>
 </blockquote>
-<h2 id="Edit-the-pg-hba-conf-file-HBA-stands-for-host-based-authentication"><a href="#Edit-the-pg-hba-conf-file-HBA-stands-for-host-based-authentication" class="headerlink" title="Edit the pg_hba.conf file: (HBA stands for host-based authentication)"></a>Edit the <code>pg_hba.conf</code> file: (HBA stands for host-based authentication)</h2><p>In order to configure the enable the authentications for specific or to all users as a temporary, we have to edit the <code>pg_hba.conf</code> file as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># TYPE  DATABASE   USER   ADDRESS   METHOD</span><br><span class="line"></span><br><span class="line"># &quot;local&quot; is for Unix domain socket connections only</span><br><span class="line">local   all        all             trust</span><br><span class="line">host    all        all    all      md5</span><br></pre></td></tr></table></figure>
-<p>Once restarted, anyone in the network can access the database with valid credentials like</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ psql -h ashokma.com -U ashkeys</span><br><span class="line">Password for user ashkeys:</span><br></pre></td></tr></table></figure>
+<h2 id="Run-mosquitto-as-container"><a href="#Run-mosquitto-as-container" class="headerlink" title="Run mosquitto as container"></a>Run mosquitto as container</h2><p>Now, we can run mosquitto as a docker container by running the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name=mosquitto -p 1883:1883 -p 9001:9001 -d eclipse-mosquitto</span><br></pre></td></tr></table></figure>
+<p>What are we doing here:</p>
+<ul>
+<li><code>run</code><br>creates and runs the newly created container with options specified.</li>
+<li><code>--name</code><br>name of the container.</li>
+<li><code>-p</code><br>Maps the container ports to <code>localhost</code> ports. Each mapping should be specified with <code>-p</code>.</li>
+<li><code>-d</code><br>Runs the container in detached mode. By default, docker attaches the container. It is common to run in detached mode like running it in the background.</li>
+<li><code>eclipse-mosquiito</code><br>Last one is the image from which we want to create the docker container.</li>
+</ul>
+<h2 id="A-quick-deep-down-about-the-port-mappings"><a href="#A-quick-deep-down-about-the-port-mappings" class="headerlink" title="A quick deep down about the port mappings"></a>A quick deep down about the port mappings</h2><h3 id="Via-MQTT-Protocol"><a href="#Via-MQTT-Protocol" class="headerlink" title="Via MQTT Protocol:"></a>Via MQTT Protocol:</h3><p>As we mentioned earlier, mosquitto is used to communicate messages between two machines/apps. Obviously, they both should agree on a protocol to be used. As mosquitto is an implementation of MQTT protocol, it does communication by sending MQTT packets through its default port mapping <code>1883</code>. We can subscribe/publish a topic via this port.</p>
+<ul>
+<li>MQTT<br>– Establish TCP connection<br>– Now we’re talking MQTT<br>– Send MQTT packets as defined by standard (publish/sub/unsub) or disconnect</li>
+</ul>
+<h3 id="Via-WebSockets-Protocol"><a href="#Via-WebSockets-Protocol" class="headerlink" title="Via WebSockets Protocol:"></a>Via WebSockets Protocol:</h3><p>In addition to MQTT, mosquitto also comes up with websockets protocol so that our web browser based applications can do two-way communication with other devices/machines/apps. This can be mapped and exposed via <code>9001</code> port.</p>
+<ul>
+<li>Websocket<br>– Establish TCP connection<br>– Send HTTP request with <code>Upgrade: websocket</code> header and other preparation<br>– Except <code>101 Switching Protocols</code> response<br>– Now we’re talking Websocket, either side can send messages as defined by standard</li>
+</ul>
 <blockquote>
-<p>Tip: <code>postgres</code> has very good documentation. To know more about the options in <code>pg_hba.conf</code>, take a look at <a href="//www.postgresql.org/docs/9.1/auth-pg-hba-conf.html">postgresql.org</a></p>
+<p><strong>Tip:</strong> Refer the <a href="//tools.ietf.org/html/rfc6455">standard document</a> to learn more about the websocket protocol</p>
 </blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Postgres/">#Postgres</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a>
                         </div>
                     
 

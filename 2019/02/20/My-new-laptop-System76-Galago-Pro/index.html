@@ -124,9 +124,22 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">My new laptop - System76 - Galago Pro</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2019-02-20</p>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-02-20</p>
+                         
         </div>
     </div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var random = JSON.parse(this.responseText);
+                document.getElementById("quote").outerHTML = `${random.quote}`;
+                document.getElementById("author").outerHTML = `${random.author}`;
+            }
+        };
+        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
+        xmlhttp.send();
+    </script>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
@@ -213,6 +226,14 @@
     <h3>Recent Posts</h3>
     
         <p>
+            <a href="/2019/04/13/How-to-publish-and-subscribe-to-a-topic-in-mosquitto/">How to publish and subscribe to a topic in mosquit</a>
+        </p>
+    
+        <p>
+            <a href="/2019/04/13/Run-eclipse-mosquitto-as-docker-container/">Run eclipse-mosquitto as docker container</a>
+        </p>
+    
+        <p>
             <a href="/2019/04/01/How-to-configure-PostgreSQL-to-accept-all-incoming-connections/">How to configure PostgreSQL to accept all incoming</a>
         </p>
     
@@ -222,14 +243,6 @@
     
         <p>
             <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/">How to change port mapping of a running docker con</a>
-        </p>
-    
-        <p>
-            <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/">How to Change File Ownership &amp; Groups in Linux</a>
-        </p>
-    
-        <p>
-            <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">Linux: how to exclude specific folder during copy </a>
         </p>
     
 </div>

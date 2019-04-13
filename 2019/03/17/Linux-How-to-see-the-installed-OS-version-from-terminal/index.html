@@ -124,13 +124,26 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">Linux: How to see the installed OS version from terminal</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2019-03-17</p>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-03-17</p>
+                         
         </div>
     </div>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var random = JSON.parse(this.responseText);
+                document.getElementById("quote").outerHTML = `${random.quote}`;
+                document.getElementById("author").outerHTML = `${random.author}`;
+            }
+        };
+        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
+        xmlhttp.send();
+    </script>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-linux"></i>
+        <i class="header-icon fas fa-terminal"></i>
     </div>
 </div>
 
@@ -173,7 +186,8 @@
 <h3 id="3-uname-command"><a href="#3-uname-command" class="headerlink" title="3. uname command"></a>3. <code>uname</code> command</h3><p>Just print Linux kernel version, run:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ uname -r</span><br><span class="line"></span><br><span class="line">4.18.0-16-generic</span><br></pre></td></tr></table></figure>
 <p>to see all available options:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ uname -a</span><br><span class="line"></span><br><span class="line">Linux </span><br><span class="line">pop-os </span><br><span class="line">4.18.0-16-generic </span><br><span class="line">#17pop0-Ubuntu </span><br><span class="line">SMP </span><br><span class="line">Fri Mar 8 17:52:57 UTC 2019 (last updated timestamp)</span><br><span class="line">x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ uname -a</span><br><span class="line"></span><br><span class="line">Linux</span><br><span class="line">pop-os</span><br><span class="line">4.18.0-16-generic</span><br><span class="line">#17pop0-Ubuntu</span><br><span class="line">SMP</span><br><span class="line">Fri Mar 8 17:52:57 UTC 2019 (last updated timestamp)</span><br><span class="line">x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+
                     
                     <!-- Tags Bottom -->
                     
@@ -214,6 +228,14 @@
     <h3>Recent Posts</h3>
     
         <p>
+            <a href="/2019/04/13/How-to-publish-and-subscribe-to-a-topic-in-mosquitto/">How to publish and subscribe to a topic in mosquit</a>
+        </p>
+    
+        <p>
+            <a href="/2019/04/13/Run-eclipse-mosquitto-as-docker-container/">Run eclipse-mosquitto as docker container</a>
+        </p>
+    
+        <p>
             <a href="/2019/04/01/How-to-configure-PostgreSQL-to-accept-all-incoming-connections/">How to configure PostgreSQL to accept all incoming</a>
         </p>
     
@@ -223,14 +245,6 @@
     
         <p>
             <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/">How to change port mapping of a running docker con</a>
-        </p>
-    
-        <p>
-            <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/">How to Change File Ownership &amp; Groups in Linux</a>
-        </p>
-    
-        <p>
-            <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">Linux: how to exclude specific folder during copy </a>
         </p>
     
 </div>

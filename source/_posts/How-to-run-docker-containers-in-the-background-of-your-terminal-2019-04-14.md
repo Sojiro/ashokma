@@ -1,8 +1,15 @@
 ---
 title: How to run docker containers in the background of your terminal
-tags: [Blog, How to, Docker, terminal, Linux]
+tags:
+  - Blog
+  - How to
+  - Docker
+  - terminal
+  - Linux
 icon: fab fa-docker
+date: 2019-04-14 16:05:54
 ---
+
 
 When we create a container from an image, by default, it attaches the container to the terminal. Many cases, we do not want that to happen for we have other commands to execute and do not bother to open new terminals. >\_O
 

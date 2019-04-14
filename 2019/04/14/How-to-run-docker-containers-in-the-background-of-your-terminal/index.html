@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="In recent post, we learned how to run mosquitto as a docker container. Now, we will learn about how to carry out messages using its publish/subscribe ">
+    <meta name="description" content="When we create a container from an image, by default, it attaches the container to the terminal. Many cases, we do not want that to happen for we have">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to publish and subscribe to a topic in mosquitto">
+    <meta property="og:title" content="How to run docker containers in the background of your terminal">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>How to publish and subscribe to a topic in mosquitto - AshKeys</title>
+    <title>How to run docker containers in the background of your terminal - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -123,8 +123,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to publish and subscribe to a topic in mosquitto</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-04-13</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to run docker containers in the background of your terminal</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-04-14</p>
                          
         </div>
     </div>
@@ -143,7 +143,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-terminal"></i>
+        <i class="header-icon fab fa-docker"></i>
     </div>
 </div>
 
@@ -157,40 +157,39 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a>
+                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/terminal/">#terminal</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>In recent <a href="/2019/04/13/Run-eclipse-mosquitto-as-docker-container/">post</a>, we learned <strong>how to run mosquitto as a docker container</strong>. Now, we will learn about how to carry out messages using its publish/subscribe model.</p>
-<p>In order to publish/subscribe to a topic in mosquitto, we need <code>mosquitto-clients</code> to be installed in our machine. We can do it by the following command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mosquitto-clients</span><br></pre></td></tr></table></figure>
-<p>This will make both <code>mosquitto_pub</code> and <code>mosquitto_sub</code> available to use.</p>
-<h2 id="Publish-message-under-a-topic"><a href="#Publish-message-under-a-topic" class="headerlink" title="Publish message under a topic"></a>Publish message under a topic</h2><p>In MQTT protocol, messages should be published and subscribed under respective topic names. For instance, if we are going to publish a message related to weather, it should be published like the following: <code>/topic/weather/nl/utrecht</code>.</p>
-<p>Lets do the same, using <code>mosquitto_pub</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_pub -t &apos;/topic/weather/nl/utrecht&apos; -m &apos;&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;&apos;</span><br><span class="line">$ mosquitto_pub -t &apos;/topic/weather/nl/rotterdam&apos; -m &apos;&#123; &quot;city&quot;:&quot;Rotterdam&quot;, &quot;temp&quot;: &quot;30&quot; &#125;&apos;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>-t</code> – The topic under which we publish a message.</li>
-<li><code>-m</code> – The message we want to publish.</li>
-</ul>
-<p><code>mosquitto_pub</code> publishes the messages under the specified topic via default port <code>1883</code> of <code>localhost</code>.</p>
+                    <p>When we create a container from an image, by default, it attaches the container to the terminal. Many cases, we do not want that to happen for we have other commands to execute and do not bother to open new terminals. &gt;_O</p>
+<p>In that case, running a docker container in detached mode comes handy.</p>
+<h2 id="The-default-attached-mode"><a href="#The-default-attached-mode" class="headerlink" title="The default attached mode:"></a>The default attached mode:</h2><p>To create and run a container, we use the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker run eclipse-mosquitto</span><br><span class="line">1555249625: mosquitto version 1.5.8 starting</span><br><span class="line">1555249625: Config loaded from /mosquitto/config/mosquitto.conf.</span><br><span class="line">1555249625: Opening ipv4 listen socket on port 1883.</span><br><span class="line">1555249625: Opening ipv6 listen socket on port 1883.</span><br></pre></td></tr></table></figure>
+<p>The above command creates a container with generated name and attaches it to you terminal. When we press <code>CTRL + C</code>, it actually stops the container. But, we do not want that!</p>
+<h2 id="Detached-Mode"><a href="#Detached-Mode" class="headerlink" title="Detached Mode:"></a>Detached Mode:</h2><p>For that we have an option to be supplied like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -d eclipse-mosquitto</span><br><span class="line">09bb7465c787fc1ff2f4177a8d0dd1d5c9751b3192583df5c177968dcacb17a2</span><br></pre></td></tr></table></figure>
+<p>Now it does the same job and instead of attaching the container to the terminal it only logs the container id.</p>
 <blockquote>
-<p><strong>Tip:</strong> We can publish anything as long as we keep it as a string. The above is just a string representation of a <code>Weather</code> JSON object. People subscribe to it, can parse it using <code>JSON.parse()</code> to use as a JSON.</p>
+<p>How do we know that our container was created successfully and running?<br>In short, <strong>we do not!</strong></p>
 </blockquote>
-<h2 id="Subscribe-to-a-topic"><a href="#Subscribe-to-a-topic" class="headerlink" title="Subscribe to a topic"></a>Subscribe to a topic</h2><p>Since people publishing already, lets subscribe to a topic and hear the gossip O_o</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_sub -t &apos;/topic/weather/nl/utrecht&apos;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;</span><br></pre></td></tr></table></figure>
-<p>If there are messages being published, you can see it being logged in your terminal.</p>
+<h2 id="Check-tail-the-container-logs"><a href="#Check-tail-the-container-logs" class="headerlink" title="Check/tail the container logs:"></a>Check/tail the container logs:</h2><p>To we the container’s logs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker logs 09bb7465c787fc1ff2f4177a8d0dd1d5c9751b3192583df5c177968dcacb17a2</span><br><span class="line">1555249810: mosquitto version 1.5.8 starting</span><br><span class="line">1555249810: Config loaded from /mosquitto/config/mosquitto.conf.</span><br><span class="line">1555249810: Opening ipv4 listen socket on port 1883.</span><br><span class="line">1555249810: Opening ipv6 listen socket on port 1883.</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>Tip:</strong> We can subscribe to all the topics by specifying the <code>-t</code> option as the following: <code>mosquitto_sub -t &#39;#&#39;</code>. However, it is advised to subscribe to as specifici topic as possible like <code>mosquitto_sub -t &#39;/topic/weather/nl/#&#39;</code> to subscribe to the entire country’s weather.</p>
+<p><strong>Tip:</strong> Use <code>docker ps</code> to list out the running containers, in case you want to know the name of your running containers. It is better to use <code>-a</code> option to list out all the containers. On error cases, the container might not be running.</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_sub -t &apos;/topic/weather/nl/#&apos;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Rotterdam&quot;, &quot;temp&quot;: &quot;30&quot; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Bonus-Attaching-the-container-back"><a href="#Bonus-Attaching-the-container-back" class="headerlink" title="Bonus: Attaching the container back:"></a>Bonus: Attaching the container back:</h2><p>Just in case if you want to attach a container back again, it is good to know the attach mode.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker attach 09bb7465c787fc1ff2f4177a8d0dd1d5c9751b3192583df5c177968dcacb17a2</span><br><span class="line">_</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Remember that pressing <code>CTRL + C</code> terminates the container.</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/terminal/">#terminal</a>
                         </div>
                     
 

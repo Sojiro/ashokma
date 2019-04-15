@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="It happens sometimes that an address in use is not released. For example, when we restart our IDE after an update or accidentally close the IDE withou">
+    <meta name="description" content="It is easy to run your own server nowadays. Nodejs, makes it look like a piece of cake.
+Once you have installed Node, let’s try building our first web">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="EADDRINUSE - kill process at a specific port">
+    <meta property="og:title" content="How to run a web server using Node.JS">
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>EADDRINUSE - kill process at a specific port - AshKeys</title>
+    <title>How to run a web server using Node.JS - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -123,8 +124,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">EADDRINUSE - kill process at a specific port</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-02-24</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to run a web server using Node.JS</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-04-15</p>
                          
         </div>
     </div>
@@ -143,7 +144,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-linux"></i>
+        <i class="header-icon fab fa-node"></i>
     </div>
 </div>
 
@@ -157,23 +158,33 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/server/">#server</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>It happens sometimes that an address in use is not released. For example, when we restart our IDE after an update or accidentally close the IDE without shutting down the server. In these cases, we encounter the below error:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: listen EADDRINUSE 0.0.0.0:4000</span><br></pre></td></tr></table></figure>
-<p>saying address already in use. In linux, there is a utility to release the port by killing the process that is using it.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ fuser -k 4000/tcp</span><br><span class="line">4000/tcp:             9032</span><br></pre></td></tr></table></figure>
-<p>It finds the user by the <code>4000</code> port with protocol <code>tcp</code>, kills it and outputs the <code>pid</code> (process id). If you do not supply the <code>-k</code>, it simply outputs the <code>pid</code>.</p>
+                    <p>It is easy to run your own server nowadays. <a href="//nodejs.org/en/about/"><code>Nodejs</code></a>, makes it look like a piece of cake.</p>
+<p>Once you have installed <a href="2019/02/18/install-nodejs-and-npm-pop-os/">Node</a>, let’s try building our first web server.</p>
+<h2 id="Create-web-directory"><a href="#Create-web-directory" class="headerlink" title="Create web directory:"></a>Create web directory:</h2><p>Let’s start by creating our server directory.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir nodejs-server</span><br></pre></td></tr></table></figure>
+<h2 id="Server-js-file"><a href="#Server-js-file" class="headerlink" title="Server js file"></a>Server js file</h2><p>Once we changed to the <code>nodejs-server</code> directory,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd nodejs-server</span><br></pre></td></tr></table></figure>
+<p>create a <code>server.js</code> with the following code:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span>;</span><br><span class="line">  res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html'</span>);</span><br><span class="line">  res.write(</span><br><span class="line">    <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;h1&gt; Hello! Welcome to AshKeys! &lt;/h1&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(port, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;port&#125;</span>/`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Now our server is ready to be created.</p>
+<h2 id="Run-as-node"><a href="#Run-as-node" class="headerlink" title="Run as node"></a>Run as <code>node</code></h2><p>This is it! All we have to do now is to run as a <code>node</code> file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node ./server.js</span><br><span class="line">Server running at http://localhost:3000/</span><br></pre></td></tr></table></figure>
+<p>Now our server is listening to port <code>3000</code> and welcomes you to <a href="/"><strong>AshKeys</strong></a></p>
+<blockquote>
+<p><strong>Tip:</strong> When it comes to routing it is <a href="//www.npmjs.com/package/express"><code>express</code></a> that comes at best!</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/server/">#server</a>
                         </div>
                     
 

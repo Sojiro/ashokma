@@ -128,17 +128,13 @@
                          
         </div>
     </div>
-    <script>
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var random = JSON.parse(this.responseText);
-                document.getElementById("quote").outerHTML = `${random.quote}`;
-                document.getElementById("author").outerHTML = `${random.author}`;
-            }
-        };
-        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
-        xmlhttp.send();
+    <script type="text/javascript">
+        fetch("//quote-generate.herokuapp.com")
+            .then(resp => resp.json())
+            .then(data => {
+                document.getElementById("quote").outerHTML = `${data.quote}`;
+                document.getElementById("author").outerHTML = `${data.author}`;
+            });
     </script>
 
     <!-- Icon -->
@@ -157,7 +153,7 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a>
+                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a>
                             </div>
                         </div>
                     
@@ -188,7 +184,7 @@
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a>
                         </div>
                     
 

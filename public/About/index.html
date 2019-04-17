@@ -129,17 +129,13 @@
                          
         </div>
     </div>
-    <script>
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var random = JSON.parse(this.responseText);
-                document.getElementById("quote").outerHTML = `${random.quote}`;
-                document.getElementById("author").outerHTML = `${random.author}`;
-            }
-        };
-        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
-        xmlhttp.send();
+    <script type="text/javascript">
+        fetch("//quote-generate.herokuapp.com")
+            .then(resp => resp.json())
+            .then(data => {
+                document.getElementById("quote").outerHTML = `${data.quote}`;
+                document.getElementById("author").outerHTML = `${data.author}`;
+            });
     </script>
 
     <!-- Icon -->

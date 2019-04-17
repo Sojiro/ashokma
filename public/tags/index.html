@@ -129,17 +129,13 @@
                          
         </div>
     </div>
-    <script>
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var random = JSON.parse(this.responseText);
-                document.getElementById("quote").outerHTML = `${random.quote}`;
-                document.getElementById("author").outerHTML = `${random.author}`;
-            }
-        };
-        xmlhttp.open("GET", "//quote-generate.herokuapp.com", true);
-        xmlhttp.send();
+    <script type="text/javascript">
+        fetch("//quote-generate.herokuapp.com")
+            .then(resp => resp.json())
+            .then(data => {
+                document.getElementById("quote").outerHTML = `${data.quote}`;
+                document.getElementById("author").outerHTML = `${data.author}`;
+            });
     </script>
 
     <!-- Icon -->
@@ -163,10 +159,18 @@
     </div>
 </a>
                 
-                <a href="/tags/Linux/">
+                <a href="/tags/How-To/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Linux<span>
+            <span class="f4 fw3 lh-copy mh4">#How To<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Docker/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Docker<span>
         </span></span></div>
     </div>
 </a>
@@ -175,6 +179,14 @@
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy mh4">#Pop!_OS<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Linux/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Linux<span>
         </span></span></div>
     </div>
 </a>
@@ -195,26 +207,26 @@
     </div>
 </a>
                 
-                <a href="/tags/How-To/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#How To<span>
-        </span></span></div>
-    </div>
-</a>
-                
-                <a href="/tags/Docker/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Docker<span>
-        </span></span></div>
-    </div>
-</a>
-                
                 <a href="/tags/Postgres/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy mh4">#Postgres<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Mosquitto/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Mosquitto<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/MQTT/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#MQTT<span>
         </span></span></div>
     </div>
 </a>
@@ -251,22 +263,6 @@
     </div>
 </a>
                 
-                <a href="/tags/Mosquitto/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Mosquitto<span>
-        </span></span></div>
-    </div>
-</a>
-                
-                <a href="/tags/MQTT/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#MQTT<span>
-        </span></span></div>
-    </div>
-</a>
-                
                 <a href="/tags/Setup/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
@@ -275,18 +271,18 @@
     </div>
 </a>
                 
-                <a href="/tags/npm/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#npm<span>
-        </span></span></div>
-    </div>
-</a>
-                
                 <a href="/tags/Hexo/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy mh4">#Hexo<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/npm/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#npm<span>
         </span></span></div>
     </div>
 </a>

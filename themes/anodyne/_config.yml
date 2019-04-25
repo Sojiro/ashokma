@@ -22,7 +22,7 @@ archive_date_format: MMM YYYY
 archive_font_awesome_icon_css: far fa-folder-open
 
 # About Widget
-about_widget_avatar_url: //media.licdn.com/dms/image/C4D03AQHkeGBS2OmyDw/profile-displayphoto-shrink_200_200/0?e=1556150400&v=beta&t=84M5R7zY4GrIJLimS1OL5e7sxB16_6W-th82JcUBZr4
+about_widget_avatar_url: ./index/avatar.jpeg
 about_widget_text: "<b>About Ashok:</b><br/>
 Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy
 too. Still evolving in the vast <code>NodeJS</code> eco-system.

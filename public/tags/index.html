@@ -96,7 +96,7 @@
 <!-- Banner -->
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
     
-    <nav class="db dt-l w-100 mw8 center border-box pv3">
+    <nav class="db dt-l w-100 mw8 center border-box">
         <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
             <img src="//github.com/sojiro.png" class="dib h3" alt="AshKeys">
         </a>
@@ -122,21 +122,14 @@
     </nav>
 
     <!-- Title -->
-    <div class="w-100 mw8 center vh-40 dt">
+    <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">All tags</h1>
             <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
                          
         </div>
     </div>
-    <script type="text/javascript">
-        fetch("//quote-generate.herokuapp.com")
-            .then(resp => resp.json())
-            .then(data => {
-                document.getElementById("quote").outerHTML = `${data.quote}`;
-                document.getElementById("author").outerHTML = `${data.author}`;
-            });
-    </script>
+                
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
@@ -146,42 +139,10 @@
 
 
 <!-- Content -->
-<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+<div class="w-100 ph2 ph4-m ph5-l mv5">
     <div class="content">
         <div class="mw8 center">
             
-                
-                <a href="/tags/Blog/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Blog<span>
-        </span></span></div>
-    </div>
-</a>
-                
-                <a href="/tags/Linux/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Linux<span>
-        </span></span></div>
-    </div>
-</a>
-                
-                <a href="/tags/Pop-OS/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Pop!_OS<span>
-        </span></span></div>
-    </div>
-</a>
-                
-                <a href="/tags/Terminal-Usage/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Terminal Usage<span>
-        </span></span></div>
-    </div>
-</a>
                 
                 <a href="/tags/Tutorial/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
@@ -199,10 +160,50 @@
     </div>
 </a>
                 
+                <a href="/tags/Pop-OS/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Pop!_OS<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Linux/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Linux<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Terminal-Usage/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Terminal Usage<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Blog/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Blog<span>
+        </span></span></div>
+    </div>
+</a>
+                
                 <a href="/tags/Docker/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy mh4">#Docker<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Postgres/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Postgres<span>
         </span></span></div>
     </div>
 </a>
@@ -219,14 +220,6 @@
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy mh4">#MQTT<span>
-        </span></span></div>
-    </div>
-</a>
-                
-                <a href="/tags/Postgres/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Postgres<span>
         </span></span></div>
     </div>
 </a>
@@ -279,14 +272,6 @@
     </div>
 </a>
                 
-                <a href="/tags/Hexo/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy mh4">#Hexo<span>
-        </span></span></div>
-    </div>
-</a>
-                
                 <a href="/tags/Journal/">
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
@@ -299,6 +284,14 @@
     <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
         <div class="dtc v-mid w-80 black-70">
             <span class="f4 fw3 lh-copy mh4">#Shukuchi<span>
+        </span></span></div>
+    </div>
+</a>
+                
+                <a href="/tags/Hexo/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy mh4">#Hexo<span>
         </span></span></div>
     </div>
 </a>

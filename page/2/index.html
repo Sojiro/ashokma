@@ -93,7 +93,7 @@
 <!-- Banner -->
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
     
-    <nav class="db dt-l w-100 mw8 center border-box pv3">
+    <nav class="db dt-l w-100 mw8 center border-box">
         <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
             <img src="//github.com/sojiro.png" class="dib h3" alt="AshKeys">
         </a>
@@ -119,7 +119,7 @@
     </nav>
 
     <!-- Title -->
-    <div class="w-100 mw8 center vh-40 dt">
+    <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">AshKeys</h1>
             <p class="f4 fw3 pab-50px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
@@ -135,14 +135,16 @@
                          
         </div>
     </div>
-    <script type="text/javascript">
-        fetch("//quote-generate.herokuapp.com")
-            .then(resp => resp.json())
-            .then(data => {
-                document.getElementById("quote").outerHTML = `${data.quote}`;
-                document.getElementById("author").outerHTML = `${data.author}`;
-            });
-    </script>
+    
+        <script type="text/javascript">
+            fetch("//quote-generate.herokuapp.com")
+                .then(resp => resp.json())
+                .then(data => {
+                    document.getElementById("quote").outerHTML = `${data.quote}`;
+                    document.getElementById("author").outerHTML = `${data.author}`;
+                });
+        </script>
+                
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
@@ -151,7 +153,7 @@
 </div>
 
 <!-- Content -->
-<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+<div class="w-100 ph2 ph4-m ph5-l mv5">
     <div class="content">
         <div class="mw8 center">
             
@@ -182,7 +184,7 @@
                     <span class="f5 fw3 lh-copy pr4">2019-02-24</span> 
                 
                 
-                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Blog/'; return false;">#Blog</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Linux/'; return false;">#Linux</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Terminal-Usage/'; return false;">#Terminal Usage</span>
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Linux/'; return false;">#Linux</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Terminal-Usage/'; return false;">#Terminal Usage</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Blog/'; return false;">#Blog</span>
                 
             </div>
             <span class="f3 fw3 lh-copy">EADDRINUSE - kill process at a specific port<span>
@@ -201,7 +203,7 @@
                     <span class="f5 fw3 lh-copy pr4">2019-02-20</span> 
                 
                 
-                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Blog/'; return false;">#Blog</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span>
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Blog/'; return false;">#Blog</span>
                 
             </div>
             <span class="f3 fw3 lh-copy">My new laptop - System76 - Galago Pro<span>
@@ -239,7 +241,7 @@
                     <span class="f5 fw3 lh-copy pr4">2019-02-18</span> 
                 
                 
-                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Tutorial/'; return false;">#Tutorial</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/nodejs/'; return false;">#nodejs</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Setup/'; return false;">#Setup</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/npm/'; return false;">#npm</span>
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Tutorial/'; return false;">#Tutorial</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Pop-OS/'; return false;">#Pop!_OS</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/nodejs/'; return false;">#nodejs</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Setup/'; return false;">#Setup</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/npm/'; return false;">#npm</span>
                 
             </div>
             <span class="f3 fw3 lh-copy">Install nodejs and npm in Pop!_OS<span>

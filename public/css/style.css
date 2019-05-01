@@ -337,3 +337,9 @@ b,
 strong {
   font-weight: bold;
 }
+li:before {
+  content: '\1F31F';
+  margin-left: -23px;
+  margin-right: 10px;
+  color: #000;
+}

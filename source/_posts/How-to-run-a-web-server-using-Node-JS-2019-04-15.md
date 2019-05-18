@@ -8,10 +8,9 @@ icon: fab fa-node
 date: 2019-04-15 22:55:05
 ---
 
-
 It is easy to run your own server nowadays. [`Nodejs`](//nodejs.org/en/about/), makes it look like a piece of cake.
 
-Once you have installed [Node](2019/02/18/install-nodejs-and-npm-pop-os/), let's try building our first web server.
+Once you have installed [Node](/2019/02/18/install-nodejs-and-npm-pop-os/), let's try building our first web server.
 
 ## Create web directory:
 

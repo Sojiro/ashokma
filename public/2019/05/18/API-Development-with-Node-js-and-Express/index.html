@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="It is fun and fast to work with terminals in linux. I remember staring at the unnecessary fancy GUI progress bars in Windows. Ugh! I still wonder who ">
+    <meta name="description" content="In my previous post, we talked about how to run a webserver by using only node modules. As mentioned before, express is good when it comes to routing.">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Linux: how to exclude specific folder during copy in terminal">
+    <meta property="og:title" content="API Development with Node.js and Express">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Linux: how to exclude specific folder during copy in terminal - AshKeys</title>
+    <title>API Development with Node.js and Express - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -123,8 +123,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Linux: how to exclude specific folder during copy in terminal</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-03-17</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">API Development with Node.js and Express</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-18</p>
              
         </div>
     </div>
@@ -132,7 +132,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-terminal"></i>
+        <i class="header-icon fab fa-node"></i>
     </div>
 </div>
 
@@ -146,42 +146,28 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a>
+                                <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/API/">#API</a> <a class="fw3 ph1 dib" href="/tags/express/">#express</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>It is fun and fast to work with terminals in linux. I remember staring at the unnecessary fancy GUI progress bars in Windows. Ugh! I still wonder who would want to see the information that is being displayed in the fancy GUI progress bars. With the latest ones they even added a graph progress bar (O_o o_O) WHY?!?</p>
-<h2 id="rsync-command"><a href="#rsync-command" class="headerlink" title="rsync command:"></a><code>rsync</code> command:</h2><p>Rsync is a fast and versatile tool to copy files and folders locally, or to/from another host over any remote shell, or to/from a remote rsync daemon. Rsync has lot useful options. One of the useful option is <code>--exclude</code>. Using <code>exclude</code> option, we can exclude certain files/directories from copying as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rsync -av --progress ./ /home/ashokma/public_html/ --exclude=.*</span><br></pre></td></tr></table></figure>
-<h2 id="cp-command"><a href="#cp-command" class="headerlink" title="cp command:"></a><code>cp</code> command:</h2><h3 id="Copy-files"><a href="#Copy-files" class="headerlink" title="Copy files"></a>Copy files</h3><p>By default <code>cp</code> copies files from folder A to B.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp index.html /home/ashokma/public_html</span><br></pre></td></tr></table></figure>
-<p>If we try to do the same for folders, we get the following log:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cp . /home/ashokma/public_html</span><br><span class="line"></span><br><span class="line">cp: omitting directory `.&apos;</span><br></pre></td></tr></table></figure>
+                    <p>In my previous <a href="/2019/04/15/How-to-run-a-web-server-using-Node-JS/">post</a>, we talked about how to run a webserver by using only node modules. As mentioned before, <a href="//expressjs.com/">express</a> is good when it comes to routing. Now, we can talk bit more in detail about the API development around it. Express makes the API development looks easy as it takes care of the uneasy parts and let us only worry about the APIs.</p>
+<p>For instance, to build <code>get</code> endpoint you just have to do the following:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/greet'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'Hello, Welcome to AshKeys!'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`API is up and running at http://localhost:3000`</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>When you hit the endpoint <code>localhost:3000/api/greet</code>, you see the <code>Hello, Welcome to AshKeys!</code> message being displayed.</p>
 <blockquote>
-<p>Even If there are files under the current directory, those files are not copied to <code>public_html</code> folder.</p>
+<p>Congratulations! You have created your first API with express.</p>
 </blockquote>
-<h3 id="Copy-folders-as-well-as-files-recursively"><a href="#Copy-folders-as-well-as-files-recursively" class="headerlink" title="Copy folders as well as files recursively"></a>Copy folders as well as files recursively</h3><p>In order to copy the files and folders we need to supply recursive option as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp -r . /home/ashokma/public_html/</span><br></pre></td></tr></table></figure>
-<p>Simple enough, is it not!</p>
-<h3 id="Ignore-specific-folders-during-copying"><a href="#Ignore-specific-folders-during-copying" class="headerlink" title="Ignore specific folders during copying"></a>Ignore specific folders during copying</h3><p>When we supply the <code>-r</code>, <code>cp</code> command tries to copy everything recursively under that folder including the hidden folders. I get the following logs, when I try to do <code>cp -r</code> under a git repository.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cp: cannot create regular file `/home/ashokma/public_html/./.git/objects/92/9323f0a105212d26776adb68dea40bd2603ac6&apos;: Permission denied</span><br><span class="line">cp: cannot create regular file `/home/ashokma/public_html/./.git/objects/92/50cb893f62e0943e599e4384604f88ba540c0b&apos;: Permission denied</span><br><span class="line">cp: cannot create regular file `/home/ashokma/public_html/./.git/objects/e9/c123a5ea6c5a542d0c27b40542c850bad59ee4&apos;: Permission denied</span><br><span class="line">cp: cannot create regular file `/home/ashokma/public_html/./.git/objects/be/61ec8fb84e53ffbca728cccbf4a28d19c719d4&apos;: Permission denied</span><br><span class="line">cp: cannot create regular file `/home/ashokma/public_html/./.git/objects/pack/pack-a1adf7cf19c0465e14013d5ebf5a69c81fbc31da.idx&apos;: Permission denied</span><br><span class="line">cp: cannot create regular file `/home/ashokma/public_html/./.git/objects/pack/pack-a1adf7cf19c0465e14013d5ebf5a69c81fbc31da.pack&apos;: Permission denied</span><br><span class="line">cp: cannot create regular file `/home/ashokma/public_html/./.git/objects/bc/cac8d4bfe7b7586ec50610e939264bd8931f61&apos;: Permission denied</span><br></pre></td></tr></table></figure>
-<p>I do not want these <code>.git/objects</code> which are repository specific being copied. Now, we need to write a small query command excluding the directory we want:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cp -r `ls --ignore=.*` /home/ashokma/public_html/</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><code>--ignore</code> takes <a href="//www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html">shell pattern</a>, so here it ignores the following folders for me: <code>.git</code>, <code>./</code>, <code>../</code></p>
-</blockquote>
-<hr>
-<blockquote>
-<p><strong>Tip:</strong> Prefer <code>rsync</code> over <code>cp</code> in case you want to copy a bunch and also want to copy to remote host as I do mostly for my blog. With the help of <code>rsync daemon</code>, it only copies the files those have changes. It works as it was named, it synchronizes the files to keep them update. ^_^</p>
+<p>We can use other HTTP request methods such as <code>post</code>, <code>put</code>, <code>delete</code>, <code>merge</code>, <code>patch</code> and various others. You can see a full list of potential routing methods here: <a href="//expressjs.com/en/4x/api.html#app.METHOD">Express routing methods</a></p>
 </blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/API/">#API</a> <a class="fw3 ph1 dib" href="/tags/express/">#express</a>
                         </div>
                     
 

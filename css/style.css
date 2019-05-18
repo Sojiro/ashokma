@@ -343,3 +343,6 @@ li:before {
   margin-right: 10px;
   color: #000;
 }
+li:before code {
+  color: #8b4513;
+}

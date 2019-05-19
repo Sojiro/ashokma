@@ -1,8 +1,14 @@
 ---
 title: How to merge arrays in JavaScript
-tags: [How to, Arrays, JS, ES6]
+tags:
+  - How to
+  - Arrays
+  - JS
+  - ES6
 icon: fab fa-js-square
+date: 2019-05-19 22:54:46
 ---
+
 
 # Using `concat` method
 

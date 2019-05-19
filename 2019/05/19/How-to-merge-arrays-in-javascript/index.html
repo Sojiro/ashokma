@@ -10,8 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="It is easy to run your own server nowadays. Nodejs, makes it look like a piece of cake.
-Once you have installed Node, let’s try building our first web">
+    <meta name="description" content="Using concat methodWith concat, we do not have to add even a single for...in loop. Instead, we can simply chain the concat method in the order we want">
     
 
     <!--Author-->
@@ -21,7 +20,7 @@ Once you have installed Node, let’s try building our first web">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to run a web server using Node.JS">
+    <meta property="og:title" content="How to merge arrays in javascript">
     
 
     <!--Open Graph Description-->
@@ -43,7 +42,7 @@ Once you have installed Node, let’s try building our first web">
 
     <!-- Title -->
     
-    <title>How to run a web server using Node.JS - AshKeys</title>
+    <title>How to merge arrays in javascript - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -134,8 +133,8 @@ Once you have installed Node, let’s try building our first web">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to run a web server using Node.JS</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-04-15</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to merge arrays in javascript</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-19</p>
              
         </div>
     </div>
@@ -143,7 +142,7 @@ Once you have installed Node, let’s try building our first web">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-node"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -157,33 +156,25 @@ Once you have installed Node, let’s try building our first web">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/server/">#server</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/ES6/">#ES6</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>It is easy to run your own server nowadays. <a href="//nodejs.org/en/about/"><code>Nodejs</code></a>, makes it look like a piece of cake.</p>
-<p>Once you have installed <a href="/2019/02/18/install-nodejs-and-npm-pop-os/">Node</a>, let’s try building our first web server.</p>
-<h2 id="Create-web-directory"><a href="#Create-web-directory" class="headerlink" title="Create web directory:"></a>Create web directory:</h2><p>Let’s start by creating our server directory.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir nodejs-server</span><br></pre></td></tr></table></figure>
-<h2 id="Server-js-file"><a href="#Server-js-file" class="headerlink" title="Server js file"></a>Server js file</h2><p>Once we changed to the <code>nodejs-server</code> directory,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd nodejs-server</span><br></pre></td></tr></table></figure>
-<p>create a <code>server.js</code> with the following code:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span>;</span><br><span class="line">  res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html'</span>);</span><br><span class="line">  res.write(</span><br><span class="line">    <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;h1&gt; Hello! Welcome to AshKeys! &lt;/h1&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(port, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;port&#125;</span>/`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>Now our server is ready to be created.</p>
-<h2 id="Run-as-node"><a href="#Run-as-node" class="headerlink" title="Run as node"></a>Run as <code>node</code></h2><p>This is it! All we have to do now is to run as a <code>node</code> file.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node ./server.js</span><br><span class="line">Server running at http://localhost:3000/</span><br></pre></td></tr></table></figure>
-<p>Now our server is listening to port <code>3000</code> and welcomes you to <a href="/"><strong>AshKeys</strong></a></p>
+                    <h1 id="Using-concat-method"><a href="#Using-concat-method" class="headerlink" title="Using concat method"></a>Using <code>concat</code> method</h1><p>With <code>concat</code>, we do not have to add even a single <code>for...in</code> loop. Instead, we can simply chain the <code>concat</code> method in the order we want!</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> array2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">const</span> array3 = [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mergedArray = []</span><br><span class="line">  .concat(array1)</span><br><span class="line">  .concat(array2)</span><br><span class="line">  .concat(array3);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mergedArray); <span class="comment">// [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>Tip:</strong> When it comes to routing it is <a href="//www.npmjs.com/package/express"><code>express</code></a> that comes at best!</p>
+<p><strong>Tip:</strong> Prefer starting with empty array when chaining <code>concat</code>. In this way, it is clear that we make a new array and do not manipulate the existing ones! ^_^</p>
 </blockquote>
+<h1 id="Spread-Operator-Since-ES6"><a href="#Spread-Operator-Since-ES6" class="headerlink" title="Spread Operator (Since ES6)"></a><a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">Spread Operator</a> (Since <code>ES6</code>)</h1><p>With <code>ES6</code> it is simple now! We can merge two or more arrays in one line:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> array2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">const</span> array3 = [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mergedArray = [...array1, ...array2, ...array3];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mergedArray); <span class="comment">// [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]</span></span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/server/">#server</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/ES6/">#ES6</a>
                         </div>
                     
 

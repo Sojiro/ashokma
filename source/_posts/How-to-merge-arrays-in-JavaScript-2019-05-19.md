@@ -9,8 +9,7 @@ icon: fab fa-js-square
 date: 2019-05-19 22:54:46
 ---
 
-
-# Using `concat` method
+# The `concat` method
 
 With `concat`, we do not have to add even a single `for...in` loop. Instead, we can simply chain the `concat` method in the order we want!
 

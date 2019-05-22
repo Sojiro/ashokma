@@ -10,7 +10,10 @@
 
     <!--Description-->
     
-    <meta name="description" content="Just open the os-release fileIt is nice to know to see the OS version installed in one’s linux machine. This might come in handy to check the version ">
+    <meta name="description" content="Reversing a string challenge has been one of the oldest code challeges! Let’s see how can we do it in JS.
+Using Array Methods:Steps to follow:
+
+Split ">
     
 
     <!--Author-->
@@ -20,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Linux: How to see the installed OS version from terminal">
+    <meta property="og:title" content="How to reverse a string in JavaScript">
     
 
     <!--Open Graph Description-->
@@ -42,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>Linux: How to see the installed OS version from terminal - AshKeys</title>
+    <title>How to reverse a string in JavaScript - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -133,8 +136,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Linux: How to see the installed OS version from terminal</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-03-17</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to reverse a string in JavaScript</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-22</p>
              
         </div>
     </div>
@@ -142,7 +145,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-terminal"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -156,42 +159,29 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/String/">#String</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h2 id="Just-open-the-os-release-file"><a href="#Just-open-the-os-release-file" class="headerlink" title="Just open the os-release file"></a>Just open the os-release file</h2><p>It is nice to know to see the OS version installed in one’s linux machine. This might come in handy to check the version installed in a running docker container or other virtual machines.</p>
-<p>To check the OS version and configs, just run the following command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/os-release</span><br></pre></td></tr></table></figure>
-<p>This should output something like:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">NAME=&quot;Pop!_OS&quot;</span><br><span class="line">VERSION=&quot;18.10&quot;</span><br><span class="line">ID=ubuntu</span><br><span class="line">ID_LIKE=debian</span><br><span class="line">PRETTY_NAME=&quot;Pop!_OS 18.10&quot;</span><br><span class="line">VERSION_ID=&quot;18.10&quot;</span><br><span class="line">HOME_URL=&quot;https://system76.com/pop&quot;</span><br><span class="line">SUPPORT_URL=&quot;http://support.system76.com&quot;</span><br><span class="line">BUG_REPORT_URL=&quot;https://github.com/pop-os/pop/issues&quot;</span><br><span class="line">PRIVACY_POLICY_URL=&quot;https://system76.com/privacy&quot;</span><br><span class="line">VERSION_CODENAME=cosmic</span><br><span class="line">UBUNTU_CODENAME=cosmic</span><br></pre></td></tr></table></figure>
-<p>Since I have a <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">System76 Galago Pro</a>, I see the above configuration.</p>
-<blockquote>
-<p>The information you see always depends on your machine’s manufacturer. However, the properties are same across linux distributions.</p>
-</blockquote>
-<h2 id="Others"><a href="#Others" class="headerlink" title="Others:"></a>Others:</h2><h3 id="1-lsb-release-command"><a href="#1-lsb-release-command" class="headerlink" title="1. lsb_release command"></a>1. <code>lsb_release</code> command</h3><p>The lsb_release command gives LSB (Linux Standard Base) and distribution-specific information on the CLI. The usage is:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsb_release -a</span><br></pre></td></tr></table></figure>
-<p>outputs something like:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">No LSB modules are available.</span><br><span class="line">Distributor ID:	Ubuntu</span><br><span class="line">Description:	Pop!_OS 18.10</span><br><span class="line">Release:	18.10</span><br><span class="line">Codename:	cosmic</span><br></pre></td></tr></table></figure>
-<p>As I chose the Ubuntu flavoured <a href="//system76.com/pop">System76 Pop!_OS</a>, I do not have any LSB modules to be shown.</p>
-<h3 id="2-hostnamectl-command"><a href="#2-hostnamectl-command" class="headerlink" title="2. hostnamectl command"></a>2. <code>hostnamectl</code> command</h3><p>Use hostnamectl command to <strong>query and change</strong> the system hostname and related settings. Just type the following command to check OS name and Linux kernel version:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hostnamectl status</span><br></pre></td></tr></table></figure>
-<p>or just</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hostnamectl</span><br></pre></td></tr></table></figure>
-<p>outputs something like:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> Static hostname: pop-os</span><br><span class="line">       Icon name: computer-laptop</span><br><span class="line">         Chassis: laptop</span><br><span class="line">      Machine ID: 828e0ab12c145d632919eeed5c6ae1a7</span><br><span class="line">         Boot ID: f4b0a67a325a4aa8b1dfceee0a4aadcc</span><br><span class="line">Operating System: Pop!_OS 18.10</span><br><span class="line">          Kernel: Linux 4.18.0-16-generic</span><br><span class="line">    Architecture: x86-64</span><br></pre></td></tr></table></figure>
-<h3 id="3-uname-command"><a href="#3-uname-command" class="headerlink" title="3. uname command"></a>3. <code>uname</code> command</h3><p>Just print Linux kernel version, run:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ uname -r</span><br><span class="line"></span><br><span class="line">4.18.0-16-generic</span><br></pre></td></tr></table></figure>
-<p>to see all available options:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ uname -a</span><br><span class="line"></span><br><span class="line">Linux</span><br><span class="line">pop-os</span><br><span class="line">4.18.0-16-generic</span><br><span class="line">#17pop0-Ubuntu</span><br><span class="line">SMP</span><br><span class="line">Fri Mar 8 17:52:57 UTC 2019 (last updated timestamp)</span><br><span class="line">x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+                    <p>Reversing a string challenge has been one of the oldest code challeges! Let’s see how can we do it in JS.</p>
+<h1 id="Using-Array-Methods"><a href="#Using-Array-Methods" class="headerlink" title="Using Array Methods:"></a>Using Array Methods:</h1><p>Steps to follow:</p>
+<ul>
+<li>Split the string to <code>char</code> arrays.</li>
+<li>Reverse the <code>char</code> array.</li>
+<li>At last <code>join</code> the array to a string.</li>
+</ul>
+<p>The same thing happens in the following code section:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stringToReverse = <span class="string">'ashkeys'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> reversedString = stringToReverse</span><br><span class="line">  .split(<span class="string">''</span>) <span class="comment">// [ 'a', 's', 'h', 'k', 'e', 'y', 's' ]</span></span><br><span class="line">  .reverse() <span class="comment">// [ 's', 'y', 'e', 'k', 'h', 's', 'a' ]</span></span><br><span class="line">  .join(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(reversedString); <span class="comment">// syekhsa</span></span><br></pre></td></tr></table></figure>
+<h1 id="With-ES6-spread-operator"><a href="#With-ES6-spread-operator" class="headerlink" title="With ES6 spread operator"></a>With ES6 spread operator</h1><p>It is possible to reduce one line from the above code using ES6 syntax! ^_^</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stringToReverse = <span class="string">'ashkeys'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [...charArrayToReverse] = stringToReverse;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(charArrayToReverse.reverse().join(<span class="string">''</span>)); <span class="comment">// syekhsa</span></span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/String/">#String</a>
                         </div>
                     
 

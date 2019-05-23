@@ -40,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>How To - AshKeys</title>
+    <title>page - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -99,8 +99,6 @@
 <body>
 
 <!-- Main Content -->
-
-
 <!-- Banner -->
 <!-- Banner -->
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
@@ -133,143 +131,73 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns"># How To</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">AshKeys</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
+             
+                <div id="quote"></div>
+                <div class="pl6 pl7-l pt4">
+                    <span id="author"></span>
+                </div>
              
         </div>
     </div>
+    
+        <script type="text/javascript">
+            fetch("//quote-generate.herokuapp.com")
+                .then(resp => resp.json())
+                .then(data => {
+                    document.getElementById("quote").outerHTML = `<i class="fas fa-quote-left"></i> ${data.quote} <i class="fas fa-quote-right"></i>`;
+                    document.getElementById("author").outerHTML = `<i class="fas fa-pen-fancy"></i> ${data.author}`;
+                });
+        </script>
                 
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon far fa-folder-open"></i>
+        <i class="header-icon far fa-star"></i>
     </div>
 </div>
 
+<!-- Content -->
 <div class="w-100 ph2 ph4-m ph5-l mv5">
     <div class="content">
         <div class="mw8 center">
             
-                <a href="/2019/05/23/How-to-get-a-list-of-files-in-a-directory-using-Bash/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">May 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to get a list of files in a directory using Bash<span>
+                <a href="/2019/02/17/log/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2019-02-17</span> 
+                
+                
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Journal/'; return false;">#Journal</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Shukuchi/'; return false;">#Shukuchi</span>
+                
+            </div>
+            <span class="f3 fw3 lh-copy">Weekend ride to Weert<span>
         </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/05/22/How-to-reverse-a-string-in-JavaScript/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">May 2019</span> 
-            
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fas fa-journal-whills"></i>
         </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to reverse a string in JavaScript<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/04/13/How-to-publish-and-subscribe-to-a-topic-in-mosquitto/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Apr 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to publish and subscribe to a topic in mosquitto<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/04/01/How-to-configure-PostgreSQL-to-accept-all-incoming-connections/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Apr 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to configure PostgreSQL to accept all incoming connections<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to create users and groups in Linux from the command line<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to change port mapping of a running docker container<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to Change File Ownership & Groups in Linux<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Linux: how to exclude specific folder during copy in terminal<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/17/Linux-How-to-see-the-installed-OS-version-from-terminal/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Linux: How to see the installed OS version from terminal<span>
-        </span></span></div>
     </div>
 </a>
             
         </div>
     </div>
+    
+    <div class="flex items-center justify-center pa4">
+        <a href="/page/2/" class="f5 no-underline inline-flex items-center pa3 ba border-box mr4 gray hover-border-main-color hover-text-main-color">
+            <i class="w1 pr2 fa fa-chevron-left" aria-hidden="true"></i>
+            <span class="pl1">Previous</span>
+        </a>
+        <a href="/" class="f5 no-underline inline-flex items-center pa3 ba border-box light-gray cursor-default">
+            <span class="pr1">Next</span>
+            <i class="w1 pl2 fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+    </div>
+
 </div>
+
 
 <!-- Footer -->
 <div class="bg-1 ph2 ph5-ns pv5">

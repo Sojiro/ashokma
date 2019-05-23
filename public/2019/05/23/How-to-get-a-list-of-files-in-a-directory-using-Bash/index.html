@@ -166,9 +166,9 @@
 <p>As part of that process, I had to iterate files in a configuration folder for transformation into <code>.json</code> files. We shall come to that later. Now, let’s see the shell script to list out the files in a folder.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> /home/ashokma/ashkeys/config/*;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ ! -d <span class="variable">$&#123;f&#125;</span> ]]; <span class="comment"># Not if it is sub-directory.</span></span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">"File Name with full path - <span class="variable">$&#123;f&#125;</span>"</span></span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">"File Name with extension - <span class="variable">$(basename $&#123;f&#125;)</span>"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>Tip:</strong> You can strip the extension away from the file using this snippet:</p>
+<p><strong>Tip:</strong> You can strip the extension away from the file using this snippet: <br></p>
+<p><code>echo -e &quot;File Name with extension - $(basename $(echo &quot;$f&quot; | cut -f 1 -d &#39;.&#39;))&quot;</code></p>
 </blockquote>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">"File Name without extension - <span class="variable">$(basename $(echo "$&#123;f&#125;" | cut -f 1 -d '.')</span>)</span></span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->

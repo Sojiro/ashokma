@@ -25,8 +25,6 @@ do
 done
 ```
 
-> **Tip:** You can strip the extension away from the file using this snippet:
-
-```sh
-echo -e "File Name without extension - $(basename $(echo "${f}" | cut -f 1 -d '.'))
-```
+> **Tip:** You can strip the extension away from the file using this snippet: <br/>
+>
+> `echo -e "File Name with extension - $(basename $(echo "$f" | cut -f 1 -d '.'))"`

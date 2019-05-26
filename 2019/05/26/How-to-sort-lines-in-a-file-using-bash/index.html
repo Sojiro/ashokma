@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="The Set collectionSince ES6, Set collection has been introduced which is really good and makes our life simple. Set is a collection which will not kee">
+    <meta name="description" content="It is nice to know how to sort the contents of a file using bash. Let us take an example where we have a .csv file with the records of employees as fo">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to remove array duplicates in JavaScript">
+    <meta property="og:title" content="How to sort lines in a file using bash">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>How to remove array duplicates in JavaScript - AshKeys</title>
+    <title>How to sort lines in a file using bash - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -133,8 +133,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to remove array duplicates in JavaScript</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-21</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to sort lines in a file using bash</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-26</p>
              
         </div>
     </div>
@@ -142,7 +142,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-js-square"></i>
+        <i class="header-icon fas fa-terminal"></i>
     </div>
 </div>
 
@@ -156,26 +156,31 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/ES6/">#ES6</a>
+                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h1 id="The-Set-collection"><a href="#The-Set-collection" class="headerlink" title="The Set collection"></a>The <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"><code>Set</code></a> collection</h1><p>Since <code>ES6</code>, <code>Set</code> collection has been introduced which is really good and makes our life simple. <code>Set</code> is a collection which will not keep duplicates. It can also take any iterable objects as constructor arguments. In our case, it is an array with duplicated values.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> duplicates = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> unique = [...new <span class="built_in">Set</span>(duplicates)];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique); <span class="comment">// [ 1, 2, 3 ]</span></span><br></pre></td></tr></table></figure>
-<h1 id="Array-filter-function"><a href="#Array-filter-function" class="headerlink" title="Array.filter function"></a><code>Array.filter</code> function</h1><p>It is better to know more options, in case of not-so-friendly environment. For instance, <code>Set</code> collection is supported by all the major browsers but few old-schools. Yes, I am looking at you IE! O_o</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> duplicates = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> unique = duplicates.filter(</span><br><span class="line">  (item, index) =&gt; duplicates.indexOf(item) === index</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique); <span class="comment">// [ 1, 2, 3 ]</span></span><br></pre></td></tr></table></figure>
-<p>Please prefer the <code>Set</code> option just for the simple of it!</p>
+                    <p>It is nice to know how to sort the contents of a file using bash. Let us take an example where we have a <code>.csv</code> file with the records of employees as following:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">emp_id;first_name;last_name;email;designation</span><br><span class="line"><span class="number">000002</span>;Ash;Keys;AshKeys@ashokma.com;UX Designer</span><br><span class="line"><span class="number">000003</span>;Sojiro;De Tenken;sojiro@ashokma.com;Tester</span><br><span class="line"><span class="number">000001</span>;Ashok;M A;ashokma@ashokma.com;Web Developer</span><br></pre></td></tr></table></figure>
+<p>If we would like to sort the contents of this file for no reason, we can do it using <code>sort</code> command.</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sort ashokma.com/employees.csv</span></span><br><span class="line"></span><br><span class="line">000001;Ashok;M A;ashokma@ashokma.com;Web Developer</span><br><span class="line">000002;Ash;Keys;AshKeys@ashokma.com;UX Designer</span><br><span class="line">000003;Sojiro;De Tenken;sojiro@ashokma.com;Tester</span><br><span class="line">emp_id;first_name;last_name;email;designation</span><br></pre></td></tr></table></figure>
+<p>It is being sorted as expected but there is one little problem. The column names are at the bottom and we do not want that as it is not valid for database records processing. In order to keep the column names up top, we just have to supply the <code>-r</code> option which is to reverse the output.</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sort ashokma.com/employees.csv</span></span><br><span class="line"></span><br><span class="line">emp_id;first_name;last_name;email;designation</span><br><span class="line">000003;Sojiro;De Tenken;sojiro@ashokma.com;Tester</span><br><span class="line">000002;Ash;Keys;AshKeys@ashokma.com;UX Designer</span><br><span class="line">000001;Ashok;M A;ashokma@ashokma.com;Web Developer</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>Tip:</strong> We can do the same <code>.indexOf</code> trick using <code>.map</code>, <code>.foreach</code> as well. But, <code>.filter</code> is more readable among those! ^_^</p>
+<p>As it only outputs the sorted values to console, we have to stream it back to the same file like: <br> <code>sort ashokma.com/employees.csv &gt; ashokma.com/employees.csv</code></p>
+</blockquote>
+<p>I understand that it is in decending order but sorted ^_^ As an alternative, we can cut the columns line and paste it again once records are sorted!</p>
+<blockquote>
+<p><strong>Tip:</strong> Using the <code>-u</code> option you can keep only the unique records along with the sorting process.</p>
 </blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/ES6/">#ES6</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
                         </div>
                     
 

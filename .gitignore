@@ -2,3 +2,4 @@ node_modules/
 target/
 dist/
 .deploy_git/
+.netlify/

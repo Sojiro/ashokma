@@ -9,7 +9,6 @@ icon: fab fa-js-square
 date: 2019-06-02 15:54:37
 ---
 
-
 - [`toString()` method](#Using-toString-method)
 - [Template String Literals](#Using-template-string-literal)
 - [`JSON.stringfy()` method](#Using-JSON-stringfy-method)
@@ -87,6 +86,5 @@ console.log(stringObject === stringLiteral); // false
 
 As you can see, `stringObject` is value equals with `stringLiteral`, but do not string equals it.
 
-[mdn-docs-tostring]:[//developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/number/tostring#parameters]
-
-[mdn-docs-stringfy]:[//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify]
+[mdn-docs-tostring]: //developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/number/tostring#parameters
+[mdn-docs-stringfy]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify

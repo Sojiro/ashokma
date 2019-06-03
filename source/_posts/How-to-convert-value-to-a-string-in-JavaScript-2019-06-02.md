@@ -12,6 +12,7 @@ date: 2019-06-02 15:54:37
 - [`toString()` method](#Using-toString-method)
 - [Template String Literals](#Using-template-string-literal)
 - [`JSON.stringfy()` method](#Using-JSON-stringfy-method)
+- [`String()` constructor](#Using-String-constructor)
 
 The Java programmers know to call `toString()`method in order to convert any value to string. That is also the case with JavaScript.
 
@@ -84,7 +85,7 @@ console.log(stringObject == stringLiteral); // true
 console.log(stringObject === stringLiteral); // false
 ```
 
-As you can see, `stringObject` is value equals with `stringLiteral`, but do not string equals it.
+As you can see, `stringObject` is value equals with `stringLiteral`, but does not strict equals it.
 
 [mdn-docs-tostring]: //developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/number/tostring#parameters
 [mdn-docs-stringfy]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify

@@ -13,8 +13,9 @@
     <meta name="description" content="toString() method
 Template String Literals
 JSON.stringfy() method
+String() constructor
 
-The Java programmers know to call toString()method in order to convert any value to">
+The Java programmers know to call toString()method in order to">
     
 
     <!--Author-->
@@ -170,6 +171,7 @@ The Java programmers know to call toString()method in order to convert any value
 <li><a href="#Using-toString-method"><code>toString()</code> method</a></li>
 <li><a href="#Using-template-string-literal">Template String Literals</a></li>
 <li><a href="#Using-JSON-stringfy-method"><code>JSON.stringfy()</code> method</a></li>
+<li><a href="#Using-String-constructor"><code>String()</code> constructor</a></li>
 </ul>
 <p>The Java programmers know to call <code>toString()</code>method in order to convert any value to string. That is also the case with JavaScript.</p>
 <h2 id="Using-toString-method"><a href="#Using-toString-method" class="headerlink" title="Using toString() method"></a>Using <code>toString()</code> method</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">'You owe me '</span> + balance.toString(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910</span></span><br></pre></td></tr></table></figure>
@@ -193,7 +195,7 @@ The Java programmers know to call toString()method in order to convert any value
 <p><strong>Tip:</strong> Use <code>String()</code> without the <code>new</code> keyword to get string literal instead. We can verify the same with <code>typeof</code> operator as well.</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stringObject = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'AshKeys'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> stringObject); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> stringLiteral = <span class="built_in">String</span>(<span class="string">'AshKeys'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> stringLiteral); <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(stringObject == stringLiteral); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(stringObject === stringLiteral); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<p>As you can see, <code>stringObject</code> is value equals with <code>stringLiteral</code>, but do not string equals it.</p>
+<p>As you can see, <code>stringObject</code> is value equals with <code>stringLiteral</code>, but does not strict equals it.</p>
 
                     
                     <!-- Tags Bottom -->

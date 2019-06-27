@@ -9,6 +9,7 @@ index_font_awesome_icon_css: far fa-star
 # Header
 menu:
   Home: /
+  Portfolio: //portfolio.ashokma.com
   Archives: /archives
   Tags: /tags
   About: /About

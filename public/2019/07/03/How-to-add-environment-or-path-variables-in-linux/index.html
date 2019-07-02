@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Le">
+    <meta name="description" content="I am exploring Golang as C and C++ are the main languages being used in the company I work now. Even though I do not see a future where I have to code">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to change port mapping of a running docker container">
+    <meta property="og:title" content="How to add environment or path variables in linux">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>How to change port mapping of a running docker container - AshKeys</title>
+    <title>How to add environment or path variables in linux - AshKeys</title>
 
     <link rel="icon" href="//github.com/sojiro.png">
 
@@ -137,8 +137,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to change port mapping of a running docker container</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-03-23</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to add environment or path variables in linux</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-07-03</p>
              
         </div>
     </div>
@@ -146,7 +146,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-docker"></i>
+        <i class="header-icon fab fa-linux"></i>
     </div>
 </div>
 
@@ -160,38 +160,29 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a>
+                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Sometimes, we might have a situation where we have to change the port mappings of a running docker container. So, it is better to know our options. Lets take a look at it with an example scenario where our <a href="/2019/03/17/Run-Postgres-as-Docker-container/">postgreSQL container</a> was mapped to as following:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE              PORTS                    NAMES</span><br><span class="line">85261c36bf0e        postgres           0.0.0.0:5433-&gt;5432/tcp   pg-docker</span><br></pre></td></tr></table></figure>
-<p>I was looking for a solution where I can just edit the <em>localhost</em> mapping from <em>5433</em> to <em>5432</em> (which is also the default for postgreSQL).</p>
-<p>Anyways, Now we know what we need, let us take a look at the steps to make it happen.</p>
-<h2 id="Stop-the-container"><a href="#Stop-the-container" class="headerlink" title="Stop the container"></a>Stop the container</h2><p>Since the container is busy bound to port <em>5433</em> which we want to change, we have to stop the container first as following:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker stop pg-docker</span><br><span class="line"></span><br><span class="line">pg-docker</span><br></pre></td></tr></table></figure>
-<h2 id="Stop-the-docker-daemon"><a href="#Stop-the-docker-daemon" class="headerlink" title="Stop the docker daemon"></a>Stop the docker daemon</h2><p>Docker daemon is the service which keeps tracks of containers and their configurations in short. As we are going to edit container specific configuration file, we need the daemon to be up and running after our changes. Now, stop the docker daemon:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl stop docker</span><br></pre></td></tr></table></figure>
-<h2 id="Edit-the-container’s-hostconfig-json"><a href="#Edit-the-container’s-hostconfig-json" class="headerlink" title="Edit the container’s hostconfig.json"></a>Edit the container’s <em>hostconfig.json</em></h2><p>Docker keeps container configurations in a file called <em>hostconfig.json</em>. You can find the same file using the following pattern:</p>
-<p><em>/var/lib/docker/containers/<strong>&lt;container_full_hash_id&gt;</strong>/hostconfig.json</em></p>
-<blockquote>
-<p><strong>Tip:</strong> Use the following command to quickly get the full hash id of the container: (ofcourse, docker daemon has to be running)<br><code>$ docker container inspect pg-docker | grep Id</code><br> “Id”: “85261c36bf0e94520012b508f67c7c0c86c0d52953a88f3cad7e06da77b225a0”,</p>
-</blockquote>
-<p>Now, we know where to find <em>hostconfig.json</em> file. In order to update the host mapping, we must edit the file and change the <strong>“HostPort”:”5433”</strong> to our desired port mappings.</p>
-<p>Once we are done editing the file, lets start the docker daemon and the container respectively.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl start docker</span><br><span class="line"></span><br><span class="line">$ docker start pg-docker</span><br><span class="line">pg-docker</span><br></pre></td></tr></table></figure>
-<p>If we take a look at our running docker container now, we see the edited port mappings.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE              PORTS                    NAMES</span><br><span class="line">85261c36bf0e        postgres           0.0.0.0:5432-&gt;5432/tcp   pg-docker</span><br></pre></td></tr></table></figure>
-<p>Yay \O/</p>
-<p>We have just updated our port mappings keeping all our container configurations!</p>
+                    <p>I am exploring <code>Golang</code> as <code>C</code> and <code>C++</code> are the main languages being used in the company I work now. Even though I do not see a future where I have to code in <code>Golang</code>, I just wanted to explore the <code>Hello World</code> with it.</p>
+<p>Instead of installing it as part of package manager, this time I downloaded the binaries and wanted to set the environment path containing <code>go</code> command file.</p>
+<h1 id="Download-the-binaries"><a href="#Download-the-binaries" class="headerlink" title="Download the binaries."></a>Download the binaries.</h1><p>Go to <a href="//golang.org/dl/"><code>golang</code> download page</a> and download the version you want for linux.</p>
+<p>Explod the same as following:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar xvzf ./go1.12.6.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<h1 id="Add-to-path-variable"><a href="#Add-to-path-variable" class="headerlink" title="Add to path variable"></a>Add to path variable</h1><p>Add the following entry at the end of the <code>.bashrc</code> file under your home directory (<code>/home/ashokma/.bashrc</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GOPATH=/home/ashokma/projects/go</span><br><span class="line"><span class="built_in">export</span> GOROOT=/home/golang</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;GOROOT&#125;</span>/bin:<span class="variable">$&#123;GOPATH&#125;</span>/bin</span><br></pre></td></tr></table></figure>
+<h1 id="Load-the-configs"><a href="#Load-the-configs" class="headerlink" title="Load the configs:"></a>Load the configs:</h1><p>Unlike other systems, in linux we can just load the startup configs using <code>source</code> util.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> /home/ashokma/.bashrc</span><br></pre></td></tr></table></figure>
+<p>Vola \O/ That is it! Now, when we try the <code>go</code> in terminal linux knows where to find it.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> go</span></span><br><span class="line">Go is a tool for managing Go source code.</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">go &lt;command&gt; [arguments]</span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a>
                         </div>
                     
 

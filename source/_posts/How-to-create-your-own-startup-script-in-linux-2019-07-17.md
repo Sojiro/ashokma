@@ -10,7 +10,6 @@ icon: fab fa-linux
 date: 2019-07-17 22:13:20
 ---
 
-
 Everyday, as soon as I logged into my linux machine, in order to start working, I had to open up some IDEs and run `docker` containers.
 
 I decided to automate this as part of my startup process. It is so easy with linux. ^\_^
@@ -39,6 +38,8 @@ $ source /home/ashkeys/.bashrc
 ```
 
 > **Tip:** It is not just about launching IDEs and such. We can also `git pull` any changes to keep our code updated before we start working or make the linux `clean build` our app in the meantime we get our coffee ^\_^
+
+> **Caution:** Do remember that the script will be executed for each shell session that is for each Terminal launch as it loads the profile per launch. /O\\/O\
 
 [1]: /2019/07/03/How-to-add-environment-or-path-variables-in-linux/#Add-to-path-variable
 [2]: /2019/07/03/How-to-add-environment-or-path-variables-in-linux/#Load-the-configs

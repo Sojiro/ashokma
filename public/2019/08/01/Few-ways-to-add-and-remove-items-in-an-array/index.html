@@ -10,8 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Here’s a quick guide to adding users and groups, and then how to add users to groups, all from the command line on the Linux platform.
-I want to walk ">
+    <meta name="description" content="There more than one way to add an item to an array and remove an item from an array in JavaScript. Let’s see how can we do that in this post.
+push and">
     
 
     <!--Author-->
@@ -21,7 +21,7 @@ I want to walk ">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to create users and groups in Linux from the command line">
+    <meta property="og:title" content="Few ways to add and remove items in an array">
     
 
     <!--Open Graph Description-->
@@ -43,7 +43,7 @@ I want to walk ">
 
     <!-- Title -->
     
-    <title>How to create users and groups in Linux from the command line - AshKeys</title>
+    <title>Few ways to add and remove items in an array - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -138,8 +138,8 @@ I want to walk ">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to create users and groups in Linux from the command line</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-03-23</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Few ways to add and remove items in an array</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-08-01</p>
              
         </div>
     </div>
@@ -147,7 +147,7 @@ I want to walk ">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-linux"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -161,58 +161,30 @@ I want to walk ">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a>
+                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Array/">#Array</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Here’s a quick guide to adding users and groups, and then how to add users to groups, all from the command line on the Linux platform.</p>
-<p>I want to walk you through the process of:</p>
-<ul>
-<li><a href="#Creating-users">Creating users</a></li>
-<li><a href="#Creating-groups">Creating groups</a></li>
-<li><a href="#Adding-users-to-groups">Adding users to groups</a></li>
-</ul>
-<p>Let’s jump in!</p>
-<h2 id="Creating-users"><a href="#Creating-users" class="headerlink" title="Creating users"></a>Creating users</h2><p>For this, we will be making use of the <code>useradd</code> command. This command is pretty flexible and allows you to create users that can login or even users that cannot login (in the case of creating a user for a software installation).</p>
-<p>The basic syntax of the command is:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ useradd [options] &lt;username&gt;</span><br></pre></td></tr></table></figure>
-<p>Say, you want to create the user <em>ashokma</em> such that he has a home directory and can log in. If you were to issue the command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd ashokma</span><br></pre></td></tr></table></figure>
-<p>The user would be added, without a home directory and can not log in.</p>
+                    <p>There more than one way to add an item to an array and remove an item from an array in JavaScript. Let’s see how can we do that in this post.</p>
+<h2 id="push-and-pop-methods"><a href="#push-and-pop-methods" class="headerlink" title="push and pop methods"></a><code>push</code> and <code>pop</code> methods</h2><p><img src="push_pop_methods.svg" alt="push and pop methods usage" title="push and pop methods usage"></p>
 <blockquote>
-<p><strong>From The Manual:</strong> When invoked without the -D option, the useradd command creates a new user account using the values specified on the command line plus the default values from the system.</p>
+<p><strong>Note:</strong> <code>push</code> inserts the elements at the end whereas <code>pop</code> pops out the top one that is the last item in the array.</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -m ashokma</span><br></pre></td></tr></table></figure>
-<p>The above command would create the user and also create the user’s home directory to match the username. So if you looked in the <em>/home</em> directory, you would now see <em>ashokma</em>.</p>
-<p>But what about the <em>password</em>? You can do this in two ways simply. If you’ve already created the user, you could issue the command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd ashokma</span><br><span class="line"></span><br><span class="line">Enter new UNIX password: </span><br><span class="line">Retype new UNIX password: </span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
-<p>Yes, it is same you set your password or reset it for that matter.</p>
-<p>If you want to do this all in a single step, that command would look like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -m ashokma -p De_Tenken</span><br></pre></td></tr></table></figure>
+<h2 id="shift-and-unshift-methods"><a href="#shift-and-unshift-methods" class="headerlink" title="shift and unshift methods"></a><code>shift</code> and <code>unshift</code> methods</h2><p><img src="shift_unshift_methods.svg" alt="shift and unshift methods usage" title="shift and unshift methods usage"></p>
 <blockquote>
-<p><strong>Tip:</strong> You can remove a user and his home directory using the following command:<br><code>$ sudo userdel -r ashokma</code></p>
+<p><strong>Note:</strong> <code>shift</code> removes the first element of an array whereas <code>unshift</code> does exact the opposite.</p>
 </blockquote>
-<p>If you need to create a user that has no home directory and is locked out from logging in, you can do this with the the following commands:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -M ashokma </span><br><span class="line">$ ​sudo usermod -L ashokma</span><br></pre></td></tr></table></figure>
-<p>The first command creates the user without a home directory and the second command locks the user out of logging in.</p>
-<h2 id="Creating-groups"><a href="#Creating-groups" class="headerlink" title="Creating groups"></a>Creating groups</h2><p>It’s time to create a group. Let’s create the group <em>ashkeys</em>. To do this, you would issue the command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo groupadd ashkeys</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>Tip:</strong> You can delete a group using the following command:<br><code>$ sudo groupdel ashkeys</code></p>
+<p><strong>Tip:</strong> It is called <code>shift</code> because once the method is called the items of an array shifts one position left if one pictures the array horizontally. \O/</p>
 </blockquote>
-<h2 id="Adding-users-to-groups"><a href="#Adding-users-to-groups" class="headerlink" title="Adding users to groups"></a>Adding users to groups</h2><p>We want to add our new user, <em>ashokma</em>, to the group <em>ashkeys</em>. For this we will take advantage of the <code>usermod</code> command. This command is quite simple to use.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -a -G ashkeys ashokma</span><br></pre></td></tr></table></figure>
-<p>The <code>-a</code> option tells <code>usermod</code> we are appending and the <code>-G</code> option tells usermod we are appending to the group name that follows the option.</p>
-<p>To find out which users are already a member of a group, you can do the following command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ grep ashokma /etc/group</span><br><span class="line"></span><br><span class="line">ashkeys:x:1001:ashokma</span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Array/">#Array</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a>
                         </div>
                     
 

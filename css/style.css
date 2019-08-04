@@ -354,3 +354,9 @@ code {
   letter-spacing: -0.4px;
   white-space: nowrap;
 }
+img {
+  transition: all 1s;
+}
+img:hover {
+  transform: scale(1.05);
+}

@@ -8,23 +8,30 @@ icon: fab fa-html5
 date: 2019-07-10 23:21:36
 ---
 
-
 # Solutions
 
-- [Field Level turn off](#Field-Level)
+- [Field Level turn off](#Field-Level-in-general)
 - [Form Level turn off](#Form-Level)
-- [Special case for Firefox](#Special-case-for-Firefox)
+- [Special case for all browsers](#Special-case-for-all-browsers)
 
 I have recently encountered a situation where I had to turn off the `autocomplete` option for filling out the saved passwords by browser.
 
-It was interesting to find out that there is a way to turn this option off. One can consider this a security reason but to me it was about turning it off on the new password page. Browser was filling out the new password field with the saved password >\_O
+It was interesting to find out that there is a way to turn this option off. One can consider this for a security reason but to me it was about turning it off on the new password page. Browser was filling out the new password field with the saved password >\_O
 
-There are two ways to turn it off one from `field` level another one from `form` level. Pick the one most suited for you!
+There are two ways to turn it off in `field` level!
 
-## Field Level
+## Field Level in general
 
 ```html
-<input name="ashkeys" type="password" autocomplete="off" />
+<input name="ashkeys" type="text" autocomplete="off" />
+```
+
+Even though few browsers support `autocomplete`, there are cases they ignore all together. Login or Sign-up forms for example. In those cases, the following helps.
+
+## Field Level for new passwords
+
+```html
+<input name="ashkeys" type="password" autocomplete="new-password" />
 ```
 
 ## Form Level
@@ -35,11 +42,9 @@ There are two ways to turn it off one from `field` level another one from `form`
 </form>
 ```
 
-## Special case for Firefox
+## Special case for all browsers
 
-It was not that easy with firefox though! Sorry I could not provide you guys with the information why it was the case.
-
-For the firefox sake: >\_<
+The below one is kind of hacky way to trick the browser than turn off the `autocomplete` option. /O\ One should consider this as a last resort to solve the problem.
 
 ```html
 <form>

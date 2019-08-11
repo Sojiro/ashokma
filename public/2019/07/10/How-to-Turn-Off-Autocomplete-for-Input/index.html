@@ -13,9 +13,9 @@
     <meta name="description" content="Solutions
 Field Level turn off
 Form Level turn off
-Special case for Firefox
+Special case for all browsers
 
-I have recently encountered a situation where I had to turn off the autoc">
+I have recently encountered a situation where I had to turn off the ">
     
 
     <!--Author-->
@@ -120,7 +120,7 @@ I have recently encountered a situation where I had to turn off the autoc">
                     Home
                 </a>
             
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" href="//portfolio.ashokma.com" title="Portfolio">
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://portfolio.ashokma.com/" title="Portfolio">
                     Portfolio
                 </a>
             
@@ -172,17 +172,18 @@ I have recently encountered a situation where I had to turn off the autoc">
 
                     <!-- Main Post Content -->
                     <h1 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h1><ul>
-<li><a href="#Field-Level">Field Level turn off</a></li>
+<li><a href="#Field-Level-in-general">Field Level turn off</a></li>
 <li><a href="#Form-Level">Form Level turn off</a></li>
-<li><a href="#Special-case-for-Firefox">Special case for Firefox</a></li>
+<li><a href="#Special-case-for-all-browsers">Special case for all browsers</a></li>
 </ul>
 <p>I have recently encountered a situation where I had to turn off the <code>autocomplete</code> option for filling out the saved passwords by browser.</p>
-<p>It was interesting to find out that there is a way to turn this option off. One can consider this a security reason but to me it was about turning it off on the new password page. Browser was filling out the new password field with the saved password &gt;_O</p>
-<p>There are two ways to turn it off one from <code>field</code> level another one from <code>form</code> level. Pick the one most suited for you!</p>
-<h2 id="Field-Level"><a href="#Field-Level" class="headerlink" title="Field Level"></a>Field Level</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ashkeys"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>It was interesting to find out that there is a way to turn this option off. One can consider this for a security reason but to me it was about turning it off on the new password page. Browser was filling out the new password field with the saved password &gt;_O</p>
+<p>There are two ways to turn it off in <code>field</code> level!</p>
+<h2 id="Field-Level-in-general"><a href="#Field-Level-in-general" class="headerlink" title="Field Level in general"></a>Field Level in general</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ashkeys"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Even though few browsers support <code>autocomplete</code>, there are cases they ignore all together. Login or Sign-up forms for example. In those cases, the following helps.</p>
+<h2 id="Field-Level-for-new-passwords"><a href="#Field-Level-for-new-passwords" class="headerlink" title="Field Level for new passwords"></a>Field Level for new passwords</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ashkeys"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">autocomplete</span>=<span class="string">"new-password"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="Form-Level"><a href="#Form-Level" class="headerlink" title="Form Level"></a>Form Level</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ashkeys"</span> <span class="attr">type</span>=<span class="string">"password"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="Special-case-for-Firefox"><a href="#Special-case-for-Firefox" class="headerlink" title="Special case for Firefox"></a>Special case for Firefox</h2><p>It was not that easy with firefox though! Sorry I could not provide you guys with the information why it was the case.</p>
-<p>For the firefox sake: &gt;_&lt;</p>
+<h2 id="Special-case-for-all-browsers"><a href="#Special-case-for-all-browsers" class="headerlink" title="Special case for all browsers"></a>Special case for all browsers</h2><p>The below one is kind of hacky way to trick the browser than turn off the <code>autocomplete</code> option. /O\ One should consider this as a last resort to solve the problem.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">hidden</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ashkeys"</span> <span class="attr">type</span>=<span class="string">"password"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Yeah, you are right! We are cheating the browser here by declaring the first password field <code>hidden</code> so that browser will the saved password there.</p>
 

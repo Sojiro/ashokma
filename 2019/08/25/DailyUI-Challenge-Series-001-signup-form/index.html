@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="In my previous post, we talked about how to run a webserver by using only node modules. As mentioned before, express is good when it comes to routing.">
+    <meta name="description" content="I have recently enrolled myself in the DailyUI challenge series. It is nice and I recommend to anyone who is looking for something to do for the code ">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="API Development with Node.js and Express">
+    <meta property="og:title" content="DailyUI Challenge Series: 001 signup form">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>API Development with Node.js and Express - AshKeys</title>
+    <title>DailyUI Challenge Series: 001 signup form - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -137,8 +137,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">API Development with Node.js and Express</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-18</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">DailyUI Challenge Series: 001 signup form</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-08-25</p>
              
         </div>
     </div>
@@ -146,7 +146,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-node"></i>
+        <i class="header-icon fas fa-palette"></i>
     </div>
 </div>
 
@@ -160,28 +160,32 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/API/">#API</a> <a class="fw3 ph1 dib" href="/tags/express/">#express</a>
+                                <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/DailyUI-Challenge-Series/">#DailyUI Challenge Series</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Reactive-Forms/">#Reactive Forms</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>In my previous <a href="/2019/04/15/How-to-run-a-web-server-using-Node-JS/">post</a>, we talked about how to run a webserver by using only node modules. As mentioned before, <a href="//expressjs.com/">express</a> is good when it comes to routing. Now, we can talk bit more in detail about the API development around it. Express makes the API development looks easy as it takes care of the uneasy parts and let us only worry about the APIs.</p>
-<p>For instance, to build <code>get</code> endpoint you just have to do the following:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/greet'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'Hello, Welcome to AshKeys!'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`API is up and running at http://localhost:3000`</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p>When you hit the endpoint <code>localhost:3000/api/greet</code>, you see the <code>Hello, Welcome to AshKeys!</code> message being displayed.</p>
+                    <p>I have recently enrolled myself in the DailyUI challenge series. It is nice and I recommend to anyone who is looking for something to do for the code muscle memory or anyone who is interested into designing UI.</p>
+<p>In all my IT experiences so far, I had never came across a situation where I had to design the page or a component by myself based on the customer requirements or hints for that matter. Designing is difficult guys as it requires some creativity at the same time keeping the customer in mind. Some things can be fancy to us but that does not mean it is going to guide the user to explore the application by himself helping here and there.</p>
+<p>Anyhow, as part of this DailyUI challenge, you will get an email everyday (Not on the weekends ;)) with a requirement for the design to be done.</p>
 <blockquote>
-<p>Congratulations! You have created your first API with express.</p>
+<p>You will also get some free useful stuffs as well if you do the challenges and share it regularly on <a href="https://twitter.com/search?q=%23DailyUI&amp;src=typed_query" target="_blank" rel="noopener">Twitter</a> or <a href="https://dribbble.com/tags/dailyui" target="_blank" rel="noopener">Dribbble</a> as they have mentioned.</p>
 </blockquote>
+<p>But, I did not want to do the design alone. As a developer, I wanted to make it work as per design more or less.</p>
 <blockquote>
-<p>We can use other HTTP request methods such as <code>post</code>, <code>put</code>, <code>delete</code>, <code>merge</code>, <code>patch</code> and various others. You can see a full list of potential routing methods here: <a href="//expressjs.com/en/4x/api.html#app.METHOD">Express routing methods</a></p>
+<p>You can check out the completed challenge that has been deployed <a href="https://daily-ui-challenge-001.netlify.com/" target="_blank" rel="noopener">here</a> in <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a>.<br><a href="https://github.com/Sojiro/daily-ui-challenge/tree/master/001-signup-form" target="_blank" rel="noopener">Here</a> is the repo for the same and below is the sneekpeak.</p>
+</blockquote>
+<p><img src="./dailyui-challenge-001-signup-form.png" alt="DailyUI Challenge 001 - SignUp Form" title="DailyUI Challenge 001 - SignUp Form"></p>
+<blockquote>
+<p>Yeah, we do not have sign up form for our site yet! T_T But it is coming. \O/</p>
 </blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/API/">#API</a> <a class="fw3 ph1 dib" href="/tags/express/">#express</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/DailyUI-Challenge-Series/">#DailyUI Challenge Series</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Reactive-Forms/">#Reactive Forms</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
                         </div>
                     
 

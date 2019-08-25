@@ -10,8 +10,6 @@
 
     <!--Description-->
     
-    <meta name="description" content="In my previous post, we talked about how to run a webserver by using only node modules. As mentioned before, express is good when it comes to routing.">
-    
 
     <!--Author-->
     
@@ -20,7 +18,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="API Development with Node.js and Express">
+    <meta property="og:title" content="AshKeys">
     
 
     <!--Open Graph Description-->
@@ -31,7 +29,7 @@
 
     <!--Type page-->
     
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     
 
     <!--Page Cover-->
@@ -42,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>API Development with Node.js and Express - AshKeys</title>
+    <title>page - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -137,16 +135,30 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">API Development with Node.js and Express</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-18</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">AshKeys</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
+             
+                <div id="quote"></div>
+                <div class="pl6 pl7-l pt4">
+                    <span id="author"></span>
+                </div>
              
         </div>
     </div>
+    
+        <script type="text/javascript">
+            fetch("//quote-generate.herokuapp.com")
+                .then(resp => resp.json())
+                .then(data => {
+                    document.getElementById("quote").outerHTML = `<i class="fas fa-quote-left"></i> ${data.quote} <i class="fas fa-quote-right"></i>`;
+                    document.getElementById("author").outerHTML = `<i class="fas fa-pen-fancy"></i> ${data.author}`;
+                });
+        </script>
                 
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-node"></i>
+        <i class="header-icon far fa-star"></i>
     </div>
 </div>
 
@@ -154,93 +166,40 @@
 <div class="w-100 ph2 ph4-m ph5-l mv5">
     <div class="content">
         <div class="mw8 center">
-            <div class="cf">
-                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
-                    <!-- Tags Vertical -->
-                    
-                        <div class="tags-container-vertical">
-                            <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/API/">#API</a> <a class="fw3 ph1 dib" href="/tags/express/">#express</a>
-                            </div>
-                        </div>
-                    
-
-                    <!-- Main Post Content -->
-                    <p>In my previous <a href="/2019/04/15/How-to-run-a-web-server-using-Node-JS/">post</a>, we talked about how to run a webserver by using only node modules. As mentioned before, <a href="//expressjs.com/">express</a> is good when it comes to routing. Now, we can talk bit more in detail about the API development around it. Express makes the API development looks easy as it takes care of the uneasy parts and let us only worry about the APIs.</p>
-<p>For instance, to build <code>get</code> endpoint you just have to do the following:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/api/greet'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'Hello, Welcome to AshKeys!'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`API is up and running at http://localhost:3000`</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p>When you hit the endpoint <code>localhost:3000/api/greet</code>, you see the <code>Hello, Welcome to AshKeys!</code> message being displayed.</p>
-<blockquote>
-<p>Congratulations! You have created your first API with express.</p>
-</blockquote>
-<blockquote>
-<p>We can use other HTTP request methods such as <code>post</code>, <code>put</code>, <code>delete</code>, <code>merge</code>, <code>patch</code> and various others. You can see a full list of potential routing methods here: <a href="//expressjs.com/en/4x/api.html#app.METHOD">Express routing methods</a></p>
-</blockquote>
-
-                    
-                    <!-- Tags Bottom -->
-                    
-                        <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/API/">#API</a> <a class="fw3 ph1 dib" href="/tags/express/">#express</a>
-                        </div>
-                    
-
-                    <!-- Comments -->
-                    
-
-
-
-                </div>
-                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
-                    
-                    <hr class="dn-l mw4 black-50 mt5">
-                    
-                    <!-- Widget 1: About -->
-                    <div class="mt5 mt0-l">
-    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
-        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
-            <img src="/About/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
-        </div>
-        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
-        </div>
-    </article>
-</div>
-
-                    <hr class="dn-l mw4 black-50 mt5">
-                    
-                    <!-- Widget 2: Categories -->
-                    
-
-                    <!-- Widget 3: Recent Posts -->
-                    <div class="mt5 tc tl-l">
-    <h3>Recent Posts</h3>
-    
-        <p>
-            <a href="/2019/08/25/DailyUI-Challenge-Series-001-signup-form/">DailyUI Challenge Series: 001 signup form</a>
-        </p>
-    
-        <p>
-            <a href="/2019/08/23/CSS-transform-property/">CSS: transform property</a>
-        </p>
-    
-        <p>
-            <a href="/2019/08/01/Few-ways-to-add-and-remove-items-in-an-array/">Few ways to add and remove items in an array</a>
-        </p>
-    
-        <p>
-            <a href="/2019/07/17/How-to-create-your-own-startup-script-in-linux/">How to create your own startup script in linux</a>
-        </p>
-    
-        <p>
-            <a href="/2019/07/10/How-to-Turn-Off-Autocomplete-for-Input/">How to Turn Off Autocomplete for Input</a>
-        </p>
-    
-</div>
-                </div>
+            
+                <a href="/2019/02/17/log/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2019-02-17</span> 
+                
+                
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Journal/'; return false;">#Journal</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Shukuchi/'; return false;">#Shukuchi</span>
+                
             </div>
+            <span class="f3 fw3 lh-copy">Weekend ride to Weert<span>
+        </span></span></div>
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fas fa-journal-whills"></i>
         </div>
     </div>
+</a>
+            
+        </div>
+    </div>
+    
+    <div class="flex items-center justify-center pa4">
+        <a href="/page/3/" class="f5 no-underline inline-flex items-center pa3 ba border-box mr4 gray hover-border-main-color hover-text-main-color">
+            <i class="w1 pr2 fa fa-chevron-left" aria-hidden="true"></i>
+            <span class="pl1">Previous</span>
+        </a>
+        <a href="/" class="f5 no-underline inline-flex items-center pa3 ba border-box light-gray cursor-default">
+            <span class="pr1">Next</span>
+            <i class="w1 pl2 fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+    </div>
+
 </div>
 
 

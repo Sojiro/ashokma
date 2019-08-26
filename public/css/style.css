@@ -240,7 +240,7 @@ body {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 85%;
   line-height: 1.45;
-  overflow: unset;
+  overflow: auto;
 }
 pre .comment,
 pre .template_comment,

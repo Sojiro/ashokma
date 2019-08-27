@@ -31,3 +31,59 @@ img
  transition: all 1s;
  &:hover
   transform: scale(1.05);
+
+body
+ transition: all .8s;
+ &.night-mode
+    background: #000;
+    filter: invert(1) hue-rotate(210deg);
+    img
+        filter: invert(1);
+
+.switch
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  top: -2px;
+  input  
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked + .slider 
+        background-color: transparent;
+
+    &:focus + .slider
+        box-shadow: 0 0 1px #2196F3;
+
+    &:checked + .slider 
+        i[class~="fa-sun"]
+            visibility: hidden;
+        i[class~="fa-moon"]
+            visibility: visible;
+            transform: translateX(26px);
+
+.slider 
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  transition: .4s;
+
+  i 
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    transition: .4s;
+    &[class~="fa-moon"]
+        visibility: hidden;
+  &.round  
+     border-radius: 34px;
+     i
+        border-radius: 50%;
+         

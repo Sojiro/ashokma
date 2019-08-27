@@ -1,0 +1,14 @@
+<!-- night-mode -->
+<script>
+    function toggle(nightMode) {
+        nightMode.checked ? document.body.classList.add("night-mode") :
+            document.body.classList.remove("night-mode");
+    }
+</script>
+<label class="switch link dim f6 f5-l dib mr3 mr4-l white">
+    <input type="checkbox" onchange="toggle(this);">
+    <span class="slider round">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </span>
+</label>

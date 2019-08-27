@@ -104,32 +104,46 @@
 <!-- Banner -->
 <!-- Banner -->
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
-    
+
     <nav class="db dt-l w-100 mw8 center border-box">
         <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
             <img src="//github.com/ashokma-com.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            <!-- night-mode -->
+<script>
+    function toggle(nightMode) {
+        nightMode.checked ? document.body.classList.add("night-mode") :
+            document.body.classList.remove("night-mode");
+    }
+</script>
+<label class="switch link dim f6 f5-l dib mr3 mr4-l white">
+    <input type="checkbox" onchange="toggle(this);">
+    <span class="slider round">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </span>
+</label>
             
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
-                    Home
-                </a>
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
+                Home
+            </a>
             
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://portfolio.ashokma.com/" title="Portfolio">
-                    Portfolio
-                </a>
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://portfolio.ashokma.com/" title="Portfolio">
+                Portfolio
+            </a>
             
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
-                    Archives
-                </a>
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
+                Archives
+            </a>
             
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
-                    Tags
-                </a>
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
+                Tags
+            </a>
             
-                <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/About" title="About">
-                    About
-                </a>
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/About" title="About">
+                About
+            </a>
             
         </div>
     </nav>
@@ -139,10 +153,10 @@
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns"># Arrays</h1>
             <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
-             
+            
         </div>
     </div>
-                
+    
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">

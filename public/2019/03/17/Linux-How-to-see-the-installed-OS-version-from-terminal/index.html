@@ -113,17 +113,29 @@
             <!-- night-mode -->
 <script>
     function toggle(nightMode) {
-        nightMode.checked ? document.body.classList.add("night-mode") :
+        console.log({ nightMode });
+        nightMode === "true" || nightMode === true ? document.body.classList.add("night-mode") :
             document.body.classList.remove("night-mode");
+        window.localStorage.setItem('ashokma.com.nightmode', nightMode);
     }
+
+    toggle(window.localStorage.getItem('ashokma.com.nightmode'));
+
 </script>
+
 <label class="switch link dim f6 f5-l dib mr3 mr4-l white">
-    <input type="checkbox" onchange="toggle(this);">
+    <input type="checkbox" onchange="toggle(this.checked);" id="nightModeIndicator">
     <span class="slider round">
         <i class="fas fa-sun"></i>
         <i class="fas fa-moon"></i>
     </span>
 </label>
+
+<script>
+    (function () {
+        document.getElementById('nightModeIndicator').checked = window.localStorage.getItem('ashokma.com.nightmode') === "true"
+    })();
+</script>
             
             <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
                 Home
@@ -174,7 +186,7 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a>
                             </div>
                         </div>
                     
@@ -209,7 +221,7 @@
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a>
                         </div>
                     
 

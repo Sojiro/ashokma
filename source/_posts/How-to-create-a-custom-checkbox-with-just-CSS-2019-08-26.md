@@ -3,11 +3,11 @@ title: How to create a custom checkbox with just CSS
 tags:
   - How To
   - CSS3
+  - Pseudo classes
   - Custom
 icon: fab fa-css3-alt
 date: 2019-08-26 23:14:19
 ---
-
 
 Today, I had to create a custom solution for a design requirement. A custom checkbox! It was fun doing it of course and I learned bit more about CSS.
 

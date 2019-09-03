@@ -1,7 +1,6 @@
 <!-- night-mode -->
 <script>
     function toggle(nightMode) {
-        console.log({ nightMode });
         nightMode === "true" || nightMode === true ? document.body.classList.add("night-mode") :
             document.body.classList.remove("night-mode");
         window.localStorage.setItem('ashokma.com.nightmode', nightMode);

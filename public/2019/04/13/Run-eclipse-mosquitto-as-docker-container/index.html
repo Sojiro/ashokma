@@ -113,7 +113,6 @@
             <!-- night-mode -->
 <script>
     function toggle(nightMode) {
-        console.log({ nightMode });
         nightMode === "true" || nightMode === true ? document.body.classList.add("night-mode") :
             document.body.classList.remove("night-mode");
         window.localStorage.setItem('ashokma.com.nightmode', nightMode);
@@ -263,6 +262,10 @@
     <h3>Recent Posts</h3>
     
         <p>
+            <a href="/2019/09/03/How-to-add-quick-night-mode-to-your-blog/">How to add quick night mode to your blog</a>
+        </p>
+    
+        <p>
             <a href="/2019/09/02/CSS-pseudo-elements-and-how-to-use-them/">CSS pseudo elements and how to use them</a>
         </p>
     
@@ -276,10 +279,6 @@
     
         <p>
             <a href="/2019/08/23/CSS-transform-property/">CSS: transform property</a>
-        </p>
-    
-        <p>
-            <a href="/2019/08/01/Few-ways-to-add-and-remove-items-in-an-array/">Few ways to add and remove items in an array</a>
         </p>
     
 </div>

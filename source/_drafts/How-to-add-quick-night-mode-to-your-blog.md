@@ -4,7 +4,7 @@ tags: [How To, Blog, CSS3]
 icon: fab fa-css3-alt
 ---
 
-As you might have already noticed, I have added an instant night mode option to [ashokma.com](ashokma.com).
+As you might have already noticed, I have added an instant night mode option to [ashokma.com](ashokma.com). It is nothing fancy of sort but it does the job right making ease for our eyes to read the blog at night +\_+
 
 ## Day Mode:
 

@@ -10,8 +10,6 @@
 
     <!--Description-->
     
-    <meta name="description" content="It is nice to know how to sort the contents of a file using bash. Let us take an example where we have a .csv file with the records of employees as fo">
-    
 
     <!--Author-->
     
@@ -20,7 +18,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to sort lines in a file using bash">
+    <meta property="og:title" content="AshKeys">
     
 
     <!--Open Graph Description-->
@@ -31,7 +29,7 @@
 
     <!--Type page-->
     
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     
 
     <!--Page Cover-->
@@ -42,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>How to sort lines in a file using bash - AshKeys</title>
+    <title>React - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -101,6 +99,8 @@
 <body>
 
 <!-- Main Content -->
+
+
 <!-- Banner -->
 <!-- Banner -->
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
@@ -162,8 +162,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to sort lines in a file using bash</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-26</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns"># React</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
             
         </div>
     </div>
@@ -171,106 +171,30 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-terminal"></i>
+        <i class="header-icon far fa-folder-open"></i>
     </div>
 </div>
 
-<!-- Content -->
 <div class="w-100 ph2 ph4-m ph5-l mv5">
     <div class="content">
         <div class="mw8 center">
-            <div class="cf">
-                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
-                    <!-- Tags Vertical -->
-                    
-                        <div class="tags-container-vertical">
-                            <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
-                            </div>
-                        </div>
-                    
-
-                    <!-- Main Post Content -->
-                    <p>It is nice to know how to sort the contents of a file using bash. Let us take an example where we have a <code>.csv</code> file with the records of employees as following:</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">emp_id;first_name;last_name;email;designation</span><br><span class="line"><span class="number">000002</span>;Ash;Keys;AshKeys@ashokma.com;UX Designer</span><br><span class="line"><span class="number">000003</span>;Sojiro;De Tenken;sojiro@ashokma.com;Tester</span><br><span class="line"><span class="number">000001</span>;Ashok;M A;ashokma@ashokma.com;Web Developer</span><br></pre></td></tr></table></figure>
-<p>If we would like to sort the contents of this file for no reason, we can do it using <code>sort</code> command.</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sort ashokma.com/employees.csv</span></span><br><span class="line"></span><br><span class="line">000001;Ashok;M A;ashokma@ashokma.com;Web Developer</span><br><span class="line">000002;Ash;Keys;AshKeys@ashokma.com;UX Designer</span><br><span class="line">000003;Sojiro;De Tenken;sojiro@ashokma.com;Tester</span><br><span class="line">emp_id;first_name;last_name;email;designation</span><br></pre></td></tr></table></figure>
-<p>It is being sorted as expected but there is one little problem. The column names are at the bottom and we do not want that as it is not valid for database records processing. In order to keep the column names up top, we just have to supply the <code>-r</code> option which is to reverse the output.</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sort ashokma.com/employees.csv</span></span><br><span class="line"></span><br><span class="line">emp_id;first_name;last_name;email;designation</span><br><span class="line">000003;Sojiro;De Tenken;sojiro@ashokma.com;Tester</span><br><span class="line">000002;Ash;Keys;AshKeys@ashokma.com;UX Designer</span><br><span class="line">000001;Ashok;M A;ashokma@ashokma.com;Web Developer</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>As it only outputs the sorted values to console, we have to stream it back to the same file like: <br> <code>sort ashokma.com/employees.csv &gt; ashokma.com/employees.csv</code></p>
-</blockquote>
-<p>I understand that it is in decending order but sorted ^_^ As an alternative, we can cut the columns line and paste it again once records are sorted!</p>
-<blockquote>
-<p><strong>Tip:</strong> Using the <code>-u</code> option you can keep only the unique records along with the sorting process.</p>
-</blockquote>
-
-                    
-                    <!-- Tags Bottom -->
-                    
-                        <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
-                        </div>
-                    
-
-                    <!-- Comments -->
-                    
-
-
-
-                </div>
-                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
-                    
-                    <hr class="dn-l mw4 black-50 mt5">
-                    
-                    <!-- Widget 1: About -->
-                    <div class="mt5 mt0-l">
-    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
-        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
-            <img src="/About/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
+            
+                <a href="/2019/09/14/Learning-react-todo-app/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
+        <div class="dtc v-mid w-20 black-50">
+            
+                <span class="f4 fw3 lh-copy">Sep 2019</span> 
+            
         </div>
-        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
-        </div>
-    </article>
-</div>
-
-                    <hr class="dn-l mw4 black-50 mt5">
-                    
-                    <!-- Widget 2: Categories -->
-                    
-
-                    <!-- Widget 3: Recent Posts -->
-                    <div class="mt5 tc tl-l">
-    <h3>Recent Posts</h3>
-    
-        <p>
-            <a href="/2019/09/14/Learning-react-todo-app/">Learning react: todo app</a>
-        </p>
-    
-        <p>
-            <a href="/2019/09/03/How-to-add-quick-night-mode-to-your-blog/">How to add quick night mode to your blog</a>
-        </p>
-    
-        <p>
-            <a href="/2019/09/02/CSS-pseudo-elements-and-how-to-use-them/">CSS pseudo elements and how to use them</a>
-        </p>
-    
-        <p>
-            <a href="/2019/08/26/How-to-create-a-custom-checkbox-with-just-CSS/">How to create a custom checkbox with just CSS</a>
-        </p>
-    
-        <p>
-            <a href="/2019/08/25/DailyUI-Challenge-Series-001-signup-form/">DailyUI Challenge Series: 001 signup form</a>
-        </p>
-    
-</div>
-                </div>
-            </div>
+        <div class="dtc v-mid w-80 black-70">
+            <span class="f4 fw3 lh-copy">Learning react: todo app<span>
+        </span></span></div>
+    </div>
+</a>
+            
         </div>
     </div>
 </div>
-
 
 <!-- Footer -->
 <div class="bg-1 ph2 ph5-ns pv5">

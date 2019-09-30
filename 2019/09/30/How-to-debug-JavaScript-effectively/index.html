@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="Today afternoon, I had time to take my Shukuchi out for a ride. It was a warm weather. It does look like we got a short-break from winter. I took moto">
+    <meta name="description" content="I work with the frontend of the application more than the backend as many of us nowadays. So, it helps to know the better way of debugging in JavaScri">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Weekend ride to Weert">
+    <meta property="og:title" content="How to debug JavaScript effectively">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Weekend ride to Weert - AshKeys</title>
+    <title>How to debug JavaScript effectively - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -162,8 +162,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Weekend ride to Weert</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-02-17</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to debug JavaScript effectively</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-09-30</p>
             
         </div>
     </div>
@@ -171,7 +171,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-journal-whills"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -185,26 +185,41 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Journal/">#Journal</a> <a class="fw3 ph1 dib" href="/tags/Shukuchi/">#Shukuchi</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Debug/">#Debug</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Today afternoon, I had time to take my Shukuchi out for a ride. It was a warm weather. It does look like we got a short-break from winter. I took motorways until Eindhovan to skip the seen places. As planned from there, I took windy roads to reach Limburg, Belgium. Since it is winter time, it was getting dark soon. I had another hour and a half ride when it was 4 o’clock. I had to give up and turn back home from a near border village called Weert. I really like the village Weert and the individual houses with car port and garages. I remembered the plan that I had initially to buy an individual house with garden and car port or shed for my Shukuchi. So that it will be a workshop afterwards for I have the Shukuchi maintanance. However, I had to settle for an apartment last year. I might buy a new one by selling this apartment later once I have a partner to increase the mortgage budget. Hold that thought!</p>
+                    <p>I work with the frontend of the application more than the backend as many of us nowadays. So, it helps to know the better way of debugging in JavaScript, not only to increase the productivity but also to keeping ourselves from getting tired of debugging. Let’s see few of the most frequently used ones.</p>
+<h2 id="console-log"><a href="#console-log" class="headerlink" title="console.log"></a><code>console.log</code></h2><p>Many of us know this but only few of us know how to effectively use <code>console.log</code>. By default it logs the <code>toString()</code> representation of what we want to log.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> msg = <span class="string">'Welcome to AshKeys!'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(msg); <span class="comment">// Welcome to AshKeys!</span></span><br></pre></td></tr></table></figure>
+<p>How many times many of us had to check the file it was logged from in the browser console. &gt;_O Because, we log many things and it is hard to know which one is being logged here. That is okay! Mostly, we do something like this to keep track.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> msg = <span class="string">'Welcome to AshKeys!'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'msg -&gt; '</span> + msg); <span class="comment">// msg -&gt; Welcome to AshKeys!</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>We do worry about the things we did not have or do. As an aquitance of mine once said, <em>I do not like the could have or should have. Because it never happens</em>.</p>
+<p><strong>Tip:</strong> Prefer string template literals <code>` `</code> over string concatenation as follows<br><code>console.log(`msg -&gt; ${msg}`)</code></p>
 </blockquote>
-<p>I rode back home real fast clocking 100Kmph as average on the motorways. It was nice ride overall even though I did not reach my destination as planned.</p>
+<p>This is not bad, is it? But, there is again a problem when we need to log more things on the way. There comes a situation where we spend some considerable amount of time thinking about what to concatenate with. &gt;_&lt;</p>
+<p>In those cases, we can quickly do the following:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> msg = <span class="string">'Welcome to AshKeys!'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(&#123; msg &#125;); <span class="comment">// &#123; msg: 'Welcome to AshKeys!' &#125;</span></span><br></pre></td></tr></table></figure>
+<p>Yes, we just make a placeholder object with same key as our named variable. It makes sense as we spent already some effort in giving a variable meaningful name before wanting to log it. ^_^ Thus, it makes it easy to keep track.</p>
 <blockquote>
-<p>So I recalled the saying, <em>it is the journey that matters!</em></p>
+<p><strong>Tip:</strong> We can log more than one in the same <code>console.log</code> call like <code>console.log({msg}, {ashkeys})</code></p>
+</blockquote>
+<h2 id="console-table"><a href="#console-table" class="headerlink" title="console.table"></a><code>console.table</code></h2><p>It is useful if we are operating around table-like data. Sometimes, it does not even have to be a table data. A plain object with property names too. Let’s take a look at those two examples.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> employee = &#123;</span><br><span class="line">  name: <span class="string">'Ashok M A'</span>,</span><br><span class="line">  role: <span class="string">'Full Stack Web Developer'</span>,</span><br><span class="line">  drinks: <span class="string">'coffee'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.table(employee);</span><br><span class="line"></span><br><span class="line">┌─────────┬────────────────────────────┐</span><br><span class="line">│ (index) │           Values           │</span><br><span class="line">├─────────┼────────────────────────────┤</span><br><span class="line">│  name   │        <span class="string">'Ashok M A'</span>         │</span><br><span class="line">│  role   │ <span class="string">'Full Stack Web Developer'</span> │</span><br><span class="line">│ drinks  │          <span class="string">'coffee'</span>          │</span><br><span class="line">└─────────┴────────────────────────────┘</span><br></pre></td></tr></table></figure>
+<p>For a plain object, it logs the key-value pair in tabular forms. But, for an array of objects:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> employees = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'Ashok M A'</span>,</span><br><span class="line">    role: <span class="string">'Full Stack Web Developer'</span>,</span><br><span class="line">    drinks: <span class="string">'coffee'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'AshKeys'</span>,</span><br><span class="line">    role: <span class="string">'Just Developer'</span>,</span><br><span class="line">    drinks: <span class="string">'caffeine'</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.table(employees);</span><br><span class="line"></span><br><span class="line">┌─────────┬─────────────┬────────────────────────────┬────────────┐</span><br><span class="line">│ (index) │    name     │            role            │   drinks   │</span><br><span class="line">├─────────┼─────────────┼────────────────────────────┼────────────┤</span><br><span class="line">│    <span class="number">0</span>    │ <span class="string">'Ashok M A'</span> │ <span class="string">'Full Stack Web Developer'</span> │  <span class="string">'coffee'</span>  │</span><br><span class="line">│    <span class="number">1</span>    │  <span class="string">'AshKeys'</span>  │      <span class="string">'Just Developer'</span>      │ <span class="string">'caffeine'</span> │</span><br><span class="line">└─────────┴─────────────┴────────────────────────────┴────────────┘</span><br></pre></td></tr></table></figure>
+<p>This makes it easy to quickly glance and verify instead of expanding the logged object or array and waste some time on clicking. Wouldn’t you agree? \O/</p>
+<blockquote>
+<p><strong>Tip:</strong> Remember this, like any other programming/scripting languages, JavaScript also has options to log messages with respect to their log levels (<code>console.error</code>, <code>console.warn</code>, <code>console.info</code>, <code>console.debug</code>, <code>console.trace</code>). We can do the same things we did with <code>console.log</code>.</p>
 </blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Journal/">#Journal</a> <a class="fw3 ph1 dib" href="/tags/Shukuchi/">#Shukuchi</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Debug/">#Debug</a>
                         </div>
                     
 

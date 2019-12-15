@@ -4,9 +4,9 @@ tags: [Journal, Vacation, Portugal, Europe]
 icon: fas fa-journal-whills
 ---
 
-It has not been two months since my vacation to India. But, I decided to take a short vacation just for a break. I had to buy hours as I spent all my vacation days in India with family and friends. >\_O I do not know the reason but as soon as I knew I could buy hours for vacation I was excited and started planning my week right away. ^\_^
+It has not been two months since my vacation to India. But, I decided to take a short vacation just for a break. I had to buy hours as I spent all my vacation days in India with family and friends. >\_O I do not know the reason but as soon as I knew I could buy hours for vacation, I was excited and started planning my week right away. ^\_^
 
-It did not take much time to choose **Madeira, Portugal** as my vacation point. I had it in my _Want to Go_ list for sometime. When I checked the weather for a week it looked perfect as well, not so hot but just warm and cloudy a lit bit. Madeira it is!
+It did not take much time to choose **Madeira, Portugal** as my vacation point. I had it in my _Want to Go_ list for sometime. When I checked the weather for a week it looked perfect as well, not so hot just warm and cloudy a lit bit. Madeira it is!
 
 My plan was to come with a _writing sample_ for my Masters application to Utrecht University (UU). Away from the routine for a while to focus and sightseeing of course!
 

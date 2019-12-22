@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+    <meta name="description" content="By default, terminal stores the password for 15 mins to ease the user in case of continuous sudo activities such as installation or upgrades. In order">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="AshKeys">
+    <meta property="og:title" content="How to make terminal to always ask for password">
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>page - Pop!_OS - AshKeys</title>
+    <title>How to make terminal to always ask for password - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -99,9 +101,7 @@
 <body>
 
     <!-- Main Content -->
-    
-
-<!-- Banner -->
+    <!-- Banner -->
 <!-- Banner -->
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
@@ -162,8 +162,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns"># Pop!_OS</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to make terminal to always ask for password</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-12-22</p>
             
         </div>
     </div>
@@ -171,186 +171,103 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon far fa-folder-open"></i>
+        <i class="header-icon fas fa-terminal"></i>
     </div>
 </div>
 
+<!-- Content -->
 <div class="w-100 ph2 ph4-m ph5-l mv5">
     <div class="content">
         <div class="mw8 center">
-            
-                <a href="/2019/12/22/How-to-make-terminal-to-always-ask-for-password/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Dec 2019</span> 
-            
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <p>By default, terminal stores the password for 15 mins to ease the user in case of continuous <code>sudo</code> activities such as installation or upgrades. In order to override these defaults, we must edit the <code>/etc/sudoers.tmp</code> as follows:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file MUST be edited with the 'visudo' command as root.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Please consider adding local content in /etc/sudoers.d/ instead of</span></span><br><span class="line"><span class="comment"># directly modifying this file.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See the man page for details on how to write a sudoers file.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">Defaults        env_reset,timestamp_timeout=0</span><br></pre></td></tr></table></figure>
+<p>The <code>timestamp_timeout=0</code> means that terminal will always ask for password when we do actions with <code>sudo</code>.</p>
+<blockquote>
+<p><strong>Caution:</strong> Mind that it is a timer. So, when we place values lesser than 0 like -1, it means that the password will be asked once and never again even after reboot.</p>
+</blockquote>
+<p>As the comment suggests, always edit the file using <code>sudo visudo</code> command. This makes sure that others do not edit the file while you are. It is safer that way! \O/</p>
+<blockquote>
+<p><strong>Tip:</strong> <code>sudoers.d</code> is powerful when it comes to configuring user permissions down to what commands and programs one can execute and what not. O_O</p>
+</blockquote>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5">
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="/About/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to make terminal to always ask for password<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/07/17/How-to-create-your-own-startup-script-in-linux/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Jul 2019</span> 
-            
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to create your own startup script in linux<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/07/03/How-to-extract-tar-gz-file-in-linux/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Jul 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to extract tar.gz file in linux<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/07/03/How-to-add-environment-or-path-variables-in-linux/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Jul 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to add environment or path variables in linux<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/04/13/How-to-publish-and-subscribe-to-a-topic-in-mosquitto/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Apr 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to publish and subscribe to a topic in mosquitto<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/23/How-to-create-users-and-groups-in-Linux-from-the-command-line/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to create users and groups in Linux from the command line<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/23/How-to-change-port-mapping-of-a-running-docker-container/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to change port mapping of a running docker container<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/23/How-to-Change-File-Ownership-Groups-in-Linux/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">How to Change File Ownership & Groups in Linux<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/17/Linux-how-to-exclude-specific-folder-during-copy-in-terminal/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Linux: how to exclude specific folder during copy in terminal<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/03/17/Linux-How-to-see-the-installed-OS-version-from-terminal/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Linux: How to see the installed OS version from terminal<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/02/24/Address-in-use-kill-process-at-a-specific-port/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Feb 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">EADDRINUSE - kill process at a specific port<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Feb 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">My new laptop - System76 - Galago Pro<span>
-        </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2019/02/18/install-nodejs-and-npm-pop-os/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Feb 2019</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Install nodejs and npm in Pop!_OS<span>
-        </span></span></div>
-    </div>
-</a>
-            
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5">
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2019/12/22/How-to-make-terminal-to-always-ask-for-password/">How to make terminal to always ask for password</a>
+        </p>
+    
+        <p>
+            <a href="/2019/12/15/How-to-tune-up-your-PostgreSQL-performance/">How to tune up your PostgreSQL performance</a>
+        </p>
+    
+        <p>
+            <a href="/2019/10/08/How-to-convert-SVGs-to-desired-color/">How to convert SVGs to desired color</a>
+        </p>
+    
+        <p>
+            <a href="/2019/09/30/How-to-debug-JavaScript-effectively/">How to debug JavaScript effectively</a>
+        </p>
+    
+        <p>
+            <a href="/2019/09/14/Learning-react-todo-app/">Learning react: todo app</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
     <!-- Footer -->
     <div class="bg-1 ph2 ph5-ns pv5">

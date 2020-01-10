@@ -8,11 +8,10 @@ index_font_awesome_icon_css: far fa-star
 
 # Header
 menu:
-  Home: /
-  Portfolio: https://portfolio.ashokma.com/
-  Archives: /archives
-  Tags: /tags
-  About: /About
+    Home: /
+    Archives: /archives
+    Tags: /tags
+    About: /me
 
 # Post
 default_post_title: Untitled
@@ -23,34 +22,34 @@ archive_date_format: MMM YYYY
 archive_font_awesome_icon_css: far fa-folder-open
 
 # About Widget
-about_widget_avatar_url: /About/index/avatar.jpeg
-about_widget_text: "<b>About Ashok:</b><br/>
-Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy
-too. Still evolving in the vast <code>NodeJS</code> eco-system.
-<ul>
-  <li> Backpacker with a bike </li>
-  <li> Trying hard to be a violinist </li>
-  <li> Reads Medium to know the buzz words and follows developer memes. </li>
-</ul>"
+# about_widget_avatar_url: /About/index/avatar.jpeg
+# about_widget_text: "<b>About Ashok:</b><br/>
+# Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy
+# too. Still evolving in the vast <code>NodeJS</code> eco-system.
+# <ul>
+#   <li> Backpacker with a bike </li>
+#   <li> Trying hard to be a violinist </li>
+#   <li> Reads Medium to know the buzz words and follows developer memes. </li>
+# </ul>"
 
 # Comments.
 comments:
-  # Disqus comments
-  disqus_shortname: 
+    # Disqus comments
+    disqus_shortname:
 
 # Google Analytics Tracking ID
 google_analytics: UA-115413748-1
 
 # Social Media Platforms
 social_platforms:
-  - url: //twitter.com/AshokMA9
-    fa_icon: fab fa-twitter
-  - url: //www.facebook.com/ashokma.arunachalam
-    fa_icon: fab fa-facebook
-  - url: //github.com/Sojiro
-    fa_icon: fab fa-github
-  - url: //stackoverflow.com/users/1197396/ashok-m-a
-    fa_icon: fab fa-stack-overflow
+    - url: //twitter.com/AshokMA9
+      fa_icon: fab fa-twitter
+    - url: //www.linkedin.com/in/ashok-m-a-full-stack-dev/
+      fa_icon: fab fa-linkedin
+    - url: //github.com/Sojiro
+      fa_icon: fab fa-github
+    - url: //stackoverflow.com/users/1197396/ashok-m-a
+      fa_icon: fab fa-stack-overflow
 
 # Footer about
 footer_about: "&copy; 2019 Ashok M A | Powered by <a class='link dim white' href='//hexo.io/'>Hexo</a>"

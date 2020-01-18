@@ -22,15 +22,15 @@ archive_date_format: MMM YYYY
 archive_font_awesome_icon_css: far fa-folder-open
 
 # About Widget
-# about_widget_avatar_url: /About/index/avatar.jpeg
-# about_widget_text: "<b>About Ashok:</b><br/>
-# Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy
-# too. Still evolving in the vast <code>NodeJS</code> eco-system.
-# <ul>
-#   <li> Backpacker with a bike </li>
-#   <li> Trying hard to be a violinist </li>
-#   <li> Reads Medium to know the buzz words and follows developer memes. </li>
-# </ul>"
+about_widget_avatar_url: /me/index/avatar.jpeg
+about_widget_text: "<b>About Ashok:</b><br/>
+Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy
+too. Still evolving in the vast <code>NodeJS</code> eco-system.
+<ul>
+  <li> Backpacker with a bike </li>
+  <li> Trying hard to be a violinist </li>
+  <li> Reads Medium to know the buzz words and follows developer memes. </li>
+</ul>"
 
 # Comments.
 comments:

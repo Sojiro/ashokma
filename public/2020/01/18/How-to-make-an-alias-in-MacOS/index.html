@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="Today, I checked out the hexo blog in my new laptop. It threw a fatal error when I tried to hexo deploy it. After trial and error for sometime, I foun">
+    <meta name="description" content="As mentioned in the previous post, I am experimenting with my Macbook Pro mid 2012. One of the things that was handy in the Pop!_OS terminal was the c">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Hexo deploy: Fatal: in unpopulated submodule `.deploy_git`">
+    <meta property="og:title" content="How to make an alias in MacOS">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Hexo deploy: Fatal: in unpopulated submodule `.deploy_git` - AshKeys</title>
+    <title>How to make an alias in MacOS - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +158,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Hexo deploy: Fatal: in unpopulated submodule `.deploy_git`</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-02-18</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to make an alias in MacOS</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-01-18</p>
             
         </div>
     </div>
@@ -167,7 +167,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-blogger-b"></i>
+        <i class="header-icon fab fa-apple"></i>
     </div>
 </div>
 
@@ -181,26 +181,24 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a> <a class="fw3 ph1 dib" href="/tags/Hexo/">#Hexo</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/MacOS/">#MacOS</a> <a class="fw3 ph1 dib" href="/tags/Mojave/">#Mojave</a> <a class="fw3 ph1 dib" href="/tags/Apple/">#Apple</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Today, I checked out the hexo blog in my new laptop. It threw a fatal error when I tried to <code>hexo deploy</code> it. After trial and error for sometime, I found the quick and easy solution like <em>Try turning it off and on again!</em></p>
-<p>First install the relevant dependencies: (I do deployment to <code>git</code>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>Here comes the universal solution:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ rm -rf .deploy_git</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Make sure you do not version the <code>.deploy_git</code> folder as it is specific to local environment and setup.</p>
-</blockquote>
+                    <p>As mentioned in the <a href="/2020/01/18/Macbook-Pro-mid-2012-usuage-notes/">previous post</a>, I am experimenting with my Macbook Pro mid 2012. One of the things that was handy in the Pop!_OS terminal was the command <code>ll</code> to list out the contents of a directive.</p>
+<p>It is nothing but an alias of <code>ls -l</code> in short. I wanted to make this alias in the Macbook as well. With the below steps one can easily make an alias in Macbook as we do in linux by editing <code>.bashrc</code> files.</p>
+<h2 id="Edit-the-bash-profile"><a href="#Edit-the-bash-profile" class="headerlink" title="Edit the ~/.bash_profile"></a>Edit the <code>~/.bash_profile</code></h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<h2 id="Add-your-required-alias-commands"><a href="#Add-your-required-alias-commands" class="headerlink" title="Add your required alias commands"></a>Add your required alias commands</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> ll=<span class="string">"ls -l"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Restart-your-terminal-session"><a href="#Restart-your-terminal-session" class="headerlink" title="Restart your terminal session"></a>Restart your terminal session</h2><p>Once you have added your respective alias in place, just restart your terminal session. Vola! \O/</p>
+<p>Just like in linux, this alias will be available in future sessions as well since it is part of the profile configurations.</p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a> <a class="fw3 ph1 dib" href="/tags/Hexo/">#Hexo</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/MacOS/">#MacOS</a> <a class="fw3 ph1 dib" href="/tags/Mojave/">#Mojave</a> <a class="fw3 ph1 dib" href="/tags/Apple/">#Apple</a>
                         </div>
                     
 

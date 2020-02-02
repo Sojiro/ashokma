@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+    <meta name="description" content="The more I explore D3.js the more I am intriguied by the ways to make Data-driven documents or charts.
+In very recently, I had to make a rect at the c">
+    
 
     <!--Author-->
     
@@ -165,7 +168,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fa-file-text-o"></i>
+        <i class="header-icon fas fa-chart-pie"></i>
     </div>
 </div>
 
@@ -177,11 +180,27 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/d3/">#d3</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    
+                    <p>The more I explore <a href="d3js.org">D3.js</a> the more I am intriguied by the ways to make Data-driven documents or charts.</p>
+<p>In very recently, I had to make a <code>rect</code> at the center of a 2D map. But, the challenge I had in getting the axis tick values irrespective of zoom/pan levels.</p>
+<p>To get the data of the axis, the following piece of code is enough:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xAxisTickValues = d3.select(<span class="string">'axis axis--x g'</span>).data();</span><br><span class="line"><span class="keyword">const</span> yAxisTickValues = d3.select(<span class="string">'axis axis--y g'</span>).data();</span><br></pre></td></tr></table></figure>
+<p>Using the <code>d3.quantile</code> function we can get the center values as follows:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> minX = d3.quantile(xAxisTickValues, <span class="number">.25</span>);</span><br><span class="line"><span class="keyword">const</span> maxX = d3.quantile(xAxisTickValues, <span class="number">.75</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> minY = d3.quantile(yAxisTickValues, <span class="number">.25</span>);</span><br><span class="line"><span class="keyword">const</span> maxY = d3.quantile(yAxisTickValues, <span class="number">.75</span>);</span><br></pre></td></tr></table></figure>
+
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/d3/">#d3</a>
+                        </div>
                     
 
                     <!-- Comments -->

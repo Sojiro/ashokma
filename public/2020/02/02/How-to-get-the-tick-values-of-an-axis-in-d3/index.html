@@ -10,8 +10,6 @@
 
     <!--Description-->
     
-    <meta name="description" content="PostgreSQL - An Introduction:PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development ">
-    
 
     <!--Author-->
     
@@ -20,7 +18,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Run Postgres as Docker container">
+    <meta property="og:title" content="How to get the tick values of an axis in d3">
     
 
     <!--Open Graph Description-->
@@ -42,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>Run Postgres as Docker container - AshKeys</title>
+    <title>How to get the tick values of an axis in d3 - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +156,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Run Postgres as Docker container</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-03-17</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to get the tick values of an axis in d3</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-02</p>
             
         </div>
     </div>
@@ -167,7 +165,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-docker"></i>
+        <i class="header-icon fa-file-text-o"></i>
     </div>
 </div>
 
@@ -179,68 +177,11 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
-                        <div class="tags-container-vertical">
-                            <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Postgres/">#Postgres</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a>
-                            </div>
-                        </div>
-                    
 
                     <!-- Main Post Content -->
-                    <h2 id="PostgreSQL-An-Introduction"><a href="#PostgreSQL-An-Introduction" class="headerlink" title="PostgreSQL - An Introduction:"></a>PostgreSQL - An Introduction:</h2><p>PostgreSQL is a powerful, open source object-relational database system. It has more than <strong>15 years of active development</strong> and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness.</p>
-<p>Just a quick overview for one should use the PostgreSQL:</p>
-<p><strong>PostgreSQL</strong></p>
-<ul>
-<li>is developed by the PostgreSQL Global Development Group, a diverse group of multiple companies and individual contributors.</li>
-<li>is free and open-source software and is released under the PostgreSQL license, a liberal Open Source license, similar to the BSD or MIT licenses.</li>
-<li>is largely SQL compliant.</li>
-<li>tackles concurrency efficiently with its MVCC implementation, which achieves very high levels of concurrency.</li>
-<li>supports JSON and other NoSQL features like native XML support and key-value pairs with HSTORE. It also supports indexing JSON data for faster access.</li>
-<li>supports a wide variety of programing languages including: C/C++, Java, JavaScript, .Net, R, Perl, Python, Ruby, Tcl and others; it’s even possible to run user-supplied code in separate processes (i.e. running as background workers).</li>
-</ul>
-<p>Hope this helps of your wonder why it is better than other DBs out there like MySQL.</p>
-<p>Now, Lets see how we can run it as docker container.</p>
-<h2 id="Pull-the-docker-image"><a href="#Pull-the-docker-image" class="headerlink" title="Pull the docker image."></a>Pull the docker image.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull postgres</span><br></pre></td></tr></table></figure>
-<p>This will pull the latest stable release of PostgreSQL with the following OS release:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PRETTY_NAME=&quot;Debian GNU/Linux 9 (stretch)&quot;</span><br><span class="line">NAME=&quot;Debian GNU/Linux&quot;</span><br><span class="line">VERSION_ID=&quot;9&quot;</span><br><span class="line">VERSION=&quot;9 (stretch)&quot;</span><br><span class="line">ID=debian</span><br><span class="line">HOME_URL=&quot;https://www.debian.org/&quot;</span><br><span class="line">SUPPORT_URL=&quot;https://www.debian.org/support&quot;</span><br><span class="line">BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;</span><br></pre></td></tr></table></figure>
-<p>which makes the image size to around <strong>312 MB</strong>.</p>
-<blockquote>
-<p>Prefer <a href="//hub.docker.com/_/postgres#image-variants"><code>alpine</code></a> versions to reduce the image size to lesser than <strong>30 MB</strong>.</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker search alpine-postgres</span><br></pre></td></tr></table></figure>
-<p>will show you multiple alpine versions out there.</p>
-<p>Once the necessary image has been downloaded, you can verify it using,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker images</span><br></pre></td></tr></table></figure>
-<h2 id="Create-a-volume-directory"><a href="#Create-a-volume-directory" class="headerlink" title="Create a volume directory"></a>Create a volume directory</h2><p>Volumes are easy and encouraged way to mount the data generated and used by the containers.</p>
-<p>Let’s create a local directory to mount as <a href="//docs.docker.com/storage/volumes/">volume</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p $HOME/docker/volumes/postgres</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Tip:</strong> <code>-p</code> option creates the subdirectories if necessary.</p>
-</blockquote>
-<h2 id="Run-Postgres-as-container"><a href="#Run-Postgres-as-container" class="headerlink" title="Run Postgres as container"></a>Run Postgres as container</h2><p>We can do multiple things (create/run/mount) all at once in the following:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name ashkeys-docker \</span><br><span class="line">    -e POSTGRES_PASSWORD=ashkeys \</span><br><span class="line">    -d -p 5432:5432 \</span><br><span class="line">    -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres</span><br></pre></td></tr></table></figure>
-<p>What are we doing here:</p>
-<ul>
-<li><code>run</code><br>– creates and runs the newly created container with options in case specified.</li>
-<li><code>--name</code><br>– name of the container.</li>
-<li><code>-e</code><br>– Exposes environment variable <code>POSTGRES_PASSWORD</code> with <code>docker</code> as value. There are others too namely <code>POSTGRES_USER</code> and <code>POSTGRES_DB</code>. <code>POSTGRES_USER</code> sets the superuser name. If not provided, the superuser name defaults to postgres.</li>
-<li><code>-d</code><br>– Runs the container in detached mode. By default, docker attaches the container. It is common to run in detached mode like running it in the background.</li>
-<li><code>-p</code><br>– Bind port 5432 on <code>localhost</code> to port 5432 within the container.</li>
-<li><code>-v</code><br>– Mount <code>$HOME/docker/volumes/postgres</code> on the host machine to the container side volume path <code>/var/lib/postgresql/data</code> created inside the container. This ensures that postgres data persists even after the container is removed.</li>
-<li><code>postgres</code><br>– Last one is the image from which we want to create the docker container.</li>
-</ul>
-<h2 id="Connecting-to-our-newly-created-postgres-database"><a href="#Connecting-to-our-newly-created-postgres-database" class="headerlink" title="Connecting to our newly created postgres database"></a>Connecting to our newly created postgres database</h2><p>Since our localhost port 5432 is bound to postgres container port, we can directly run our CRUD operations to <code>localhost:5432</code>. Lets connect to the database.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ psql -h localhost -U postgres -d postgres</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>You might have to install the <code>psql</code> as global dependencies using <a href="/2019/02/18/install-nodejs-and-npm-pop-os/"><code>npm</code></a>.</p>
-</blockquote>
-
+                    
                     
                     <!-- Tags Bottom -->
-                    
-                        <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Postgres/">#Postgres</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a>
-                        </div>
                     
 
                     <!-- Comments -->

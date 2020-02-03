@@ -3,3 +3,6 @@ target/
 dist/
 .deploy_git/
 .netlify/
+
+# Local Netlify folder
+.netlify

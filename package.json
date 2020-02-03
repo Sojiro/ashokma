@@ -1,7 +1,10 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "ashokma.com",
+  "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "server": "hexo server --draft"
+  },
   "hexo": {
     "version": "3.8.0"
   },

@@ -1,7 +1,7 @@
 ---
 title: How to convert SVGs to desired color
 tags:
-  - How To
+  - How to
   - SVG
   - CSS
   - Tools

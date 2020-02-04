@@ -1,7 +1,7 @@
 ---
 title: How to get the tick values of an axis in d3
 tags:
-  - How To
+  - How to
   - JavaScript
   - d3
 icon: fas fa-chart-pie

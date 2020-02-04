@@ -1,7 +1,7 @@
 ---
 title: How to make an alias in MacOS
 tags:
-  - How To
+  - How to
   - MacOS
   - Mojave
   - Apple

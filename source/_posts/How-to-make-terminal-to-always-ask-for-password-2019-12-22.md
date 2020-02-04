@@ -1,7 +1,7 @@
 ---
 title: How to make terminal to always ask for password
 tags:
-  - How To
+  - How to
   - Terminal
   - Pop!_OS
   - Linux

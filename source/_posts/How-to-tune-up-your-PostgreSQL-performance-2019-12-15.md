@@ -1,7 +1,7 @@
 ---
 title: How to tune up your PostgreSQL performance
 tags:
-  - How To
+  - How to
   - Postgres
   - Performance
   - DB

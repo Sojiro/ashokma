@@ -2,7 +2,7 @@
 title: How to configure PostgreSQL to accept all incoming connections
 tags:
   - Blog
-  - How To
+  - How to
   - Postgres
   - Docker
 icon: fab fa-docker

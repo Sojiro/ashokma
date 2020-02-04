@@ -1,7 +1,7 @@
 ---
 title: How to add quick night mode to your blog
 tags:
-  - How To
+  - How to
   - Blog
   - CSS3
   - HTML

@@ -1,7 +1,7 @@
 ---
 title: How to Turn Off Autocomplete for Input
 tags:
-  - How To
+  - How to
   - HTML
   - Web Browser
 icon: fab fa-html5

@@ -1,7 +1,7 @@
 ---
 title: How to reverse a string in JavaScript
 tags:
-  - How To
+  - How to
   - String
   - JS
 icon: fab fa-js-square

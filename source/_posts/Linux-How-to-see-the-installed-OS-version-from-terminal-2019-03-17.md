@@ -2,7 +2,7 @@
 title: 'Linux: How to see the installed OS version from terminal'
 tags:
   - Blog
-  - How To
+  - How to
   - Linux
   - Pop!_OS
   - Terminal Usage

@@ -1,7 +1,7 @@
 ---
 title: How to create a custom checkbox with just CSS
 tags:
-  - How To
+  - How to
   - CSS3
   - Pseudo classes
   - Custom

@@ -1,7 +1,7 @@
 ---
 title: 'Spring Boot: How to include a @Configuration from a dependency'
 tags:
-    - How To
+    - How to
     - Spring Boot
     - Java
 icon: fab fa-java

@@ -1,7 +1,7 @@
 ---
 title: How to publish and subscribe to a topic in mosquitto
 tags:
-  - How To
+  - How to
   - Blog
   - Docker
   - Mosquitto

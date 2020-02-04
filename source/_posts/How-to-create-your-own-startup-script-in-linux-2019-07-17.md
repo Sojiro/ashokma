@@ -1,7 +1,7 @@
 ---
 title: How to create your own startup script in linux
 tags:
-  - How To
+  - How to
   - Bash
   - Shell
   - Linux

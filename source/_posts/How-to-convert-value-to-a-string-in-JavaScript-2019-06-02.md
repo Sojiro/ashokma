@@ -1,7 +1,7 @@
 ---
 title: How to convert value to a string in JavaScript
 tags:
-  - How To
+  - How to
   - String
   - JS
   - ES6

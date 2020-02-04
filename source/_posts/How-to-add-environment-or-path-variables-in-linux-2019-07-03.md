@@ -1,7 +1,7 @@
 ---
 title: How to add environment or path variables in linux
 tags:
-  - How To
+  - How to
   - Pop!_OS
   - Linux
   - Terminal Usage

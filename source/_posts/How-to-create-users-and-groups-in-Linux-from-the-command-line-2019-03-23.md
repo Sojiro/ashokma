@@ -2,7 +2,7 @@
 title: How to create users and groups in Linux from the command line
 tags:
   - Tutorial
-  - How To
+  - How to
   - Pop!_OS
   - Linux
   - Terminal Usage

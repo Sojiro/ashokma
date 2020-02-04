@@ -1,7 +1,7 @@
 ---
 title: How to get a list of files in a directory using Bash
 tags:
-  - How To
+  - How to
   - Linux
   - Bash
   - Shell

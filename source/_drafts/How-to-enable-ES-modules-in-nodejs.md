@@ -1,6 +1,6 @@
 ---
 title: How to enable ES modules in nodejs
-tags: [How To, ES6, nodejs]
+tags: [How to, ES6, nodejs]
 icon: fab fa-node
 ---
 

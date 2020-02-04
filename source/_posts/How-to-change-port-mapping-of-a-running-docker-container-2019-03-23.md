@@ -2,7 +2,7 @@
 title: How to change port mapping of a running docker container
 tags:
   - Blog
-  - How To
+  - How to
   - Docker
   - Pop!_OS
   - Linux

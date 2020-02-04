@@ -1,7 +1,7 @@
 ---
 title: How to sort lines in a file using bash
 tags:
-  - How To
+  - How to
   - Linux
   - Bash
   - Shell

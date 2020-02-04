@@ -2,7 +2,7 @@
 title: How to extract tar.gz file in linux
 tags:
   - Blog
-  - How To
+  - How to
   - Linux
   - Pop!_OS
   - Terminal Usage

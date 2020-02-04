@@ -1,7 +1,7 @@
 ---
 title: CSS pseudo elements and how to use them
 tags:
-  - How To
+  - How to
   - CSS
   - Pseudo classes
 icon: fab fa-css3-alt

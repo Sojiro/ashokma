@@ -1,7 +1,7 @@
 ---
 title: How to toggle a css class of an element
 tags:
-  - How To
+  - How to
   - CSS
   - JavaScript
 icon: fab fa-css3-alt

@@ -2,7 +2,7 @@
 title: How to Change File Ownership & Groups in Linux
 tags:
   - Tutorial
-  - How To
+  - How to
   - Pop!_OS
   - Linux
   - Terminal Usage

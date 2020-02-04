@@ -1,7 +1,7 @@
 ---
 title: How to debug JavaScript effectively
 tags:
-  - How To
+  - How to
   - Debug
   - JS
 icon: fab fa-js-square

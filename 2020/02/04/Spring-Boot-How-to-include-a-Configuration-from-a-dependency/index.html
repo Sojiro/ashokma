@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my [stack][1], I use Sp">
+    <meta name="description" content="As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my stack, I use Spring ">
     
 
     <!--Author-->
@@ -187,9 +187,9 @@
                     
 
                     <!-- Main Post Content -->
-                    <p>As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my [stack][1], I use Spring Boot with Java for BE mostly.</p>
+                    <p>As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my <a href="/me/#Stack">stack</a>, I use Spring Boot with Java for BE mostly.</p>
 <p>I have recently encountered a situation where I need to include only one <code>@Configuration</code> of a library.</p>
-<p>As per the [docs][2], we can do using <code>@Import</code> annotation.</p>
+<p>As per the <a href="https://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/html/ch04s03.html" target="_blank" rel="noopener">docs</a>, we can do using <code>@Import</code> annotation.</p>
 <p>If following is the library config that I want to import,</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SharedLibConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SharedBean <span class="title">sharedBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SharedBean(...);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>then we just have to import this config in our configurations as follows:</p>

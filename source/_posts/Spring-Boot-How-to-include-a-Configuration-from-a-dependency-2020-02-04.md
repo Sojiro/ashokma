@@ -1,13 +1,12 @@
 ---
 title: 'Spring Boot: How to include a @Configuration from a dependency'
 tags:
-  - How To
-  - Spring Boot
-  - Java
+    - How To
+    - Spring Boot
+    - Java
 icon: fab fa-java
 date: 2020-02-04 12:16:11
 ---
-
 
 As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my [stack][1], I use Spring Boot with Java for BE mostly.
 
@@ -36,3 +35,6 @@ public class AppConfig extends ConfigurationSupport {
     // @Bean methods here we can reference @Bean methods in SharedLibConfig or AnotherSharedLibConfig.
 }
 ```
+
+[1]: /me/#Stack
+[2]: https://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/html/ch04s03.html

@@ -10,11 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="Start by updating the packages list by typing:
-1$ sudo apt update
-Install nodejs using the apt package manager:
-1$ sudo apt install nodejs npm
-The Nod">
+    <meta name="description" content="As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my [stack][1], I use Sp">
     
 
     <!--Author-->
@@ -24,7 +20,7 @@ The Nod">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Install nodejs and npm in Pop!_OS">
+    <meta property="og:title" content="Spring Boot: How to include a @Configuration from a dependency">
     
 
     <!--Open Graph Description-->
@@ -46,7 +42,7 @@ The Nod">
 
     <!-- Title -->
     
-    <title>Install nodejs and npm in Pop!_OS - AshKeys</title>
+    <title>Spring Boot: How to include a @Configuration from a dependency - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -162,8 +158,8 @@ The Nod">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Install nodejs and npm in Pop!_OS</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-02-18</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Spring Boot: How to include a @Configuration from a dependency</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-04</p>
             
         </div>
     </div>
@@ -171,7 +167,7 @@ The Nod">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-node fa-npm"></i>
+        <i class="header-icon fab fa-java"></i>
     </div>
 </div>
 
@@ -185,26 +181,25 @@ The Nod">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a> <a class="fw3 ph1 dib" href="/tags/npm/">#npm</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/Spring-Boot/">#Spring Boot</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Start by updating the packages list by typing:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update</span><br></pre></td></tr></table></figure>
-<p>Install <code>nodejs</code> using the <code>apt</code> package manager:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install nodejs npm</span><br></pre></td></tr></table></figure>
-<p>The Node.js executable from the Ubuntu repositories is named <code>nodejs</code> instead of node because of a conflict with another package.</p>
-<p>To launch the <a href="//www.tutorialspoint.com/nodejs/nodejs_repl_terminal.htm">REPL Terminal</a>: (Pressing <code>Ctrl + C</code> twice exits!)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nodejs</span><br></pre></td></tr></table></figure>
-<p>To verify the installation execute the following command:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v &amp;&amp; npm -v</span><br></pre></td></tr></table></figure>
+                    <p>As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my [stack][1], I use Spring Boot with Java for BE mostly.</p>
+<p>I have recently encountered a situation where I need to include only one <code>@Configuration</code> of a library.</p>
+<p>As per the [docs][2], we can do using <code>@Import</code> annotation.</p>
+<p>If following is the library config that I want to import,</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SharedLibConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SharedBean <span class="title">sharedBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SharedBean(...);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>then we just have to import this config in our configurations as follows:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Import</span>(&#123; SharedLibConfig.class, AnotherSharedLibConfig.class &#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppConfig</span> <span class="keyword">extends</span> <span class="title">ConfigurationSupport</span> </span>&#123;</span><br><span class="line">    <span class="comment">// @Bean methods here we can reference @Bean methods in SharedLibConfig or AnotherSharedLibConfig.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a> <a class="fw3 ph1 dib" href="/tags/npm/">#npm</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-To/">#How To</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/Spring-Boot/">#Spring Boot</a>
                         </div>
                     
 

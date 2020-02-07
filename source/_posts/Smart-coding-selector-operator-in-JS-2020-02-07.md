@@ -3,10 +3,9 @@ title: 'Smart coding: selector operator in JS'
 tags:
   - How to
   - JavaScript
-icon: fab js-square
+icon: fab fa-js-square
 date: 2020-02-07 23:10:38
 ---
-
 
 ## What is Smart coding?
 

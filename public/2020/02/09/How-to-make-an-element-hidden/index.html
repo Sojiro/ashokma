@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Most of you know about ::before and ::after CSS peudo elements from the create your own custom checkbox post or from the usecases for ::first-child an">
+    <meta name="description" content="There are multiple ways to make an element not visible to the user. The following are top three of those.
+hidden123&amp;lt;span hidden&amp;gt;    You can&#39;t se">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="CSS pseudo elements and how to use them">
+    <meta property="og:title" content="How to make an element hidden">
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>CSS pseudo elements and how to use them - AshKeys</title>
+    <title>How to make an element hidden - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +159,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">CSS pseudo elements and how to use them</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-09-02</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to make an element hidden</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-09</p>
             
         </div>
     </div>
@@ -167,7 +168,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-css3-alt"></i>
+        <i class="header-icon fab fa-html5"></i>
     </div>
 </div>
 
@@ -181,22 +182,32 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/Pseudo-classes/">#Pseudo classes</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/HTML/">#HTML</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Most of you know about <code>::before</code> and <code>::after</code> CSS peudo elements from the <a href="/2019/08/26/How-to-create-a-custom-checkbox-with-just-CSS/">create your own custom checkbox post</a> or from <a href="/2019/06/10/Usecases-for-first-child-and-last-child-in-css/">the usecases for <code>::first-child</code> and <code>::last-child</code> post</a>. Let’s take a look at some other interesting peudo classes.</p>
-<div id="pseudo-elements"><link rel="preconnect" href="https://source.unsplash.com"><link rel="preconnect" href="https://pseudo-elements.netlify.com"><link rel="stylesheet" href="https://pseudo-elements.netlify.com/style-for-blog.css"><link rel="prefetch" href="https://source.unsplash.com/random"><h2 id="selection">::selection</h2>Applies styles to user selected text of an element like the paragraph below. Try selecting it.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: yellowgreen;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><h2 id="placeholder">::placeholder</h2><p>We see the custom placeholder styles for all input elements.</p><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::placeholder</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.6</span>;</span><br><span class="line">  <span class="attribute">font-family</span>: monospace;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><div><input type="number" name="age" id="age" placeholder="Please enter your age..."><input type="email" name="email" id="email" placeholder="Please enter your email..."></div><h2 id="backdrop">::backdrop</h2><p>Backdrop is used to style the elements full screen box. Here in this example it is a dialog.</p><dialog id="dialog"><h2>This is the dialog</h2><form method="dialog"><button type="submit">Close</button></form><br></dialog><button onclick="document.getElementById('dialog').showModal()">Show Dialog</button></div>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::backdrop</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://source.unsplash.com/random);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                    <p>There are multiple ways to make an element not visible to the user. The following are top three of those.</p>
+<h2 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a><code>hidden</code></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">hidden</span>&gt;</span></span><br><span class="line">    You can't see me! -_-</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>One can still see this by inspecting the page using developer tools.</p>
+<h2 id="display-none"><a href="#display-none" class="headerlink" title="display: none"></a><code>display: none</code></h2><p>This is the CSS version of <code>hidden</code> attribute.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;secret&quot;&gt;</span><br><span class="line">    Keep it safe! O_o</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#tribute</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Trivia:</strong> When we set the <code>hidden</code> attribute, the browser actually sets the <code>display: none;</code> to the respective element. Check it yourself ^_^!</p>
+</blockquote>
+<h2 id="visibility-hidden"><a href="#visibility-hidden" class="headerlink" title="visibility: hidden"></a><code>visibility: hidden</code></h2><p>This does the same thing. But, there are some significant differences between <a href="//developer.mozilla.org/en-US/docs/Web/CSS/visibility"><code>visibility</code></a> and <a href="//developer.mozilla.org/en-US/docs/Web/CSS/display"> <code>display</code> </a> CSS properties.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#tribute</span> &#123;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> Use <code>display</code> option when you do not want the elements to be rendered and use <code>visibility</code> option when you do not want to mess up the layout while hiding elements.\O/</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/Pseudo-classes/">#Pseudo classes</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/HTML/">#HTML</a>
                         </div>
                     
 

@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Even though the word pseudo means not real or fake, peudo classes of CSS are not of those. They come more meaningful with their specific use cases. Le">
+    <meta name="description" content="Sorting an array in JavaScript is handy with sort array method.
+12345const names = [&#39;Sojiro&#39;, &#39;åshKeys&#39;, &#39;Sakaßato&#39;, &#39;Ashok M A&#39;, &#39;Zin&#39;, &#39;Kenshin&#39;, &#39;H">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Usecases for first-child and last-child in CSS">
+    <meta property="og:title" content="How to sort an array in JavaScript">
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Usecases for first-child and last-child in CSS - AshKeys</title>
+    <title>How to sort an array in JavaScript - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +159,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Usecases for first-child and last-child in CSS</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-06-10</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to sort an array in JavaScript</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-15</p>
             
         </div>
     </div>
@@ -167,7 +168,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-css3-alt"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -181,27 +182,26 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/Pseudo-classes/">#Pseudo classes</a> <a class="fw3 ph1 dib" href="/tags/Usecase/">#Usecase</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Even though the word pseudo means <em>not real</em> or <em>fake</em>, peudo classes of CSS are not of those. They come more meaningful with their specific use cases. Let us take a look at two of those pseudo classes in this blog.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>As we have our rating numbers, now we want to notify the user which is the low and the high end. We can do the same using our fancy <code>first-child</code> and <code>last-child</code> pseudo classes.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:first-child</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: greenyellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="first-child_last-child.png" alt="Highlighting first and last numbers" title="Highlighting first and last numbers"></p>
-<p>Below we use the same peudo classes to highlight a table’s header and footer. ^_^</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>Tech Stack<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>JS<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>Angular<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>GraphQL<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>Total - 5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">section</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: gray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="first-row_last-row.png" alt="Highlighting first and last rows" title="Highlighting first and last rows"></p>
+                    <p>Sorting an array in JavaScript is handy with <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><code>sort</code></a> array method.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> names = [<span class="string">'Sojiro'</span>, <span class="string">'åshKeys'</span>, <span class="string">'Sakaßato'</span>, <span class="string">'Ashok M A'</span>, <span class="string">'Zin'</span>, <span class="string">'Kenshin'</span>, <span class="string">'Himura'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sortedNames = names.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.localeCompare(b));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.table(sortedNames);</span><br></pre></td></tr></table></figure>
+<p>The above gives the following sorted array in table format as we used <a href="/2019/09/30/How-to-debug-JavaScript-effectively/#console-table"><code>console.table</code></a>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">┌─────────┬─────────────┐</span><br><span class="line">│ (index) │   Values    │</span><br><span class="line">├─────────┼─────────────┤</span><br><span class="line">│    <span class="number">0</span>    │  <span class="string">'åshKeys'</span>  │</span><br><span class="line">│    <span class="number">1</span>    │ <span class="string">'Ashok M A'</span> │</span><br><span class="line">│    <span class="number">2</span>    │  <span class="string">'Himura'</span>   │</span><br><span class="line">│    <span class="number">3</span>    │  <span class="string">'Kenshin'</span>  │</span><br><span class="line">│    <span class="number">4</span>    │ <span class="string">'Sakaßato'</span>  │</span><br><span class="line">│    <span class="number">5</span>    │  <span class="string">'Sojiro'</span>   │</span><br><span class="line">│    <span class="number">6</span>    │    <span class="string">'Zin'</span>    │</span><br><span class="line">└─────────┴─────────────┘</span><br></pre></td></tr></table></figure>
+<p>Notice that we used <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare"><code>localeCompare</code></a> as our sorting method. It is really useful for comparing strings from different locales. \O/</p>
+<blockquote>
+<p><strong>Tip:</strong> By default it takes it by the base of the letters irrespective of their locales as you can see in our example as well. ^_^</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/Pseudo-classes/">#Pseudo classes</a> <a class="fw3 ph1 dib" href="/tags/Usecase/">#Usecase</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
                         </div>
                     
 

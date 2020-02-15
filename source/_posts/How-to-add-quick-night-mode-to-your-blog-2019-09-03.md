@@ -43,7 +43,7 @@ body {
 
 We need the night mode but also where people can read the lines without streching their eyes wide. So, I ended up with the above styles. It was challenging to find the perfect one for images though. O_o
 
-> **Tip:** Always use some preprocessors like [`SASS`](https://sass-lang.com/) I used here. It saves a lot of time by reducing the duplication and increasing the readability. More over, we can groupd the styles properly.
+> **Tip:** Always use some preprocessors like [`SASS`](https://sass-lang.com/) I used here. It saves a lot of time by reducing the duplication and increasing the readability. More over, we can group the styles properly.
 
 ## HTML Part
 

@@ -1,12 +1,13 @@
 ---
 title: 'Smart coding: destructuring in JavaScript'
 tags:
-  - Smart coding
-  - JS
+
+  + Smart coding
+  + JS
+
 icon: fab fa-js-square
 date: 2020-02-16 22:37:55
 ---
-
 
 [Destructuring assignment][1] is the best one that came with latest JS features.
 
@@ -36,7 +37,7 @@ const [max, min] = [80, 20];
 console.log( `Min - ${min}; Max - ${max}` );
 ```
 
-**Tip:** We can swap numbers using the same. `[a, b] = [b, a]` 
+**Tip:** We can swap values using the same. `[a, b] = [b, a]` 
 
 [1]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 

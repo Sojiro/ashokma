@@ -1,9 +1,8 @@
 ---
 title: 'Smart coding: selector operator in JS'
 tags:
-
-  + JS
-  + Smart coding
+  - JS
+  - Smart coding
 
 icon: fab fa-js-square
 date: 2020-02-07 23:10:38

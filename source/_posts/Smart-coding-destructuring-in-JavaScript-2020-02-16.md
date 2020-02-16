@@ -1,9 +1,8 @@
 ---
 title: 'Smart coding: destructuring in JavaScript'
 tags:
-
-  + Smart coding
-  + JS
+  - Smart coding
+  - JS
 
 icon: fab fa-js-square
 date: 2020-02-16 22:37:55

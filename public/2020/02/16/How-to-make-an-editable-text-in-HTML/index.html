@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Most of you know about ::before and ::after CSS peudo elements from the create your own custom checkbox post or from the usecases for ::first-child an">
+    <meta name="description" content="Sometime making a text element editable makes sense such as div , span or p than having to create a text input field.
+We can do the same using the con">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="CSS pseudo elements and how to use them">
+    <meta property="og:title" content="How to make an editable text in HTML">
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>CSS pseudo elements and how to use them - AshKeys</title>
+    <title>How to make an editable text in HTML - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +159,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">CSS pseudo elements and how to use them</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-09-02</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to make an editable text in HTML</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-16</p>
             
         </div>
     </div>
@@ -167,7 +168,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-css3-alt"></i>
+        <i class="header-icon fab fa-html5"></i>
     </div>
 </div>
 
@@ -181,22 +182,27 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/Pseudo-classes/">#Pseudo classes</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/HTML5/">#HTML5</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Most of you know about <code>::before</code> and <code>::after</code> CSS peudo elements from the <a href="/2019/08/26/How-to-create-a-custom-checkbox-with-just-CSS/">create your own custom checkbox post</a> or from <a href="/2019/06/10/Usecases-for-first-child-and-last-child-in-css/">the usecases for <code>::first-child</code> and <code>::last-child</code> post</a>. Let’s take a look at some other interesting peudo classes.</p>
-<div id="pseudo-elements"><link rel="preconnect" href="https://source.unsplash.com"><link rel="preconnect" href="https://pseudo-elements.netlify.com"><link rel="stylesheet" href="https://pseudo-elements.netlify.com/style-for-blog.css"><link rel="prefetch" href="https://source.unsplash.com/random"><h2 id="selection">::selection</h2>Applies styles to user selected text of an element like the paragraph below. Try selecting it.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: yellowgreen;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><h2 id="placeholder">::placeholder</h2><p>We see the custom placeholder styles for all input elements.</p><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::placeholder</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.6</span>;</span><br><span class="line">  <span class="attribute">font-family</span>: monospace;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><div><input type="number" name="age" id="age" placeholder="Please enter your age..."><input type="email" name="email" id="email" placeholder="Please enter your email..."></div><h2 id="backdrop">::backdrop</h2><p>Backdrop is used to style the elements full screen box. Here in this example it is a dialog.</p><dialog id="dialog"><h2>This is the dialog</h2><form method="dialog"><button type="submit">Close</button></form><br></dialog><button onclick="document.getElementById('dialog').showModal()">Show Dialog</button></div>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::backdrop</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://source.unsplash.com/random);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                    <p>Sometime making a text element editable makes sense such as <code>div</code> , <code>span</code> or <code>p</code> than having to create a text <code>input</code> field.</p>
+<p>We can do the same using the <code>contenteditable</code> attribute of those elements.^_^</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            cursor: pointer;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">div</span><span class="selector-pseudo">:focus</span> &#123;</span></span><br><span class="line"><span class="undefined">            cursor: text;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span>=<span class="string">"true"</span>&gt;</span>This is editable!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> It comes really handy with one-way binding situations with frameworks like Angular/React/Vue.\O/</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> <code>contenteditable</code> attribute is only available in HTML5 O_o</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/Pseudo-classes/">#Pseudo classes</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/HTML5/">#HTML5</a>
                         </div>
                     
 

@@ -182,7 +182,7 @@ I like to stree the above ">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                                <a class="fw3 ph1 dib" href="/tags/JS-Smart-coding/">#+ JS + Smart coding</a>
                             </div>
                         </div>
                     
@@ -190,12 +190,12 @@ I like to stree the above ">
                     <!-- Main Post Content -->
                     <h2 id="What-is-Smart-coding"><a href="#What-is-Smart-coding" class="headerlink" title="What is Smart coding?"></a>What is Smart coding?</h2><p>Smart coding is coding the logic in precise, consice and readable at the sametime maintainable manner.</p>
 <p>I like to stree the above meaning in all the upcoming post under this series (Yes, you can expect more coming up) ^_^.</p>
-<h2 id="Selector-Operator"><a href="#Selector-Operator" class="headerlink" title="Selector Operator(||)"></a>Selector Operator(<code>||</code>)</h2><p>Yes, I like calling it <strong>selector operator</strong> as per its usuage.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    name = name || <span class="string">'guest'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(<span class="string">'Ashkeys'</span>); <span class="comment">// Hello Ashkeys</span></span><br></pre></td></tr></table></figure>
+<h2 id="Selector-Operator"><a href="#Selector-Operator" class="headerlink" title="Selector Operator( || )"></a>Selector Operator( <code>||</code> )</h2><p>Yes, I like calling it <strong>selector operator</strong> as per its usuage.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    name = name || <span class="string">'guest'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span> );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(<span class="string">'Ashkeys'</span>); <span class="comment">// Hello Ashkeys</span></span><br></pre></td></tr></table></figure>
 <p>We can achieve the same using the following approach too.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">name = <span class="string">'guest'</span></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(<span class="string">'Ashkeys'</span>); <span class="comment">// Hello Ashkeys</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">name = <span class="string">'guest'</span></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">`Hello <span class="subst">$&#123;name&#125;</span>`</span> );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">greet(<span class="string">'Ashkeys'</span>); <span class="comment">// Hello Ashkeys</span></span><br></pre></td></tr></table></figure>
 <p>The problem with the default argument value approach is that it will fail for empty string or null value.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">greet(<span class="literal">null</span>); <span class="comment">// Hello null</span></span><br><span class="line">greet(<span class="string">''</span>);   <span class="comment">// Hello</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">greet(<span class="literal">null</span>); <span class="comment">// Hello null</span></span><br><span class="line">greet(<span class="string">''</span>); <span class="comment">// Hello</span></span><br></pre></td></tr></table></figure>
 <p>So, prefer the selector operator over the default argument value assignment.</p>
 <blockquote>
 <p><strong>Tip:</strong> We can also call a function or evaluate an expression to determine the default value like <code>name = name || determineDefaultName();</code> \O/</p>
@@ -205,7 +205,7 @@ I like to stree the above ">
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/JS-Smart-coding/">#+ JS + Smart coding</a>
                         </div>
                     
 
@@ -241,6 +241,10 @@ I like to stree the above ">
     <h3>Recent Posts</h3>
     
         <p>
+            <a href="/2020/02/16/Smart-coding-destructuring-in-JavaScript/">Smart coding: destructuring in JavaScript</a>
+        </p>
+    
+        <p>
             <a href="/2020/02/16/How-to-repeat-a-string-in-JavaScript/">How to repeat a string in JavaScript</a>
         </p>
     
@@ -254,10 +258,6 @@ I like to stree the above ">
     
         <p>
             <a href="/2020/02/09/How-to-make-an-element-hidden/">How to make an element hidden</a>
-        </p>
-    
-        <p>
-            <a href="/2020/02/09/What-is-IIFE/">What is IIFE</a>
         </p>
     
 </div>

@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Recently, I have been doing a lot of shell scripting to automate some time consuming manual processes. For instance, read configuration using xslt tra">
+    <meta name="description" content="Short circuit expressions are simply cute and compact.^_^
+It can be used as a fail-fast mechanism like if you want to do specific actions only when a ">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to get a list of files in a directory using Bash">
+    <meta property="og:title" content="Smart coding: short-circuit expression in JavaScript">
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>How to get a list of files in a directory using Bash - AshKeys</title>
+    <title>Smart coding: short-circuit expression in JavaScript - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +159,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to get a list of files in a directory using Bash</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-05-23</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Smart coding: short-circuit expression in JavaScript</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-22</p>
             
         </div>
     </div>
@@ -167,7 +168,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-terminal"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -181,25 +182,26 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
+                                <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Smart-coding/">#Smart coding</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Recently, I have been doing a lot of <code>shell</code> scripting to automate some time consuming manual processes. For instance, read configuration using <code>xslt</code> transformation stylesheets. &gt;_O Though it was painful to my eyes, once done I felt bit proud of myself learning something new. (Yes, <code>XSLT</code> you go to my <em>Skills List</em> ^_^)</p>
-<p>As part of that process, I had to iterate files in a configuration folder for transformation into <code>.json</code> files. We shall come to that later. Now, let’s see the shell script to list out the files in a folder.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> /home/ashokma/ashkeys/config/*;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ ! -d <span class="variable">$&#123;f&#125;</span> ]]; <span class="comment"># Not if it is sub-directory.</span></span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">"File Name with full path - <span class="variable">$&#123;f&#125;</span>"</span></span><br><span class="line">        <span class="built_in">echo</span> -e <span class="string">"File Name with extension - <span class="variable">$(basename $&#123;f&#125;)</span>"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Tip:</strong> You can strip the extension away from the file using this snippet: <br></p>
-<p><code>echo -e &quot;File Name with extension - $(basename $(echo &quot;$f&quot; | cut -f 1 -d &#39;.&#39;))&quot;</code></p>
-</blockquote>
+                    <p>Short circuit expressions are simply cute and compact.^_^</p>
+<p>It can be used as a fail-fast mechanism like if you want to do specific actions only when a case is true.</p>
+<p>Yes, you heard that right to simplify the <code>if</code> cases in general. Take a look at the approach below:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isOnline = system.online();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (isOnline) &#123;</span><br><span class="line">    <span class="keyword">const</span> data = fetchData();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now we can simplify this using the short-circuit expression as follows:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = system.online() &amp;&amp; fetchData();</span><br></pre></td></tr></table></figure>
+<p>Isn’t she a beauty! \O/</p>
+<p><strong>Note:</strong> Yes, the return value of the last expression will be assigned to the <code>data</code> .</p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Smart-coding/">#Smart coding</a>
                         </div>
                     
 

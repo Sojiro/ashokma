@@ -10,8 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Everyday, as soon as I logged into my linux machine, in order to start working, I had to open up some IDEs and run docker containers.
-I decided to aut">
+    <meta name="description" content="Regex stands for regular expression and it is so awesome when it comes to string manipulations.
+In JS, a regular expression is enclosed with /&amp;lt;rege">
     
 
     <!--Author-->
@@ -21,7 +21,7 @@ I decided to aut">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to create your own startup script in linux">
+    <meta property="og:title" content="How to use regular expressions in JS">
     
 
     <!--Open Graph Description-->
@@ -43,7 +43,7 @@ I decided to aut">
 
     <!-- Title -->
     
-    <title>How to create your own startup script in linux - AshKeys</title>
+    <title>How to use regular expressions in JS - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -159,8 +159,8 @@ I decided to aut">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to create your own startup script in linux</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-07-17</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to use regular expressions in JS</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-26</p>
             
         </div>
     </div>
@@ -168,7 +168,7 @@ I decided to aut">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-linux"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -182,32 +182,26 @@ I decided to aut">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Regex/">#Regex</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Everyday, as soon as I logged into my linux machine, in order to start working, I had to open up some IDEs and run <code>docker</code> containers.</p>
-<p>I decided to automate this as part of my startup process. It is so easy with linux. ^_^</p>
-<p>In this <a href="/2019/07/03/How-to-add-environment-or-path-variables-in-linux/#Add-to-path-variable">post</a>, we talked about adding the environment variables by updating the <code>.bashrc</code> startup script. It can do more than that!</p>
-<p>First, list out the things you do repeatedly during the startup of your machine and add those commands or startup steps at the end of <code>.bashrc</code> file as follows:</p>
-<p>Below are the steps I was repeating everyday. &gt;_O I know it is not much but we are developers! We should be lazy to do repeated stuffs and automate them instead \O/</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Starting the database</span></span><br><span class="line">docker start postgres</span><br><span class="line"></span><br><span class="line"><span class="comment"># Launch the VSCode for FE Dev.</span></span><br><span class="line">code /home/ashkeys/ashokma.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># Launch IntelliJ IDE for BE Dev.</span></span><br><span class="line">/home/ashkeys/apps/idea-IC-183.5912.21/bin/idea.sh &amp;</span><br></pre></td></tr></table></figure>
-<p>To see it happening rightaway just <a href="/2019/07/03/How-to-add-environment-or-path-variables-in-linux/#Load-the-configs">load the configs</a>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> /home/ashkeys/.bashrc</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Tip:</strong> It is not just about launching IDEs and such. We can also <code>git pull</code> any changes to keep our code updated before we start working or make the linux <code>clean build</code> our app in the meantime we get our coffee ^_^</p>
-</blockquote>
-<blockquote>
-<p><strong>Caution:</strong> Do remember that the script will be executed for each shell session that is for each Terminal launch as it loads the profile per launch. /O\/O\</p>
-</blockquote>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener">Regex</a> stands for regular expression and it is so awesome when it comes to string manipulations.</p>
+<p>In JS, a regular expression is enclosed with <code>/&lt;regex&gt;/</code> .</p>
+<p>Let’s take a look at few usecases.</p>
+<h2 id="To-select-a-complete-word"><a href="#To-select-a-complete-word" class="headerlink" title="To select a complete word"></a>To select a complete word</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> site = <span class="string">'AshKeys'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(site.match(<span class="regexp">/AshKeys/g</span>)); <span class="comment">// [ 'AshKeys' ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="This-or-that-part"><a href="#This-or-that-part" class="headerlink" title="This or that part"></a>This or that part</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> site = <span class="string">'AshKeys'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(site.match(<span class="regexp">/Ash|Keys/g</span>)); <span class="comment">// [ 'Ash', 'Keys' ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="This-or-that-word"><a href="#This-or-that-word" class="headerlink" title="This or that word"></a>This or that word</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site = <span class="string">'AshKeys'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(site.match(<span class="regexp">/Ash(Talks|Keys)/g</span>)); <span class="comment">// [ 'AshKeys', 'AshTalks' ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Starts-with"><a href="#Starts-with" class="headerlink" title="Starts with"></a>Starts with</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site = <span class="string">'AshKeys or AshTalks'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/^Ash/</span>.test(site)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Ends-with"><a href="#Ends-with" class="headerlink" title="Ends with"></a>Ends with</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site = <span class="string">'AshKeys or AshTalks'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="regexp">/Talks$/</span>.test(site)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Bash/">#Bash</a> <a class="fw3 ph1 dib" href="/tags/Shell/">#Shell</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Regex/">#Regex</a>
                         </div>
                     
 

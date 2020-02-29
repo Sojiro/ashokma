@@ -10,7 +10,9 @@
 
     <!--Description-->
     
-    <meta name="description" content="I am exploring Golang as C and C++ are the main languages being used in the company I work now. Even though I do not see a future where I have to code">
+    <meta name="description" content="As the  systemctl  is used to start and stop services,  journalctrl  keeps the logs of those services.
+System Control1$ systemctl status ashokma.com
+J">
     
 
     <!--Author-->
@@ -20,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to add environment or path variables in linux">
+    <meta property="og:title" content="How to check the logs of system service">
     
 
     <!--Open Graph Description-->
@@ -42,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>How to add environment or path variables in linux - AshKeys</title>
+    <title>How to check the logs of system service - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +160,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to add environment or path variables in linux</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-07-03</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to check the logs of system service</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-29</p>
             
         </div>
     </div>
@@ -181,29 +183,23 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
+                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>I am exploring <code>Golang</code> as <code>C</code> and <code>C++</code> are the main languages being used in the company I work now. Even though I do not see a future where I have to code in <code>Golang</code>, I just wanted to explore the <code>Hello World</code> with it.</p>
-<p>Instead of installing it as part of package manager, this time I downloaded the binaries and wanted to set the environment path containing <code>go</code> command file.</p>
-<h1 id="Download-the-binaries"><a href="#Download-the-binaries" class="headerlink" title="Download the binaries."></a>Download the binaries.</h1><p>Go to <a href="//golang.org/dl/"><code>golang</code> download page</a> and download the version you want for linux.</p>
-<p>Explod the same as following:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar xvzf ./go1.12.6.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure>
-<h1 id="Add-to-path-variable"><a href="#Add-to-path-variable" class="headerlink" title="Add to path variable"></a>Add to path variable</h1><p>Add the following entry at the end of the <code>.bashrc</code> file under your home directory (<code>/home/ashokma/.bashrc</code>)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GOPATH=/home/ashokma/projects/go</span><br><span class="line"><span class="built_in">export</span> GOROOT=/home/golang</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;GOROOT&#125;</span>/bin:<span class="variable">$&#123;GOPATH&#125;</span>/bin</span><br></pre></td></tr></table></figure>
-<h1 id="Load-the-configs"><a href="#Load-the-configs" class="headerlink" title="Load the configs:"></a>Load the configs:</h1><p>Unlike other systems, in linux we can just load the startup configs using <code>source</code> util.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> /home/ashokma/.bashrc</span><br></pre></td></tr></table></figure>
-<p>Vola \O/ That is it! Now, when we try the <code>go</code> in terminal linux knows where to find it.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> go</span></span><br><span class="line">Go is a tool for managing Go source code.</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">go &lt;command&gt; [arguments]</span><br></pre></td></tr></table></figure>
+                    <p>As the <a href="//wiki.archlinux.org/index.php/systemd"> <code>systemctl</code> </a> is used to start and stop services, <a href="//wiki.archlinux.org/index.php/Systemd/Journal"> <code>journalctrl</code> </a> keeps the logs of those services.</p>
+<h2 id="System-Control"><a href="#System-Control" class="headerlink" title="System Control"></a>System Control</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl status ashokma.com</span><br></pre></td></tr></table></figure>
+<h2 id="Journal-Control"><a href="#Journal-Control" class="headerlink" title="Journal Control"></a>Journal Control</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ journalctl -u ashokma.com</span><br></pre></td></tr></table></figure>
+<p><strong>Tip:</strong> Use the <code>-f</code> to follow the logs as the services run.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ journalctl -u ashokma.com -f</span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal-Usage/">#Terminal Usage</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
                         </div>
                     
 

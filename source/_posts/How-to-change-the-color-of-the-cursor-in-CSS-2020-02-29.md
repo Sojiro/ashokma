@@ -12,9 +12,9 @@ date: 2020-02-29 15:42:55
 
 To set a specific color.
 
-<span style="caret-color: red; cursor: pointer;" contenteditable="true">
-Click here and see the red caret ^_^
-</span>
+<span 
+  style="caret-color: red; cursor: pointer;"
+  contenteditable="true">Click here and see the red caret ^_^</span>
 
 ``` css
 span {

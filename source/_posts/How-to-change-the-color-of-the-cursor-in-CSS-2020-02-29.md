@@ -12,12 +12,12 @@ date: 2020-02-29 15:42:55
 
 To set a specific color.
 
-<div style="caret-color: red; " contenteditable="true">
+<span style="caret-color: red; cursor: pointer;" contenteditable="true">
 Click here and see the red caret ^_^
-</div>
+</span>
 
 ``` css
-div {
+span {
     caret-color: red;
 }
 ```

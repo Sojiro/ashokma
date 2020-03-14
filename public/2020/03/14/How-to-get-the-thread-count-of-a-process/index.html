@@ -10,8 +10,9 @@
 
     <!--Description-->
     
-    <meta name="description" content="Sorting an array in JavaScript is handy with sort array method.
-12345const names = [&#39;Sojiro&#39;, &#39;åshKeys&#39;, &#39;Sakaßato&#39;, &#39;Ashok M A&#39;, &#39;Zin&#39;, &#39;Kenshin&#39;, &#39;H">
+    <meta name="description" content="I recently had to check the number of threads being created by a process, for instance, a java application.
+We can do the same using the following:
+1$">
     
 
     <!--Author-->
@@ -21,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to sort an array in JavaScript">
+    <meta property="og:title" content="How to get the thread count of a process">
     
 
     <!--Open Graph Description-->
@@ -43,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>How to sort an array in JavaScript - AshKeys</title>
+    <title>How to get the thread count of a process - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -159,8 +160,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to sort an array in JavaScript</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-15</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to get the thread count of a process</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-03-14</p>
             
         </div>
     </div>
@@ -168,7 +169,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-js-square"></i>
+        <i class="header-icon fab fa-linux"></i>
     </div>
 </div>
 
@@ -182,26 +183,22 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
+                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Sorting an array in JavaScript is handy with <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"><code>sort</code></a> array method.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> names = [<span class="string">'Sojiro'</span>, <span class="string">'åshKeys'</span>, <span class="string">'Sakaßato'</span>, <span class="string">'Ashok M A'</span>, <span class="string">'Zin'</span>, <span class="string">'Kenshin'</span>, <span class="string">'Himura'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sortedNames = names.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.localeCompare(b));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.table(sortedNames);</span><br></pre></td></tr></table></figure>
-<p>The above gives the following sorted array in table format as we used <a href="/2019/09/30/How-to-debug-JavaScript-effectively/#console-table"><code>console.table</code></a>.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">┌─────────┬─────────────┐</span><br><span class="line">│ (index) │   Values    │</span><br><span class="line">├─────────┼─────────────┤</span><br><span class="line">│    <span class="number">0</span>    │  <span class="string">'åshKeys'</span>  │</span><br><span class="line">│    <span class="number">1</span>    │ <span class="string">'Ashok M A'</span> │</span><br><span class="line">│    <span class="number">2</span>    │  <span class="string">'Himura'</span>   │</span><br><span class="line">│    <span class="number">3</span>    │  <span class="string">'Kenshin'</span>  │</span><br><span class="line">│    <span class="number">4</span>    │ <span class="string">'Sakaßato'</span>  │</span><br><span class="line">│    <span class="number">5</span>    │  <span class="string">'Sojiro'</span>   │</span><br><span class="line">│    <span class="number">6</span>    │    <span class="string">'Zin'</span>    │</span><br><span class="line">└─────────┴─────────────┘</span><br></pre></td></tr></table></figure>
-<p>Notice that we used <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare"><code>localeCompare</code></a> as our sorting method. It is really useful for comparing strings from different locales. \O/</p>
-<blockquote>
-<p><strong>Tip:</strong> By default it takes it by the base of the letters irrespective of their locales as you can see in our example as well. ^_^</p>
-</blockquote>
-
+                    <p>I recently had to check the number of threads being created by a process, for instance, a java application.</p>
+<p>We can do the same using the following:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -o thcount &lt;pid&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Tip:</strong> Use <code>watch</code> to monitor the same every 2 seconds.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ watch ps -o thcount &lt;pid&gt;</span><br></pre></td></tr></table></figure>
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
                         </div>
                     
 

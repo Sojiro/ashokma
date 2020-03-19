@@ -10,8 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="To flat an array is easy in JavaScript using the  flat  array method.
-123const names = [&#39;AshKeys&#39;, [&#39;Sojiro&#39;, [&#39;Seta&#39;]]];console.log(names.flat(2)); /">
+    <meta name="description" content="There comes a situation where we need to change a number’s sign (+/-). We can do this in two ways:
+Math.abs()abs gives the absolute number irrespectiv">
     
 
     <!--Author-->
@@ -21,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to flatten an array in JavaScript">
+    <meta property="og:title" content="How to change the sign of a number in JS">
     
 
     <!--Open Graph Description-->
@@ -43,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>How to flatten an array in JavaScript - AshKeys</title>
+    <title>How to change the sign of a number in JS - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -159,8 +159,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to flatten an array in JavaScript</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-19</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to change the sign of a number in JS</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-03-19</p>
             
         </div>
     </div>
@@ -182,23 +182,23 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>To flat an array is easy in JavaScript using the <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat"> <code>flat</code> </a> array method.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> names = [<span class="string">'AshKeys'</span>, [<span class="string">'Sojiro'</span>, [<span class="string">'Seta'</span>]]];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(names.flat(<span class="number">2</span>)); <span class="comment">// ['AshKeys', 'Sojiro', 'Seta']</span></span><br></pre></td></tr></table></figure>
-<p>By default, it flattens to 1 depth but we do can supply the depth level to be flattened.</p>
-<p>If you do not know the depth you want, then it is better to give the max depth possible.<a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity">Infinity</a></p>
-<p><strong>Note:</strong> <code>flat</code> method is quite new to JS as it is specified in ES2019. I had to code the snippet in chrome console./O\</p>
+                    <p>There comes a situation where we need to change a number’s sign (+/-). We can do this in two ways:</p>
+<h2 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs" target="_blank" rel="noopener"><code>Math.abs()</code></a></h2><p><code>abs</code> gives the absolute number irrespective of a number’s sign.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> randomDiff = <span class="built_in">Math</span>.abs(<span class="built_in">Math</span>.random() - <span class="built_in">Math</span>.random());</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(randomDiff);</span><br></pre></td></tr></table></figure>
+<h2 id="Math-sign"><a href="#Math-sign" class="headerlink" title="Math.sign"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign" target="_blank" rel="noopener"><code>Math.sign</code></a></h2><p>On the other hand, <code>sign</code> returns the sign of a number as either <code>-1</code> or <code>1</code> or <code>0</code> if the number is <code>0</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> randomNumber = <span class="built_in">Math</span>.random() - <span class="built_in">Math</span>.random();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> randomDiff = <span class="built_in">Math</span>.sign(randomNumber) * randomNumber;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(randomDiff);</span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
                         </div>
                     
 

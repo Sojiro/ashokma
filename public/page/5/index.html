@@ -40,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>Political science - AshKeys</title>
+    <title>page - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -99,9 +99,7 @@
 <body>
 
     <!-- Main Content -->
-    
-
-<!-- Banner -->
+    <!-- Banner -->
 <!-- Banner -->
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
@@ -158,52 +156,73 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns"># Political science</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns"></p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">AshKeys</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">Confessions and Confusions of Ashok M A. Personal and Professional Blog.</p>
+            
+            <div id="quote"></div>
+            <div class="pl6 pl7-l pt4">
+                <span id="author"></span>
+            </div>
             
         </div>
     </div>
     
+    <script type="text/javascript">
+        fetch("//quote-generate.herokuapp.com")
+            .then(resp => resp.json())
+            .then(data => {
+                document.getElementById("quote").outerHTML = `<i class="fas fa-quote-left"></i> ${data.quote} <i class="fas fa-quote-right"></i>`;
+                document.getElementById("author").outerHTML = `<i class="fas fa-pen-fancy"></i> ${data.author}`;
+            });
+    </script>
+    
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon far fa-folder-open"></i>
+        <i class="header-icon far fa-star"></i>
     </div>
 </div>
 
+<!-- Content -->
 <div class="w-100 ph2 ph4-m ph5-l mv5">
     <div class="content">
         <div class="mw8 center">
             
-                <a href="/2020/03/25/Utrecht-University-Relevant-course-works-for-Masters-in-History-of-Politics-and-Society/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2020</span> 
-            
-        </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Utrecht University: Relevant course works for Masters in History of Politics and Society<span>
+                <a href="/2019/02/17/log/">
+    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv4">
+        <div class="dtc v-mid w-90 black-70">
+            <div>
+                
+                    <span class="f5 fw3 lh-copy pr4">2019-02-17</span> 
+                
+                
+                <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Journal/'; return false;">#Journal</span> <span class="fake-link fw3 ph1 dib" onclick="location.href = '/tags/Shukuchi/'; return false;">#Shukuchi</span>
+                
+            </div>
+            <span class="f3 fw3 lh-copy">Weekend ride to Weert<span>
         </span></span></div>
-    </div>
-</a>
-            
-                <a href="/2020/03/25/Utrecht-University-Motivation-letter-for-Masters-in-History-of-Politics-and-Society/">
-    <div class="dt w-100 hover-border-main-color pointer pa3 border-color bl mv3">
-        <div class="dtc v-mid w-20 black-50">
-            
-                <span class="f4 fw3 lh-copy">Mar 2020</span> 
-            
+        <div class="dtc v-mid w-10 f1 black-50 tr">
+            <i class="fas fa-journal-whills"></i>
         </div>
-        <div class="dtc v-mid w-80 black-70">
-            <span class="f4 fw3 lh-copy">Utrecht University: Motivation letter for Masters in History of Politics and Society<span>
-        </span></span></div>
     </div>
 </a>
             
         </div>
     </div>
+    
+    <div class="flex items-center justify-center pa4">
+        <a href="/page/4/" class="f5 no-underline inline-flex items-center pa3 ba border-box mr4 gray hover-border-main-color hover-text-main-color">
+            <i class="w1 pr2 fa fa-chevron-left" aria-hidden="true"></i>
+            <span class="pl1">Previous</span>
+        </a>
+        <a href="/" class="f5 no-underline inline-flex items-center pa3 ba border-box light-gray cursor-default">
+            <span class="pr1">Next</span>
+            <i class="w1 pl2 fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+    </div>
+
 </div>
+
 
     <!-- Footer -->
     <div class="bg-1 ph2 ph5-ns pv5">

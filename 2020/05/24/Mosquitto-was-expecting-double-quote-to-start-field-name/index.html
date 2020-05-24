@@ -10,9 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="As we do most of the things command line in linux, we could make a file executable by doing the same.
-1chmod +x AshKeys.war
-Recently, I had to make ou">
+    <meta name="description" content="I recently encountered the following exception in my Spring Boot Rest application when I published a MQTT message for a topic.
+I was testing the MQTT ">
     
 
     <!--Author-->
@@ -22,7 +21,7 @@ Recently, I had to make ou">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to make a file executable in linux">
+    <meta property="og:title" content="Mosquitto: was expecting double-quote to start field name">
     
 
     <!--Open Graph Description-->
@@ -44,7 +43,7 @@ Recently, I had to make ou">
 
     <!-- Title -->
     
-    <title>How to make a file executable in linux - AshKeys</title>
+    <title>Mosquitto: was expecting double-quote to start field name - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -160,8 +159,8 @@ Recently, I had to make ou">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to make a file executable in linux</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-03-05</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Mosquitto: was expecting double-quote to start field name</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-05-24</p>
             
         </div>
     </div>
@@ -169,7 +168,7 @@ Recently, I had to make ou">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-linux"></i>
+        <i class="header-icon fab fa-java"></i>
     </div>
 </div>
 
@@ -183,22 +182,32 @@ Recently, I had to make ou">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a> <a class="fw3 ph1 dib" href="/tags/linux/">#linux</a>
+                                <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/JSON/">#JSON</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>As we do most of the things command line in linux, we could make a file executable by doing the same.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x AshKeys.war</span><br></pre></td></tr></table></figure>
-<p>Recently, I had to make our application (spring boot <code>war</code> file) executable. This came in handy. \O/</p>
-<p><strong>Tip:</strong> Use <code>-x</code> to undo the same executable change applied on a file.</p>
+                    <p>I recently encountered the following exception in my Spring Boot Rest application when I published a MQTT message for a topic.</p>
+<p>I was testing the MQTT subscribers whether they get the published message or not.</p>
+<blockquote>
+<p>org.codehaus.jackson.JsonParseException:<br>Unexpected character (‘s’ (code 110)): was expecting double-quote to start field name</p>
+</blockquote>
+<p>I published the below message:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_pub -t <span class="string">"/v1/ashkeys/site"</span> -m <span class="string">"&#123;site:\"ashokma.com\"&#125;"</span></span><br></pre></td></tr></table></figure>
+<p>After some googling I found out that field names should be double-quoted.</p>
+<p>I know it was obvious from the exception itself. Dumb me &gt;_&lt;</p>
+<p>Now the following works just fine with the subscribers.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_pub -t <span class="string">"/v1/ashkeys/site"</span> -m <span class="string">"&#123;"</span>site<span class="string">":\"ashokma.com\"&#125;"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>P.S:</strong> The MQTT subscribers in turn use the jackson parser which adheres JSON specification. JSON specification demands that field names in a JSON should be double-quoted.</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a> <a class="fw3 ph1 dib" href="/tags/linux/">#linux</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/JSON/">#JSON</a>
                         </div>
                     
 

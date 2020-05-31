@@ -1,15 +1,15 @@
 ---
 title: 'Fix: No provider for MockStore in NgRx'
 tags:
-  - NgRx
-  - Anguar
-  - NodeJS
+    - NgRx
+    - Anguar
+    - NodeJS
+    - Fix
 icon: fab fa-angular
 date: 2020-05-22 22:40:20
 ---
 
-
-We have recently started using [NgRx](1) in our project and it is awesome ^_^. We achieved a lot of performance benefits just by making use of the shared state store.
+We have recently started using [NgRx](1) in our project and it is awesome ^\_^. We achieved a lot of performance benefits just by making use of the shared state store.
 
 It is just amazing how it keeps the state true across the Single Page Application (SPA). It gave us the power to keep one single source of truth.
 

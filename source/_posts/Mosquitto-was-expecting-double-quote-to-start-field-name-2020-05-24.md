@@ -1,14 +1,14 @@
 ---
 title: 'Mosquitto: was expecting double-quote to start field name'
 tags:
-  - Java
-  - Mosquitto
-  - MQTT
-  - JSON
+    - Java
+    - Mosquitto
+    - MQTT
+    - JSON
+    - Fix
 icon: fab fa-java
 date: 2020-05-24 16:59:50
 ---
-
 
 I recently encountered the following exception in my Spring Boot Rest application when I published a MQTT message for a topic.
 

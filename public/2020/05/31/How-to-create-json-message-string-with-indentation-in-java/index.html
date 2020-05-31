@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my stack, I use Spring ">
+    <meta name="description" content="Recently I came across an ugly string concatenation in one of our legacy codebase or the one I did not came across for a long time.
+The string concate">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Spring Boot: How to include a @Configuration from a dependency">
+    <meta property="og:title" content="How to create json message string with indentation in java">
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Spring Boot: How to include a @Configuration from a dependency - AshKeys</title>
+    <title>How to create json message string with indentation in java - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +159,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Spring Boot: How to include a @Configuration from a dependency</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-04</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to create json message string with indentation in java</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-05-31</p>
             
         </div>
     </div>
@@ -181,25 +182,32 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/Spring-Boot/">#Spring Boot</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/JSON/">#JSON</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>As a Full Stack Web Developer, I developer features as a whole. A complete vertical development so to say. As you can see from my <a href="/me/#Stack">stack</a>, I use Spring Boot with Java for BE mostly.</p>
-<p>I have recently encountered a situation where I need to include only one <code>@Configuration</code> of a library.</p>
-<p>As per the <a href="https://docs.spring.io/spring-javaconfig/docs/1.0.0.M4/reference/html/ch04s03.html" target="_blank" rel="noopener">docs</a>, we can do using <code>@Import</code> annotation.</p>
-<p>If following is the library config that I want to import,</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SharedLibConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SharedBean <span class="title">sharedBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SharedBean(...);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>then we just have to import this config in our configurations as follows:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Import</span>(&#123; SharedLibConfig.class, AnotherSharedLibConfig.class &#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppConfig</span> <span class="keyword">extends</span> <span class="title">ConfigurationSupport</span> </span>&#123;</span><br><span class="line">    <span class="comment">// @Bean methods here we can reference @Bean methods in SharedLibConfig or AnotherSharedLibConfig.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                    <p>Recently I came across an ugly string concatenation in one of our legacy codebase or the one I did not came across for a long time.</p>
+<p>The string concatenation was there to construct as JSON string. The JSON string was then parsed as a message template for MQTT topics.</p>
+<p>At first sight, I knew it gotta go and something bit more cleaner piece of code should replace it. So I was looking for options to do a better job. Then I found something below:</p>
+<h2 id="org-json-library"><a href="#org-json-library" class="headerlink" title="org.json library"></a><code>org.json</code> library</h2><h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.json<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>json<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>20090211<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">"org.json:json:20090211"</span></span><br></pre></td></tr></table></figure>
+<p>Using the <code>JSONObject</code> of this library I was able to replace the ugly string concatenation with something like below:</p>
+<h2 id="JSONObject-in-action"><a href="#JSONObject-in-action" class="headerlink" title="JSONObject in action"></a><code>JSONObject</code> in action</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> JSONObject()</span><br><span class="line">   .put(<span class="string">"name"</span>, <span class="string">"Ashok M A"</span>)</span><br><span class="line">   .put(<span class="string">"website"</span>, <span class="string">"https://ashokma.com"</span>)</span><br><span class="line">   .put(<span class="string">"address"</span>, <span class="keyword">new</span> JSONObject()</span><br><span class="line">	.put(<span class="string">"houseNumber"</span>, <span class="string">"1234"</span>)</span><br><span class="line">   	.put(<span class="string">"street"</span>, <span class="string">"Woonboulevard"</span>)</span><br><span class="line">   	.put(<span class="string">"city"</span>, <span class="string">"Utrecht"</span>)</span><br><span class="line">   	.put(<span class="string">"country"</span>, <span class="string">"The Netherlands"</span>)</span><br><span class="line">   )</span><br><span class="line">   .put(<span class="string">"skills"</span>, <span class="keyword">new</span> JSONArray(Arrays.asList(<span class="string">"Angular"</span>, <span class="string">"Spring Boot"</span>)))</span><br><span class="line">   .toString(<span class="number">4</span>); <span class="comment">// indentation</span></span><br></pre></td></tr></table></figure>
+<p>The above beautiful piece of code gives us the below JSON string.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"address"</span>: &#123;</span><br><span class="line">        <span class="attr">"city"</span>: <span class="string">"Utrecht"</span>,</span><br><span class="line">        <span class="attr">"country"</span>: <span class="string">"The Netherlands"</span>,</span><br><span class="line">        <span class="attr">"houseNumber"</span>: <span class="string">"1234"</span>,</span><br><span class="line">        <span class="attr">"street"</span>: <span class="string">"Woonboulevard"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"Ashok M A"</span>,</span><br><span class="line">    <span class="attr">"skills"</span>: [<span class="string">"Angular"</span>, <span class="string">"Spring Boot"</span>],</span><br><span class="line">    <span class="attr">"website"</span>: <span class="string">"https://ashokma.com"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> Yes, you can also construct by nesting arrays into objects and vice versa. \O/</p>
+</blockquote>
+<p><em>The keys are sorted by default. In JSON format that does no harm.</em></p>
+<p>I do not have to show you the ugly concatenation to sell the point here but this <code>org.json</code> lib itself does pretty good job and I am sure you would agree as well.</p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/Spring-Boot/">#Spring Boot</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Java/">#Java</a> <a class="fw3 ph1 dib" href="/tags/JSON/">#JSON</a>
                         </div>
                     
 

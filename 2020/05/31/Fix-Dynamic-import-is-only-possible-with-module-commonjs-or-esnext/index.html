@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="I have recently enrolled myself in the DailyUI challenge series. It is nice and I recommend to anyone who is looking for something to do for the code ">
+    <meta name="description" content="Recently, I am trying to introduce dynamic import of modules in our Angular application. So that, we can have reduced bundle size for a better perform">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="DailyUI Challenge Series: 001 signup form">
+    <meta property="og:title" content="Fix: Dynamic import is only possible with --module commonjs or esnext">
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>DailyUI Challenge Series: 001 signup form - AshKeys</title>
+    <title>Fix: Dynamic import is only possible with --module commonjs or esnext - AshKeys</title>
 
     <link rel="icon" href="//github.com/ashokma-com.png">
 
@@ -158,8 +158,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">DailyUI Challenge Series: 001 signup form</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-08-25</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Fix: Dynamic import is only possible with --module commonjs or esnext</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-05-31</p>
             
         </div>
     </div>
@@ -167,7 +167,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-palette"></i>
+        <i class="header-icon fab fa-angular"></i>
     </div>
 </div>
 
@@ -181,32 +181,33 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/DailyUI-Challenge-Series/">#DailyUI Challenge Series</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Reactive-Forms/">#Reactive Forms</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                                <a class="fw3 ph1 dib" href="/tags/NodeJS/">#NodeJS</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Typescript/">#Typescript</a> <a class="fw3 ph1 dib" href="/tags/Fix/">#Fix</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>I have recently enrolled myself in the DailyUI challenge series. It is nice and I recommend to anyone who is looking for something to do for the code muscle memory or anyone who is interested into designing UI.</p>
-<p>In all my IT experiences so far, I had never came across a situation where I had to design the page or a component by myself based on the customer requirements or hints for that matter. Designing is difficult guys as it requires some creativity at the same time keeping the customer in mind. Some things can be fancy to us but that does not mean it is going to guide the user to explore the application by himself helping here and there.</p>
-<p>Anyhow, as part of this DailyUI challenge, you will get an email everyday (Not on the weekends ;)) with a requirement for the design to be done.</p>
+                    <p>Recently, I am trying to introduce dynamic import of modules in our Angular application. So that, we can have reduced bundle size for a better performance of course.</p>
+<p>We are not there yet but we do have an action item though. ^_^</p>
+<p>During the tryouts I faced the following error saying:</p>
+<p><strong>error TS1323: Dynamic import is only supported when ‘–module’ flag is ‘commonjs’ or ‘esNext’.</strong></p>
+<p>As the error suggests we have to specify or change our module type in the following files as specified.</p>
+<ul>
+<li><code>tsconfig.json</code></li>
+<li><code>tsconfig.app.json</code></li>
+<li><code>tsconfig-aot.json</code></li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"compileOnSave"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">        <span class="attr">"module"</span>: <span class="string">"esnext"</span> // add this line</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>You will also get some free useful stuffs as well if you do the challenges and share it regularly on <a href="https://twitter.com/search?q=%23DailyUI&amp;src=typed_query" target="_blank" rel="noopener">Twitter</a> or <a href="https://dribbble.com/tags/dailyui" target="_blank" rel="noopener">Dribbble</a> as they have mentioned.</p>
+<p><strong>Note:</strong> Apply the changes in the files those matter to your case.</p>
 </blockquote>
-<p>But, I did not want to do the design alone. As a developer, I wanted to make it work as per design more or less.</p>
-<blockquote>
-<p>You can check out the completed challenge that has been deployed <a href="https://daily-ui-challenge-001.netlify.com/" target="_blank" rel="noopener">here</a> in <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a>.<br><a href="https://github.com/Sojiro/daily-ui-challenge/tree/master/001-signup-form" target="_blank" rel="noopener">Here</a> is the repo for the same and below is the sneekpeak.</p>
-</blockquote>
-<p><img src="./dailyui-challenge-001-signup-form.png" alt="DailyUI Challenge 001 - SignUp Form" title="DailyUI Challenge 001 - SignUp Form"></p>
-<blockquote>
-<p>Yeah, we do not have sign up form for our site yet! T_T But it is coming. \O/</p>
-</blockquote>
+<p>For me it was the <code>tsconfig-aot.json</code> as we build our app using <code>--aot</code> flag. \O/</p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/CSS/">#CSS</a> <a class="fw3 ph1 dib" href="/tags/DailyUI-Challenge-Series/">#DailyUI Challenge Series</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Reactive-Forms/">#Reactive Forms</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/NodeJS/">#NodeJS</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Typescript/">#Typescript</a> <a class="fw3 ph1 dib" href="/tags/Fix/">#Fix</a>
                         </div>
                     
 

@@ -10,8 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description" content="There more than one way to add an item to an array and remove an item from an array in JavaScript. Let’s see how can we do that in this post.
-push and">
+    <meta name="description" content="Recently I have noticed that one of our applications crossed the allowed threshold for creating new threads in a test server. After a talk with Ops gu">
     
 
     <!--Author-->
@@ -21,7 +20,7 @@ push and">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Few ways to add and remove items in an array">
+    <meta property="og:title" content="How to list the number of threads ran by a process in linux">
     
 
     <!--Open Graph Description-->
@@ -43,7 +42,7 @@ push and">
 
     <!-- Title -->
     
-    <title>Few ways to add and remove items in an array - AshKeys</title>
+    <title>How to list the number of threads ran by a process in linux - AshKeys</title>
 
     <link rel="icon" href="/ashkeys.png">
 
@@ -159,8 +158,8 @@ push and">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Few ways to add and remove items in an array</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-08-01</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to list the number of threads ran by a process in linux</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2021-01-06</p>
             
         </div>
     </div>
@@ -168,7 +167,7 @@ push and">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-js-square"></i>
+        <i class="header-icon fas fa-terminal"></i>
     </div>
 </div>
 
@@ -182,30 +181,27 @@ push and">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Array/">#Array</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a>
+                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>There more than one way to add an item to an array and remove an item from an array in JavaScript. Let’s see how can we do that in this post.</p>
-<h2 id="push-and-pop-methods"><a href="#push-and-pop-methods" class="headerlink" title="push and pop methods"></a><code>push</code> and <code>pop</code> methods</h2><p><img src="push_pop_methods.svg" alt="push and pop methods usage" title="push and pop methods usage"></p>
-<blockquote>
-<p><strong>Note:</strong> <code>push</code> inserts the elements at the end whereas <code>pop</code> pops out the top one that is the last item in the array.</p>
-</blockquote>
-<h2 id="shift-and-unshift-methods"><a href="#shift-and-unshift-methods" class="headerlink" title="shift and unshift methods"></a><code>shift</code> and <code>unshift</code> methods</h2><p><img src="shift_unshift_methods.svg" alt="shift and unshift methods usage" title="shift and unshift methods usage"></p>
-<blockquote>
-<p><strong>Note:</strong> <code>shift</code> removes the first element of an array whereas <code>unshift</code> does exact the opposite.</p>
-</blockquote>
-<blockquote>
-<p><strong>Tip:</strong> It is called <code>shift</code> because once the method is called the items of an array shifts one position left if one pictures the array horizontally. \O/</p>
-</blockquote>
+                    <p>Recently I have noticed that one of our applications crossed the allowed threshold for creating new threads in a test server. After a talk with Ops guy, we gotta to know that it had around 5k+ (O_O) threads running already for no reason. Probably a memory leak that we can have it for another day.</p>
+<p>For now, let me share you the way to find the process and its threads in linux.</p>
+<h2 id="Know-the-process-id"><a href="#Know-the-process-id" class="headerlink" title="Know the process id."></a>Know the process id.</h2><p>First of all, we need the process id in order to list out the threads being created by said process.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ top -H -u ashokma</span><br><span class="line"></span><br><span class="line">PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+  	COMMAND</span><br><span class="line">3173 ashokma   20   0 2720980 429424  99644 S   5.6   2.7   4:49.63 	Compositor</span><br><span class="line">3166 ashokma   20   0 2720980 429424  99644 S   4.6   2.7   1:53.81 	teams</span><br></pre></td></tr></table></figure>
+<p>Let’s take the process <strong>teams</strong> for instance. It’s id is <code>3166</code>.</p>
+<h2 id="List-the-number-of-threads"><a href="#List-the-number-of-threads" class="headerlink" title="List the number of threads"></a>List the number of threads</h2><p>Using the following command we can list out the number of threads.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ ps -T -p 3166</span><br><span class="line">    PID    SPID TTY          TIME CMD</span><br><span class="line">   3166    3166 ?        00:02:02 teams</span><br><span class="line">   3166    3168 ?        00:00:00 ThreadPoolServi</span><br><span class="line">   3166    3170 ?        00:01:47 Chrome_ChildIOT</span><br><span class="line">   3166    3171 ?        00:00:00 GpuMemoryThread</span><br><span class="line">   3166    3173 ?        00:05:17 Compositor</span><br><span class="line">   3166    3174 ?        00:00:00 ThreadPoolSingl</span><br><span class="line">   3166    3175 ?        00:00:01 CompositorTileW</span><br><span class="line">   3166    3176 ?        00:00:01 CompositorTileW</span><br><span class="line">   3166    3177 ?        00:00:01 CompositorTileW</span><br><span class="line">   3166    3178 ?        00:00:01 CompositorTileW</span><br><span class="line">   3166    3179 ?        00:00:00 CompositorTileW</span><br><span class="line">   3166    3180 ?        00:00:00 teams</span><br><span class="line">   3166    3184 ?        00:00:00 Watchdog</span><br><span class="line">   3166    3199 ?        00:00:01 SharedWorker th</span><br><span class="line">   3166    3205 ?        00:00:00 DedicatedWorker</span><br><span class="line">   3166    3328 ?        00:00:00 Media</span><br><span class="line">   3166   71782 ?        00:00:00 ThreadPoolForeg</span><br><span class="line">   3166   71915 ?        00:00:00 ThreadPoolForeg</span><br><span class="line">   3166   71916 ?        00:00:00 ThreadPoolForeg</span><br><span class="line">   3166   71917 ?        00:00:00 ThreadPoolForeg</span><br><span class="line">   3166   71918 ?        00:00:00 ThreadPoolForeg</span><br><span class="line">   3166   71919 ?        00:00:00 ThreadPoolForeg</span><br><span class="line">   3166   71920 ?        00:00:00 ThreadPoolForeg</span><br></pre></td></tr></table></figure>
+<p><strong>Pro Tip:</strong> To quickly know the number of threads just chain the above command with wordcount (<code>wc</code>) as follows:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ps -T -p 3166 | wc -l</span><br><span class="line">21</span><br><span class="line"><span class="comment"># This varies realtime as the threads are being closed and created over the time.</span></span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Array/">#Array</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Terminal/">#Terminal</a>
                         </div>
                     
 

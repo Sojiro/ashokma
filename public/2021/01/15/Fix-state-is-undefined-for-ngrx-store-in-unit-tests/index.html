@@ -10,8 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="There more than one way to add an item to an array and remove an item from an array in JavaScript. Let’s see how can we do that in this post.
-push and">
+    <meta name="description" content="Go to fix
+I use @ngrx/store at my day-to-day development. This post is not to share the benefits of using a state-management library. Instead, to shar">
     
 
     <!--Author-->
@@ -21,7 +21,7 @@ push and">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="Few ways to add and remove items in an array">
+    <meta property="og:title" content="Fix: state is undefined for @ngrx/store in unit tests">
     
 
     <!--Open Graph Description-->
@@ -43,7 +43,7 @@ push and">
 
     <!-- Title -->
     
-    <title>Few ways to add and remove items in an array - AshKeys</title>
+    <title>Fix: state is undefined for @ngrx/store in unit tests - AshKeys</title>
 
     <link rel="icon" href="/ashkeys.png">
 
@@ -159,8 +159,8 @@ push and">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Few ways to add and remove items in an array</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-08-01</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Fix: state is undefined for @ngrx/store in unit tests</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2021-01-15</p>
             
         </div>
     </div>
@@ -168,7 +168,7 @@ push and">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-js-square"></i>
+        <i class="header-icon fab fa-angular"></i>
     </div>
 </div>
 
@@ -182,30 +182,30 @@ push and">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Array/">#Array</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a>
+                                <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Fix/">#Fix</a> <a class="fw3 ph1 dib" href="/tags/Ngrx/">#Ngrx</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>There more than one way to add an item to an array and remove an item from an array in JavaScript. Let’s see how can we do that in this post.</p>
-<h2 id="push-and-pop-methods"><a href="#push-and-pop-methods" class="headerlink" title="push and pop methods"></a><code>push</code> and <code>pop</code> methods</h2><p><img src="push_pop_methods.svg" alt="push and pop methods usage" title="push and pop methods usage"></p>
-<blockquote>
-<p><strong>Note:</strong> <code>push</code> inserts the elements at the end whereas <code>pop</code> pops out the top one that is the last item in the array.</p>
-</blockquote>
-<h2 id="shift-and-unshift-methods"><a href="#shift-and-unshift-methods" class="headerlink" title="shift and unshift methods"></a><code>shift</code> and <code>unshift</code> methods</h2><p><img src="shift_unshift_methods.svg" alt="shift and unshift methods usage" title="shift and unshift methods usage"></p>
-<blockquote>
-<p><strong>Note:</strong> <code>shift</code> removes the first element of an array whereas <code>unshift</code> does exact the opposite.</p>
-</blockquote>
-<blockquote>
-<p><strong>Tip:</strong> It is called <code>shift</code> because once the method is called the items of an array shifts one position left if one pictures the array horizontally. \O/</p>
-</blockquote>
+                    <p><a href="#Fix-state-is-undefined">Go to fix</a></p>
+<p>I use <a href="//ngrx.io/guide/store"><code>@ngrx/store</code></a> at my day-to-day development. This post is not to share the benefits of using a state-management library. Instead, to share a fix for a possible unit tests mess up we might make along the way of using such libraries.</p>
+<h2 id="MockStore"><a href="#MockStore" class="headerlink" title="MockStore"></a><code>MockStore</code></h2><p>In unit tests, we usually set our initial state as follows:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> initialState: AppState = &#123;</span><br><span class="line">    title: <span class="string">'AshKeys'</span>,</span><br><span class="line">    name: <span class="string">'Sojiro De Tenken'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">TestBed.configureTestingModule(&#123;</span><br><span class="line">    imports: [TestModule],</span><br><span class="line">    declarations: [AshKeysComponent],</span><br><span class="line">    providers: [provideMockStore(&#123; initialState &#125;)],</span><br><span class="line">&#125;)</span><br><span class="line">    .overrideTemplate(AshKeysComponent, <span class="string">''</span>)</span><br><span class="line">    .compileComponents();</span><br></pre></td></tr></table></figure>
+<p>This is good as long as we are fine writing units with the initial state values.</p>
+<h2 id="Updating-the-state-in-an-iteration"><a href="#Updating-the-state-in-an-iteration" class="headerlink" title="Updating the state in an iteration"></a>Updating the state in an iteration</h2><p>There comes a scenario where we might have to update the said state for an iteration as follows:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mockStore.setState(&#123;</span><br><span class="line">    title: <span class="string">'ashokma.com'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>As you might have guessed it already, this overrides the <code>initialState</code> and in turn we loose a property called <code>name</code>. &gt;_O</p>
+<h2 id="Fix-state-is-undefined"><a href="#Fix-state-is-undefined" class="headerlink" title="Fix: state is undefined"></a>Fix: state is undefined</h2><p>Imagine <code>name</code> property as a state for some cases and there is a <a href="//ngrx.io/guide/store/selectors"><code>selector</code></a> referring that particular state. In those cases, due to the above overriding, we encounter <strong>State is undefined</strong> error.</p>
+<p>What I forgot to do is the following:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mockStore.setState(&#123;</span><br><span class="line">    ...initialState,</span><br><span class="line">    title: <span class="string">'ashokma.com'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>In this way, we keep whatever we had in the <code>initialState</code> undisturbed and update the ones we bother. \O/</p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Array/">#Array</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/Fix/">#Fix</a> <a class="fw3 ph1 dib" href="/tags/Ngrx/">#Ngrx</a>
                         </div>
                     
 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="It is easy to run your own server nowadays. Nodejs, makes it look like a piece of cake.
+    <meta name="description"
+        content="It is easy to run your own server nowadays. Nodejs, makes it look like a piece of cake.
 Once you have installed Node, let’s try building our first web">
     
 
@@ -21,24 +22,24 @@ Once you have installed Node, let’s try building our first web">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to run a web server using Node.JS">
+    <meta property="og:title" content="How to run a web server using Node.JS" />
     
 
     <!--Open Graph Description-->
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="AshKeys">
+    <meta property="og:site_name" content="AshKeys" />
 
     <!--Type page-->
     
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
     
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary" />
     
 
     <!-- Title -->
@@ -48,10 +49,11 @@ Once you have installed Node, let’s try building our first web">
     <link rel="icon" href="/ashkeys.png">
 
     <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,7 +63,9 @@ Once you have installed Node, let’s try building our first web">
     <![endif]-->
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
 
     <!-- Google Analytics -->
     
@@ -97,7 +101,7 @@ Once you have installed Node, let’s try building our first web">
   });
 </script>
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
 
@@ -107,7 +111,8 @@ Once you have installed Node, let’s try building our first web">
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
+           title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -137,19 +142,27 @@ Once you have installed Node, let’s try building our first web">
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/"
+               title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/archives"
+               title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/tags"
+               title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/me"
+               title="About">
                 About
             </a>
             
@@ -188,20 +201,24 @@ Once you have installed Node, let’s try building our first web">
                     
 
                     <!-- Main Post Content -->
-                    <p>It is easy to run your own server nowadays. <a href="//nodejs.org/en/about/"><code>Nodejs</code></a>, makes it look like a piece of cake.</p>
+                    <p>It is easy to run your own server nowadays. <a target="_blank" rel="noopener" href="//nodejs.org/en/about/"><code>Nodejs</code></a>, makes it look like a piece of cake.</p>
 <p>Once you have installed <a href="/2019/02/18/install-nodejs-and-npm-pop-os/">Node</a>, let’s try building our first web server.</p>
 <h2 id="Create-web-directory"><a href="#Create-web-directory" class="headerlink" title="Create web directory:"></a>Create web directory:</h2><p>Let’s start by creating our server directory.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir nodejs-server</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir nodejs-server</span><br></pre></td></tr></table></figure>
+
 <h2 id="Server-js-file"><a href="#Server-js-file" class="headerlink" title="Server js file"></a>Server js file</h2><p>Once we changed to the <code>nodejs-server</code> directory,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd nodejs-server</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd nodejs-server</span><br></pre></td></tr></table></figure>
+
 <p>create a <code>server.js</code> with the following code:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span>;</span><br><span class="line">  res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/html'</span>);</span><br><span class="line">  res.write(</span><br><span class="line">    <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;h1&gt; Hello! Welcome to AshKeys! &lt;/h1&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(port, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;port&#125;</span>/`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span>;</span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html&#x27;</span>);</span><br><span class="line">  res.write(</span><br><span class="line">    <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;h1&gt; Hello! Welcome to AshKeys! &lt;/h1&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server running at http://localhost:<span class="subst">$&#123;port&#125;</span>/`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>Now our server is ready to be created.</p>
 <h2 id="Run-as-node"><a href="#Run-as-node" class="headerlink" title="Run as node"></a>Run as <code>node</code></h2><p>This is it! All we have to do now is to run as a <code>node</code> file.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node ./server.js</span><br><span class="line">Server running at http://localhost:3000/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node ./server.js</span><br><span class="line">Server running at http://localhost:3000/</span><br></pre></td></tr></table></figure>
+
 <p>Now our server is listening to port <code>3000</code> and welcomes you to <a href="/"><strong>AshKeys</strong></a></p>
 <blockquote>
-<p><strong>Tip:</strong> When it comes to routing it is <a href="//www.npmjs.com/package/express"><code>express</code></a> that comes at best!</p>
+<p><strong>Tip:</strong> When it comes to routing it is <a target="_blank" rel="noopener" href="//www.npmjs.com/package/express"><code>express</code></a> that comes at best!</p>
 </blockquote>
 
                     
@@ -220,7 +237,7 @@ Once you have installed Node, let’s try building our first web">
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -229,12 +246,12 @@ Once you have installed Node, let’s try building our first web">
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 2: Categories -->
                     
@@ -242,6 +259,10 @@ Once you have installed Node, let’s try building our first web">
                     <!-- Widget 3: Recent Posts -->
                     <div class="mt5 tc tl-l">
     <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2021/05/22/How-to-fill-an-array-of-N-numbers-in-JavaScript/">How to fill an array of N numbers in JavaScript</a>
+        </p>
     
         <p>
             <a href="/2020/06/17/How-to-convert-milliseconds-to-date-in-JavaScript/">How to convert milliseconds to date in JavaScript</a>
@@ -257,10 +278,6 @@ Once you have installed Node, let’s try building our first web">
     
         <p>
             <a href="/2020/05/31/How-to-create-json-message-string-with-indentation-in-java/">How to create json message string with indentation</a>
-        </p>
-    
-        <p>
-            <a href="/2020/05/31/Fix-Dynamic-import-is-only-possible-with-module-commonjs-or-esnext/">Fix: Dynamic import is only possible with --module</a>
         </p>
     
 </div>
@@ -318,7 +335,9 @@ Once you have installed Node, let’s try building our first web">
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/4Dd9KBuvl">
-    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
+    <img
+         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
+         alt="Buy me a coffee...">
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
             <div class="center tc pt2">
@@ -349,7 +368,7 @@ Once you have installed Node, let’s try building our first web">
                 
             </div>
             <div class="f6 f5-ns center tc white pt2 fw3">
-                &copy; 2019 Ashok M A | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
+                &copy; 2019 Ashok M A | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
             </div>
         </div>
     </div>

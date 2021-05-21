@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Today, I had to create a custom solution for a design requirement. A custom checkbox! It was fun doing it of course and I learned bit more about CSS.
+    <meta name="description"
+        content="Today, I had to create a custom solution for a design requirement. A custom checkbox! It was fun doing it of course and I learned bit more about CSS.
 ">
     
 
@@ -21,24 +22,24 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to create a custom checkbox with just CSS">
+    <meta property="og:title" content="How to create a custom checkbox with just CSS" />
     
 
     <!--Open Graph Description-->
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="AshKeys">
+    <meta property="og:site_name" content="AshKeys" />
 
     <!--Type page-->
     
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
     
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary" />
     
 
     <!-- Title -->
@@ -48,10 +49,11 @@
     <link rel="icon" href="/ashkeys.png">
 
     <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,7 +63,9 @@
     <![endif]-->
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
 
     <!-- Google Analytics -->
     
@@ -97,7 +101,7 @@
   });
 </script>
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
 
@@ -107,7 +111,8 @@
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
+           title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -137,19 +142,27 @@
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/"
+               title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/archives"
+               title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/tags"
+               title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/me"
+               title="About">
                 About
             </a>
             
@@ -191,13 +204,21 @@
                     <p>Today, I had to create a custom solution for a design requirement. A custom checkbox! It was fun doing it of course and I learned bit more about CSS.</p>
 <p>However, I realized that it took me more time to track down the perfect custom solution that was need for me than the complexity of the solution itself. I did not want anything that will make my style sheets more messier and also not for just fancy. Just the right one needed as per the design.</p>
 <p>Here follows the code piece. I am trying out this new approach where I add comments in order to explain what a piece of code does or why does it need to be there. ^_^</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Yes, the label should follow the input and id/name is must,</span></span><br><span class="line"><span class="comment">   in order to associate the label to the input --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"customCheckbox"</span> <span class="attr">id</span>=<span class="string">"customCheckbox"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"customCheckbox"</span>&gt;</span>Custom Checkbox<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Yes, the label should follow the input and id/name is must,</span></span><br><span class="line"><span class="comment">   in order to associate the label to the input --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;customCheckbox&quot;</span> <span class="attr">id</span>=<span class="string">&quot;customCheckbox&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;customCheckbox&quot;</span>&gt;</span>Custom Checkbox<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Here comes the fun part of CSS only!</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* First hide the default browser's boring style. */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type='checkbox']</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Makes the label clickable and also not selectable.*/</span></span><br><span class="line"><span class="selector-tag">label</span> &#123;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">user-select</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Creates the box for our check mark. */</span></span><br><span class="line"><span class="selector-tag">label</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">17px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">border</span>: solid <span class="number">1px</span> <span class="built_in">rgb</span>(25, 209, 25);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Here comes the checkmark. */</span></span><br><span class="line"><span class="selector-tag">label</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">1px</span> solid;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid;</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="built_in">rgb</span>(22, 43, 230);</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-45deg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Makes sure the tick is not displayed by default */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type='checkbox']</span> + <span class="selector-tag">label</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* But, only when user checks the box */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type='checkbox']</span><span class="selector-pseudo">:checked</span> + <span class="selector-tag">label</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Makes ease of user interaction by addressing the focus state */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type='checkbox']</span><span class="selector-pseudo">:focus</span> + <span class="selector-tag">label</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">4px</span> <span class="number">0</span> <span class="built_in">rgb</span>(25, 209, 25);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* First hide the default browser&#x27;s boring style. */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;checkbox&#x27;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Makes the label clickable and also not selectable.*/</span></span><br><span class="line"><span class="selector-tag">label</span> &#123;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">15px</span>;</span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Creates the box for our check mark. */</span></span><br><span class="line"><span class="selector-tag">label</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">17px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">border</span>: solid <span class="number">1px</span> <span class="built_in">rgb</span>(<span class="number">25</span>, <span class="number">209</span>, <span class="number">25</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Here comes the checkmark. */</span></span><br><span class="line"><span class="selector-tag">label</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">1px</span> solid;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid;</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="built_in">rgb</span>(<span class="number">22</span>, <span class="number">43</span>, <span class="number">230</span>);</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Makes sure the tick is not displayed by default */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;checkbox&#x27;</span>]</span> + <span class="selector-tag">label</span>:after &#123;</span><br><span class="line">  content: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* But, only when user checks the box */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;checkbox&#x27;</span>]</span><span class="selector-pseudo">:checked</span> + <span class="selector-tag">label</span>:after &#123;</span><br><span class="line">  content: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Makes ease of user interaction by addressing the focus state */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=<span class="string">&#x27;checkbox&#x27;</span>]</span><span class="selector-pseudo">:focus</span> + <span class="selector-tag">label</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">4px</span> <span class="number">0</span> <span class="built_in">rgb</span>(<span class="number">25</span>, <span class="number">209</span>, <span class="number">25</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p><strong>Tip:</strong> As you can see, I just used the general style property. This works fine in chrome. I strongly advice to use CSS preprocessors like <a href="https://sass-lang.com/" target="_blank" rel="noopener"><code>SASS</code></a> so that you do not need to worry about browser specific property prefixes such as <code>-webkit-</code> for chrome. \O/</p>
+<p><strong>Tip:</strong> As you can see, I just used the general style property. This works fine in chrome. I strongly advice to use CSS preprocessors like <a target="_blank" rel="noopener" href="https://sass-lang.com/"><code>SASS</code></a> so that you do not need to worry about browser specific property prefixes such as <code>-webkit-</code> for chrome. \O/</p>
 </blockquote>
-<center><br><strong>Live Demo:</strong><br><br><a href="https://custom-checkbox-css-only.netlify.com/" target="_blank" rel="noopener">https://custom-checkbox-css-only.netlify.com/</a><br><br><strong>Sneak Peek</strong><br><br><img src="./custom-checkbox-css-only.png" alt="Custom Checkbox - CSS only!" title="Custom Checkbox - CSS only!"><br><br></center>
+<center>
+**Live Demo:**
+
+<p><a target="_blank" rel="noopener" href="https://custom-checkbox-css-only.netlify.com/">https://custom-checkbox-css-only.netlify.com/</a></p>
+<p><strong>Sneak Peek</strong></p>
+<p><img src="./custom-checkbox-css-only.png" alt="Custom Checkbox - CSS only!" title="Custom Checkbox - CSS only!"></p>
+</center>
 
                     
                     <!-- Tags Bottom -->
@@ -215,7 +236,7 @@
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -224,12 +245,12 @@
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 2: Categories -->
                     
@@ -237,6 +258,10 @@
                     <!-- Widget 3: Recent Posts -->
                     <div class="mt5 tc tl-l">
     <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2021/05/22/How-to-fill-an-array-of-N-numbers-in-JavaScript/">How to fill an array of N numbers in JavaScript</a>
+        </p>
     
         <p>
             <a href="/2020/06/17/How-to-convert-milliseconds-to-date-in-JavaScript/">How to convert milliseconds to date in JavaScript</a>
@@ -252,10 +277,6 @@
     
         <p>
             <a href="/2020/05/31/How-to-create-json-message-string-with-indentation-in-java/">How to create json message string with indentation</a>
-        </p>
-    
-        <p>
-            <a href="/2020/05/31/Fix-Dynamic-import-is-only-possible-with-module-commonjs-or-esnext/">Fix: Dynamic import is only possible with --module</a>
         </p>
     
 </div>
@@ -313,7 +334,9 @@
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/4Dd9KBuvl">
-    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
+    <img
+         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
+         alt="Buy me a coffee...">
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
             <div class="center tc pt2">
@@ -344,7 +367,7 @@
                 
             </div>
             <div class="f6 f5-ns center tc white pt2 fw3">
-                &copy; 2019 Ashok M A | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
+                &copy; 2019 Ashok M A | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
             </div>
         </div>
     </div>

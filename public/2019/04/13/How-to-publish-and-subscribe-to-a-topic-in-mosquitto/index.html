@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description"
-        content="In recent post, we learned how to run mosquitto as a docker container. Now, we will learn about how to carry out messages using its publish/subscribe ">
+    <meta name="description" content="In recent post, we learned how to run mosquitto as a docker container. Now, we will learn about how to carry out messages using its publish/subscribe ">
     
 
     <!--Author-->
@@ -21,24 +20,24 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to publish and subscribe to a topic in mosquitto" />
+    <meta property="og:title" content="How to publish and subscribe to a topic in mosquitto">
     
 
     <!--Open Graph Description-->
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="AshKeys" />
+    <meta property="og:site_name" content="AshKeys">
 
     <!--Type page-->
     
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
     
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary">
     
 
     <!-- Title -->
@@ -48,11 +47,10 @@
     <link rel="icon" href="/ashkeys.png">
 
     <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,9 +60,7 @@
     <![endif]-->
 
     <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Google Analytics -->
     
@@ -100,7 +96,7 @@
   });
 </script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+</head>
 
 <body>
 
@@ -110,8 +106,7 @@
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
-           title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -141,27 +136,19 @@
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/"
-               title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/archives"
-               title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/tags"
-               title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/me"
-               title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
                 About
             </a>
             
@@ -194,7 +181,7 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a>
                             </div>
                         </div>
                     
@@ -202,13 +189,11 @@
                     <!-- Main Post Content -->
                     <p>In recent <a href="/2019/04/13/Run-eclipse-mosquitto-as-docker-container/">post</a>, we learned <strong>how to run mosquitto as a docker container</strong>. Now, we will learn about how to carry out messages using its publish/subscribe model.</p>
 <p>In order to publish/subscribe to a topic in mosquitto, we need <code>mosquitto-clients</code> to be installed in our machine. We can do it by the following command:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mosquitto-clients</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install mosquitto-clients</span><br></pre></td></tr></table></figure>
 <p>This will make both <code>mosquitto_pub</code> and <code>mosquitto_sub</code> available to use.</p>
 <h2 id="Publish-message-under-a-topic"><a href="#Publish-message-under-a-topic" class="headerlink" title="Publish message under a topic"></a>Publish message under a topic</h2><p>In MQTT protocol, messages should be published and subscribed under respective topic names. For instance, if we are going to publish a message related to weather, it should be published like the following: <code>/topic/weather/nl/utrecht</code>.</p>
 <p>Lets do the same, using <code>mosquitto_pub</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_pub -t &#x27;/topic/weather/nl/utrecht&#x27; -m &#x27;&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;&#x27;</span><br><span class="line">$ mosquitto_pub -t &#x27;/topic/weather/nl/rotterdam&#x27; -m &#x27;&#123; &quot;city&quot;:&quot;Rotterdam&quot;, &quot;temp&quot;: &quot;30&quot; &#125;&#x27;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_pub -t &apos;/topic/weather/nl/utrecht&apos; -m &apos;&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;&apos;</span><br><span class="line">$ mosquitto_pub -t &apos;/topic/weather/nl/rotterdam&apos; -m &apos;&#123; &quot;city&quot;:&quot;Rotterdam&quot;, &quot;temp&quot;: &quot;30&quot; &#125;&apos;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>-t</code> – The topic under which we publish a message.</li>
 <li><code>-m</code> – The message we want to publish.</li>
@@ -218,19 +203,18 @@
 <p><strong>Tip:</strong> We can publish anything as long as we keep it as a string. The above is just a string representation of a <code>Weather</code> JSON object. People subscribe to it, can parse it using <code>JSON.parse()</code> to use as a JSON.</p>
 </blockquote>
 <h2 id="Subscribe-to-a-topic"><a href="#Subscribe-to-a-topic" class="headerlink" title="Subscribe to a topic"></a>Subscribe to a topic</h2><p>Since people publishing already, lets subscribe to a topic and hear the gossip O_o</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_sub -t &#x27;/topic/weather/nl/utrecht&#x27;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_sub -t &apos;/topic/weather/nl/utrecht&apos;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;</span><br></pre></td></tr></table></figure>
 <p>If there are messages being published, you can see it being logged in your terminal.</p>
 <blockquote>
 <p><strong>Tip:</strong> We can subscribe to all the topics by specifying the <code>-t</code> option as the following: <code>mosquitto_sub -t &#39;#&#39;</code>. However, it is advised to subscribe to as specifici topic as possible like <code>mosquitto_sub -t &#39;/topic/weather/nl/#&#39;</code> to subscribe to the entire country’s weather.</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_sub -t &#x27;/topic/weather/nl/#&#x27;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Rotterdam&quot;, &quot;temp&quot;: &quot;30&quot; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mosquitto_sub -t &apos;/topic/weather/nl/#&apos;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Utrecht&quot;, &quot;temp&quot;: &quot;20&quot; &#125;</span><br><span class="line">&#123; &quot;city&quot;:&quot;Rotterdam&quot;, &quot;temp&quot;: &quot;30&quot; &#125;</span><br></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Docker/">#Docker</a> <a class="fw3 ph1 dib" href="/tags/Mosquitto/">#Mosquitto</a> <a class="fw3 ph1 dib" href="/tags/MQTT/">#MQTT</a>
                         </div>
                     
 
@@ -242,7 +226,7 @@
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5" />
+                    <hr class="dn-l mw4 black-50 mt5">
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -251,12 +235,12 @@
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5" />
+                    <hr class="dn-l mw4 black-50 mt5">
                     
                     <!-- Widget 2: Categories -->
                     
@@ -270,6 +254,10 @@
         </p>
     
         <p>
+            <a href="/2021/05/22/How-to-fill-an-array-of-N-numbers-in-JavaScript/">How to fill an array of N numbers in JavaScript</a>
+        </p>
+    
+        <p>
             <a href="/2021/01/15/Fix-state-is-undefined-for-ngrx-store-in-unit-tests/">Fix: state is undefined for @ngrx/store in unit te</a>
         </p>
     
@@ -279,10 +267,6 @@
     
         <p>
             <a href="/2021/01/06/How-to-install-postgres-client-in-linux/">How to install postgres client in linux</a>
-        </p>
-    
-        <p>
-            <a href="/2020/12/27/Http-code-ranges/">Http Status Code Ranges</a>
         </p>
     
 </div>
@@ -339,15 +323,8 @@
     }
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-<<<<<<< HEAD
 <a class="bmc-button" target="_blank" href="https://buymeacoffee.com/ashkeys">
     <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
-=======
-<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/4Dd9KBuvl">
-    <img
-         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
-         alt="Buy me a coffee...">
->>>>>>> 255a54a88410d912af6017e5c4a01ef54921d44f
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
             <div class="center tc pt2">
@@ -378,7 +355,7 @@
                 
             </div>
             <div class="f6 f5-ns center tc white pt2 fw3">
-                &copy; 2019 Ashok M A | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
+                &copy; 2019 Ashok M A | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
             </div>
         </div>
     </div>

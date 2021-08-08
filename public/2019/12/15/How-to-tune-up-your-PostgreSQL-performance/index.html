@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,7 @@
 
     <!--Description-->
     
-    <meta name="description"
-        content="Recently, at work, we were facing performance issues with our database queries. As the databse grew to millions of records in a short time, querying e">
+    <meta name="description" content="Recently, at work, we were facing performance issues with our database queries. As the databse grew to millions of records in a short time, querying e">
     
 
     <!--Author-->
@@ -21,24 +20,24 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to tune up your PostgreSQL performance" />
+    <meta property="og:title" content="How to tune up your PostgreSQL performance">
     
 
     <!--Open Graph Description-->
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="AshKeys" />
+    <meta property="og:site_name" content="AshKeys">
 
     <!--Type page-->
     
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
     
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary">
     
 
     <!-- Title -->
@@ -48,11 +47,10 @@
     <link rel="icon" href="/ashkeys.png">
 
     <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,9 +60,7 @@
     <![endif]-->
 
     <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Google Analytics -->
     
@@ -100,7 +96,7 @@
   });
 </script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+</head>
 
 <body>
 
@@ -110,8 +106,7 @@
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
-           title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -141,27 +136,19 @@
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/"
-               title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/archives"
-               title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/tags"
-               title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white"
-               href="/me"
-               title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
                 About
             </a>
             
@@ -202,14 +189,11 @@
                     <!-- Main Post Content -->
                     <p>Recently, at work, we were facing performance issues with our database queries. As the databse grew to millions of records in a short time, querying even a small segment of data was taking so much time. There was an urgent need to improve the query execution time.</p>
 <p>For instance, the query execution on a massive table took around 60s as follows.</p>
-<figure class="highlight postgres"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ashkeys=&gt; <span class="keyword">explain</span> <span class="keyword">analyze</span> <span class="keyword">select</span> * <span class="keyword">from</span> massive_table;</span><br><span class="line">                                                    QUERY PLAN</span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"> Seq Scan <span class="keyword">on</span> massive_table  (<span class="keyword">cost</span>=<span class="number">0.00</span>.<span class="number">.1363033</span><span class="number">.47</span> <span class="keyword">rows</span>=<span class="number">42377647</span> width=<span class="number">144</span>) (actual <span class="type">time</span>=<span class="number">5.269</span>.<span class="number">.27925</span><span class="number">.251</span> <span class="keyword">rows</span>=<span class="number">42619306</span> loops=<span class="number">1</span>)</span><br><span class="line"> Planning <span class="type">time</span>: <span class="number">0.321</span> ms</span><br><span class="line"> Execution <span class="type">time</span>: <span class="number">62062.535</span> ms</span><br><span class="line">(<span class="number">3</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ashkeys=&gt; explain analyze select * from massive_table;</span><br><span class="line">                                                    QUERY PLAN</span><br><span class="line">------------------------------------------------------------------------------------------------------------------</span><br><span class="line"> Seq Scan on massive_table  (cost=0.00..1363033.47 rows=42377647 width=144) (actual time=5.269..27925.251 rows=42619306 loops=1)</span><br><span class="line"> Planning time: 0.321 ms</span><br><span class="line"> Execution time: 62062.535 ms</span><br><span class="line">(3 rows)</span><br></pre></td></tr></table></figure>
 <p>With the following update to the <code>postgresql.conf</code> file, the performance improved a lot since the <code>postgres</code> had a lot of memory to work with \O/.</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># RESOURCE USAGE (except WAL)</span></span><br><span class="line"><span class="comment">#------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># - Memory -</span></span><br><span class="line"></span><br><span class="line"><span class="attr">shared_buffers</span> = <span class="string">13GB                   # min 128kB</span></span><br><span class="line"><span class="comment">                                        # (change requires restart)</span></span><br><span class="line"><span class="comment">#huge_pages = on                        # on, off, or try</span></span><br><span class="line"><span class="comment">                                        # (change requires restart)</span></span><br><span class="line"><span class="comment">#temp_buffers = 1GB                     # min 800kB</span></span><br><span class="line"><span class="comment">#max_prepared_transactions = 0          # zero disables the feature</span></span><br><span class="line"><span class="comment">                                        # (change requires restart)</span></span><br><span class="line"><span class="comment"># Caution: it is not advisable to set max_prepared_transactions nonzero unless</span></span><br><span class="line"><span class="comment"># you actively intend to use prepared transactions.</span></span><br><span class="line"><span class="attr">work_mem</span> = <span class="string">1GB                          # min 64kB</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#------------------------------------------------------------------------------</span><br><span class="line"># RESOURCE USAGE (except WAL)</span><br><span class="line">#------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># - Memory -</span><br><span class="line"></span><br><span class="line">shared_buffers = 13GB                   # min 128kB</span><br><span class="line">                                        # (change requires restart)</span><br><span class="line">#huge_pages = on                        # on, off, or try</span><br><span class="line">                                        # (change requires restart)</span><br><span class="line">#temp_buffers = 1GB                     # min 800kB</span><br><span class="line">#max_prepared_transactions = 0          # zero disables the feature</span><br><span class="line">                                        # (change requires restart)</span><br><span class="line"># Caution: it is not advisable to set max_prepared_transactions nonzero unless</span><br><span class="line"># you actively intend to use prepared transactions.</span><br><span class="line">work_mem = 1GB                          # min 64kB</span><br></pre></td></tr></table></figure>
 <p>With above configurations, <code>postgres</code> executed the same query a lot more better.</p>
-<figure class="highlight postgres"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ashkeys=&gt; <span class="keyword">explain</span> <span class="keyword">analyze</span> <span class="keyword">select</span> * <span class="keyword">from</span> massive_table;</span><br><span class="line">                                                    QUERY PLAN</span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line"> Seq Scan <span class="keyword">on</span> massive_table  (<span class="keyword">cost</span>=<span class="number">0.00</span>.<span class="number">.1363033</span><span class="number">.47</span> <span class="keyword">rows</span>=<span class="number">42377647</span> width=<span class="number">144</span>) (actual <span class="type">time</span>=<span class="number">5.269</span>.<span class="number">.27925</span><span class="number">.251</span> <span class="keyword">rows</span>=<span class="number">42619306</span> loops=<span class="number">1</span>)</span><br><span class="line"> Planning <span class="type">time</span>: <span class="number">0.321</span> ms</span><br><span class="line"> Execution <span class="type">time</span>: <span class="number">29062.535</span> ms</span><br><span class="line">(<span class="number">3</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ashkeys=&gt; explain analyze select * from massive_table;</span><br><span class="line">                                                    QUERY PLAN</span><br><span class="line">------------------------------------------------------------------------------------------------------------------</span><br><span class="line"> Seq Scan on massive_table  (cost=0.00..1363033.47 rows=42377647 width=144) (actual time=5.269..27925.251 rows=42619306 loops=1)</span><br><span class="line"> Planning time: 0.321 ms</span><br><span class="line"> Execution time: 29062.535 ms</span><br><span class="line">(3 rows)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>P.S:</strong> It only increases the performance to some point and does not guarantee super speed execution. Mind your relations in the relational carefully ^_^</p>
 </blockquote>
@@ -230,7 +214,7 @@
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5" />
+                    <hr class="dn-l mw4 black-50 mt5">
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -239,12 +223,12 @@
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5" />
+                    <hr class="dn-l mw4 black-50 mt5">
                     
                     <!-- Widget 2: Categories -->
                     
@@ -258,6 +242,10 @@
         </p>
     
         <p>
+            <a href="/2021/05/22/How-to-fill-an-array-of-N-numbers-in-JavaScript/">How to fill an array of N numbers in JavaScript</a>
+        </p>
+    
+        <p>
             <a href="/2021/01/15/Fix-state-is-undefined-for-ngrx-store-in-unit-tests/">Fix: state is undefined for @ngrx/store in unit te</a>
         </p>
     
@@ -267,10 +255,6 @@
     
         <p>
             <a href="/2021/01/06/How-to-install-postgres-client-in-linux/">How to install postgres client in linux</a>
-        </p>
-    
-        <p>
-            <a href="/2020/12/27/Http-code-ranges/">Http Status Code Ranges</a>
         </p>
     
 </div>
@@ -327,15 +311,8 @@
     }
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-<<<<<<< HEAD
 <a class="bmc-button" target="_blank" href="https://buymeacoffee.com/ashkeys">
     <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
-=======
-<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/4Dd9KBuvl">
-    <img
-         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
-         alt="Buy me a coffee...">
->>>>>>> 255a54a88410d912af6017e5c4a01ef54921d44f
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
             <div class="center tc pt2">
@@ -366,7 +343,7 @@
                 
             </div>
             <div class="f6 f5-ns center tc white pt2 fw3">
-                &copy; 2019 Ashok M A | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
+                &copy; 2019 Ashok M A | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
             </div>
         </div>
     </div>

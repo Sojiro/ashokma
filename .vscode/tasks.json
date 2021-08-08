@@ -4,9 +4,19 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "hexo clean",
+            "type": "shell",
+            "command": "hexo clean",
+            "problemMatcher": []
+        },{
             "label": "hexo serve",
             "type": "shell",
             "command": "hexo serve --draft",
+            "problemMatcher": []
+        },{
+            "label": "hexo deploy",
+            "type": "shell",
+            "command": "hexo generate --deploy",
             "problemMatcher": []
         },
         {

@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "clean": "hexo clean",
+    "deploy": "hexo generate --deploy",
     "server": "hexo server --draft"
   },
   "hexo": {
@@ -19,6 +21,6 @@
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
-    "netlify-cli": "^2.52.0"
+    "netlify-cli": "^2.71.0"
   }
 }

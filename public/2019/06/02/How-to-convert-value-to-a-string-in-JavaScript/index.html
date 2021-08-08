@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="toString() method
+    <meta name="description"
+        content="toString() method
 Template String Literals
 JSON.stringfy() method
 String() constructor
@@ -25,24 +26,24 @@ The Java programmers know to call toString()method in order to">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to convert value to a string in JavaScript">
+    <meta property="og:title" content="How to convert value to a string in JavaScript" />
     
 
     <!--Open Graph Description-->
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="AshKeys">
+    <meta property="og:site_name" content="AshKeys" />
 
     <!--Type page-->
     
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
     
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary" />
     
 
     <!-- Title -->
@@ -52,10 +53,11 @@ The Java programmers know to call toString()method in order to">
     <link rel="icon" href="/ashkeys.png">
 
     <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,7 +67,9 @@ The Java programmers know to call toString()method in order to">
     <![endif]-->
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/css/style.css">
+
 
     <!-- Google Analytics -->
     
@@ -101,7 +105,7 @@ The Java programmers know to call toString()method in order to">
   });
 </script>
 
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
 
@@ -111,7 +115,8 @@ The Java programmers know to call toString()method in order to">
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
+           title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -141,19 +146,27 @@ The Java programmers know to call toString()method in order to">
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/"
+               title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/archives"
+               title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/tags"
+               title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/me"
+               title="About">
                 About
             </a>
             
@@ -199,27 +212,32 @@ The Java programmers know to call toString()method in order to">
 <li><a href="#Using-String-constructor"><code>String()</code> constructor</a></li>
 </ul>
 <p>The Java programmers know to call <code>toString()</code>method in order to convert any value to string. That is also the case with JavaScript.</p>
-<h2 id="Using-toString-method"><a href="#Using-toString-method" class="headerlink" title="Using toString() method"></a>Using <code>toString()</code> method</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">'You owe me '</span> + balance.toString(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910</span></span><br></pre></td></tr></table></figure>
+<h2 id="Using-toString-method"><a href="#Using-toString-method" class="headerlink" title="Using toString() method"></a>Using <code>toString()</code> method</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">&#x27;You owe me &#x27;</span> + balance.toString(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p><strong>Tip:</strong> <code>toString()</code> also accepts an argument to represent the numeric values with respect to a base. Please refer the <a href="//developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/number/tostring#parameters">docs</a> to make a better use of it.</p>
+<p><strong>Tip:</strong> <code>toString()</code> also accepts an argument to represent the numeric values with respect to a base. Please refer the <a target="_blank" rel="noopener" href="//developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/number/tostring#parameters">docs</a> to make a better use of it.</p>
 </blockquote>
 <p>Since the <code>ES6</code> standard, we have another way as well, called template string literals.</p>
 <h2 id="Using-template-string-literal"><a href="#Using-template-string-literal" class="headerlink" title="Using template string literal"></a>Using template string literal</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">`You owe me <span class="subst">$&#123;balance&#125;</span>!`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910!</span></span><br></pre></td></tr></table></figure>
+
 <p>Looks good is it not ^_^</p>
 <blockquote>
 <p><strong>Tip:</strong> Prefer template strings whenever constructing strings with values or object references.</p>
 </blockquote>
-<h2 id="Using-JSON-stringfy-method"><a href="#Using-JSON-stringfy-method" class="headerlink" title="Using JSON.stringfy() method"></a>Using <code>JSON.stringfy()</code> method</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">'You owe me '</span> + <span class="built_in">JSON</span>.stringify(balance);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910</span></span><br></pre></td></tr></table></figure>
+<h2 id="Using-JSON-stringfy-method"><a href="#Using-JSON-stringfy-method" class="headerlink" title="Using JSON.stringfy() method"></a>Using <code>JSON.stringfy()</code> method</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">&#x27;You owe me &#x27;</span> + <span class="built_in">JSON</span>.stringify(balance);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910</span></span><br></pre></td></tr></table></figure>
+
 <p>This really comes handy for objects in order to print the object structure in string notation. <code>JSON.stringfy</code> accepts two more arguments called <code>replacer</code> and <code>space</code> respectively.</p>
 <blockquote>
-<p><strong>Tip:</strong> Prefer to supply <code>space</code> argument when stringfying objects. Refer <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">docs</a> for more.</p>
+<p><strong>Tip:</strong> Prefer to supply <code>space</code> argument when stringfying objects. Refer <a target="_blank" rel="noopener" href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">docs</a> for more.</p>
 </blockquote>
-<h2 id="Using-String-constructor"><a href="#Using-String-constructor" class="headerlink" title="Using String() constructor"></a>Using <code>String()</code> constructor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">'You owe me '</span> + <span class="keyword">new</span> <span class="built_in">String</span>(balance);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910</span></span><br></pre></td></tr></table></figure>
+<h2 id="Using-String-constructor"><a href="#Using-String-constructor" class="headerlink" title="Using String() constructor"></a>Using <code>String()</code> constructor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> balance = <span class="number">910</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> notification = <span class="string">&#x27;You owe me &#x27;</span> + <span class="keyword">new</span> <span class="built_in">String</span>(balance);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(notification); <span class="comment">// You owe me 910</span></span><br></pre></td></tr></table></figure>
+
 <p>There is this <code>constructor</code> option for us to be OOPs.</p>
 <blockquote>
 <p><strong>Tip:</strong> Use <code>String()</code> without the <code>new</code> keyword to get string literal instead. We can verify the same with <code>typeof</code> operator as well.</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stringObject = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'AshKeys'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> stringObject); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> stringLiteral = <span class="built_in">String</span>(<span class="string">'AshKeys'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> stringLiteral); <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(stringObject == stringLiteral); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(stringObject === stringLiteral); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stringObject = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&#x27;AshKeys&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> stringObject); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> stringLiteral = <span class="built_in">String</span>(<span class="string">&#x27;AshKeys&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> stringLiteral); <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(stringObject == stringLiteral); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(stringObject === stringLiteral); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
 <p>As you can see, <code>stringObject</code> is value equals with <code>stringLiteral</code>, but does not strict equals it.</p>
 
                     
@@ -238,7 +256,7 @@ The Java programmers know to call toString()method in order to">
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -247,12 +265,12 @@ The Java programmers know to call toString()method in order to">
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 2: Categories -->
                     
@@ -335,8 +353,15 @@ The Java programmers know to call toString()method in order to">
     }
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<<<<<<< HEAD
 <a class="bmc-button" target="_blank" href="https://buymeacoffee.com/ashkeys">
     <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
+=======
+<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/4Dd9KBuvl">
+    <img
+         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
+         alt="Buy me a coffee...">
+>>>>>>> 255a54a88410d912af6017e5c4a01ef54921d44f
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
             <div class="center tc pt2">
@@ -367,7 +392,7 @@ The Java programmers know to call toString()method in order to">
                 
             </div>
             <div class="f6 f5-ns center tc white pt2 fw3">
-                &copy; 2019 Ashok M A | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
+                &copy; 2019 Ashok M A | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
             </div>
         </div>
     </div>

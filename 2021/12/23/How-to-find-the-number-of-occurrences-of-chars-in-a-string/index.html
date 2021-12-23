@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="As mentioned in the previous post, I am experimenting with my Macbook Pro mid 2012. One of the things that was handy in the Pop!_OS terminal was the c">
+    <meta name="description" content="Recently, I came across a code challenge to find the number of occurrences of a character in a string.
+It was intended to use it as a validator in ord">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to make an alias in MacOS">
+    <meta property="og:title" content="How to find the number of occurrences of chars in a string">
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>How to make an alias in MacOS - AshKeys</title>
+    <title>How to find the number of occurrences of chars in a string - AshKeys</title>
 
     <link rel="icon" href="/ashkeys.png">
 
@@ -177,8 +178,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to make an alias in MacOS</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-01-18</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to find the number of occurrences of chars in a string</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2021-12-23</p>
             
         </div>
     </div>
@@ -186,7 +187,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-apple"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -200,24 +201,25 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/MacOS/">#MacOS</a> <a class="fw3 ph1 dib" href="/tags/Mojave/">#Mojave</a> <a class="fw3 ph1 dib" href="/tags/Apple/">#Apple</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Regex/">#Regex</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>As mentioned in the <a href="/2020/01/18/Macbook-Pro-mid-2012-usuage-notes/">previous post</a>, I am experimenting with my Macbook Pro mid 2012. One of the things that was handy in the Pop!_OS terminal was the command <code>ll</code> to list out the contents of a directive.</p>
-<p>It is nothing but an alias of <code>ls -l</code> in short. I wanted to make this alias in the Macbook as well. With the below steps one can easily make an alias in Macbook as we do in linux by editing <code>.bashrc</code> files.</p>
-<h2 id="Edit-the-bash-profile"><a href="#Edit-the-bash-profile" class="headerlink" title="Edit the ~/.bash_profile"></a>Edit the <code>~/.bash_profile</code></h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<h2 id="Add-your-required-alias-commands"><a href="#Add-your-required-alias-commands" class="headerlink" title="Add your required alias commands"></a>Add your required alias commands</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> ll=<span class="string">"ls -l"</span></span><br></pre></td></tr></table></figure>
-<h2 id="Restart-your-terminal-session"><a href="#Restart-your-terminal-session" class="headerlink" title="Restart your terminal session"></a>Restart your terminal session</h2><p>Once you have added your respective alias in place, just restart your terminal session. Vola! \O/</p>
-<p>Just like in linux, this alias will be available in future sessions as well since it is part of the profile configurations.</p>
+                    <p>Recently, I came across a code challenge to find the number of occurrences of a character in a string.</p>
+<p>It was intended to use it as a validator in order to perform some minimum char length along with the occurrences.</p>
+<p>Anyhow, it took some time to figure out a way using Regex.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">searchString</span><br><span class="line">  <span class="comment">// split into each characters.</span></span><br><span class="line">  .split(<span class="string">''</span>)</span><br><span class="line">  <span class="comment">// Sort it so that the similar chars can be grouped together.</span></span><br><span class="line">  .sort()</span><br><span class="line">  <span class="comment">// Join them to group.</span></span><br><span class="line">  .join(<span class="string">''</span>)</span><br><span class="line">  <span class="comment">// match the chars those have more than one occurrence.</span></span><br><span class="line">  .match(<span class="regexp">/(.)\1+/g</span>)</span><br><span class="line">  <span class="comment">// Do what you wish with the result. I am just counting the length here.</span></span><br><span class="line">  .map(<span class="function">(<span class="params">a</span>) =&gt;</span> a.length);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> Try to modify the Regex to match only a set of chars occurrences.</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/MacOS/">#MacOS</a> <a class="fw3 ph1 dib" href="/tags/Mojave/">#Mojave</a> <a class="fw3 ph1 dib" href="/tags/Apple/">#Apple</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Regex/">#Regex</a>
                         </div>
                     
 

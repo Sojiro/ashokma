@@ -9,7 +9,8 @@ index_font_awesome_icon_css: far fa-star
 # Header
 menu:
     Home: /
-    Sharmi's NFTs: /nfts/
+    Portfolio: https://fullstacker.nl
+    Sharmi's NFTs: https://ashokma.com/nfts/
     Archives: /archives
     Tags: /tags
     About: /me

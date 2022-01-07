@@ -10,8 +10,8 @@
 
     <!--Description-->
     
-    <meta name="description" content="Postgres client is handy for a lot of operations you could do against a postgres db, be it local or remote.
-Let’s see how we can install one for linux">
+    <meta name="description" content="With the angular cli, it is really handy to make one’s angular app into a Progressive Web App.
+Add PWA capabilitiesJust add @angular/pwa module to you">
     
 
     <!--Author-->
@@ -21,7 +21,7 @@ Let’s see how we can install one for linux">
 
     <!--Open Graph Title-->
     
-    <meta property="og:title" content="How to install postgres client in linux">
+    <meta property="og:title" content="How to make an angular app into a Progressive Web App">
     
 
     <!--Open Graph Description-->
@@ -43,7 +43,7 @@ Let’s see how we can install one for linux">
 
     <!-- Title -->
     
-    <title>How to install postgres client in linux - AshKeys</title>
+    <title>How to make an angular app into a Progressive Web App - AshKeys</title>
 
     <link rel="icon" href="/ashkeys.png">
 
@@ -182,8 +182,8 @@ Let’s see how we can install one for linux">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to install postgres client in linux</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2021-01-06</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to make an angular app into a Progressive Web App</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2022-01-08</p>
             
         </div>
     </div>
@@ -191,7 +191,7 @@ Let’s see how we can install one for linux">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-database"></i>
+        <i class="header-icon fab fa-angular"></i>
     </div>
 </div>
 
@@ -205,25 +205,28 @@ Let’s see how we can install one for linux">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Postgres/">#Postgres</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/PWA/">#PWA</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Postgres client is handy for a lot of operations you could do against a postgres db, be it local or remote.</p>
-<p>Let’s see how we can install one for linux.</p>
-<h2 id="Installing-postgres-client"><a href="#Installing-postgres-client" class="headerlink" title="Installing postgres client"></a>Installing postgres client</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install postgresql-client</span><br></pre></td></tr></table></figure>
-<p>This installs <code>psql</code> bin with other utilities such as, <code>pg_dump</code>.</p>
-<h2 id="Verifying-the-installation"><a href="#Verifying-the-installation" class="headerlink" title="Verifying the installation"></a>Verifying the installation</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ psql --version</span><br><span class="line">psql (PostgreSQL) 12.5 (Ubuntu 12.5-0ubuntu0.20.10.1)</span><br></pre></td></tr></table></figure>
-<h2 id="Connecting-to-a-database"><a href="#Connecting-to-a-database" class="headerlink" title="Connecting to a database"></a>Connecting to a database</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ psql -h ashokma.com -U ashkeys -d ashkeys</span><br></pre></td></tr></table></figure>
-<p>In the above statement, we are trying to make a connection to the database named <code>ashkeys</code>, under the username <code>ashkeys</code>, against the host <code>ashokma.com</code>.</p>
+                    <p>With the <a href="https://angular.io/cli" target="_blank" rel="noopener">angular cli</a>, it is really handy to make one’s angular app into a <a href="https://web.dev/progressive-web-apps/" target="_blank" rel="noopener">Progressive Web App</a>.</p>
+<h2 id="Add-PWA-capabilities"><a href="#Add-PWA-capabilities" class="headerlink" title="Add PWA capabilities"></a>Add PWA capabilities</h2><p>Just add <code>@angular/pwa</code> module to your angular app using the cli.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng add @angular/pwa</span><br></pre></td></tr></table></figure>
+<p>This adds the PWA module and generates the default PWA featuers with the service-worker configured for basic assets cache. It also generates a <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank" rel="noopener"><code>manifest.webmanifest</code></a> and few icons.</p>
+<h2 id="Update-ngsw-config-json"><a href="#Update-ngsw-config-json" class="headerlink" title="Update ngsw-config.json"></a>Update <code>ngsw-config.json</code></h2><p>If you have more assets to be cached by the service worker to be more of a PWA, update the <code>ngsw-config.json</code> like below:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"$schema"</span>: <span class="string">"./node_modules/@angular/service-worker/config/schema.json"</span>,</span><br><span class="line">  <span class="attr">"index"</span>: <span class="string">"/index.html"</span>,</span><br><span class="line">  <span class="attr">"assetGroups"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"app"</span>,</span><br><span class="line">      <span class="attr">"installMode"</span>: <span class="string">"prefetch"</span>,</span><br><span class="line">      <span class="attr">"resources"</span>: &#123;</span><br><span class="line">        <span class="attr">"urls"</span>: [</span><br><span class="line">          <span class="string">"https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&amp;amp;display=swap"</span>,</span><br><span class="line">          <span class="string">"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"</span>,</span><br><span class="line">          <span class="string">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"</span>,</span><br><span class="line">          <span class="string">"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;amp;display=swap"</span>,</span><br><span class="line">          <span class="string">"https://fonts.googleapis.com/icon?family=Material+Icons"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">"files"</span>: [</span><br><span class="line">          <span class="string">"/favicon.ico"</span>,</span><br><span class="line">          <span class="string">"/index.html"</span>,</span><br><span class="line">          <span class="string">"/manifest.webmanifest"</span>,</span><br><span class="line">          <span class="string">"/*.css"</span>,</span><br><span class="line">          <span class="string">"/*.js"</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"assets"</span>,</span><br><span class="line">      <span class="attr">"installMode"</span>: <span class="string">"lazy"</span>,</span><br><span class="line">      <span class="attr">"updateMode"</span>: <span class="string">"prefetch"</span>,</span><br><span class="line">      <span class="attr">"resources"</span>: &#123;</span><br><span class="line">        <span class="attr">"files"</span>: [</span><br><span class="line">          <span class="string">"/assets/**"</span>,</span><br><span class="line">          <span class="string">"/*.(json|svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Here I have also added the URLs for the static CDN resources like <em>bootstrap.min.css</em></p>
+<blockquote>
+<p><strong>Tip:</strong> Use PWA assets generators such as <a href="https://www.npmjs.com/package/ngx-pwa-icons" target="_blank" rel="noopener">ngx-pwa-icons</a> or <a href="https://www.npmjs.com/package/pwa-asset-generator" target="_blank" rel="noopener">pwa-asset-generator</a> to generate icons for your PWA precisly for each devices.</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Linux/">#Linux</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Postgres/">#Postgres</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/Angular/">#Angular</a> <a class="fw3 ph1 dib" href="/tags/PWA/">#PWA</a>
                         </div>
                     
 

@@ -9,8 +9,8 @@
 
   <!--Description-->
   
-  <meta name="description" content="The more I explore D3.js the more I am intriguied by the ways to make Data-driven documents or charts.
-In very recently, I had to make a rect at the c">
+  <meta name="description" content="I have recently added Service Worker for this blog in order to make use of the PWA features and offline mode.
+FixIf one of the urls mentioned below re">
   
 
   <!--Author-->
@@ -20,7 +20,7 @@ In very recently, I had to make a rect at the c">
 
   <!--Open Graph Title-->
   
-  <meta property="og:title" content="How to get the tick values of an axis in d3">
+  <meta property="og:title" content="PWA Fix: Uncaught (in promise) TypeError: Failed to execute &#39;Cache&#39; on &#39;addAll&#39;: Request failed">
   
 
   <!--Open Graph Description-->
@@ -42,7 +42,7 @@ In very recently, I had to make a rect at the c">
 
   <!-- Title -->
   
-  <title>How to get the tick values of an axis in d3 - AshKeys</title>
+  <title>PWA Fix: Uncaught (in promise) TypeError: Failed to execute &#39;Cache&#39; on &#39;addAll&#39;: Request failed - AshKeys</title>
 
   <link rel="icon" href="/ashkeys.png">
 
@@ -196,8 +196,8 @@ In very recently, I had to make a rect at the c">
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to get the tick values of an axis in d3</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-02</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">PWA Fix: Uncaught (in promise) TypeError: Failed to execute 'Cache' on 'addAll': Request failed</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2022-01-08</p>
             
         </div>
     </div>
@@ -205,7 +205,7 @@ In very recently, I had to make a rect at the c">
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fas fa-chart-pie"></i>
+        <i class="header-icon fas fa-blog"></i>
     </div>
 </div>
 
@@ -219,24 +219,24 @@ In very recently, I had to make a rect at the c">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/d3/">#d3</a>
+                                <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Fix/">#Fix</a> <a class="fw3 ph1 dib" href="/tags/CacheAPI/">#CacheAPI</a> <a class="fw3 ph1 dib" href="/tags/PWA/">#PWA</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>The more I explore <a href="d3js.org">D3.js</a> the more I am intriguied by the ways to make Data-driven documents or charts.</p>
-<p>In very recently, I had to make a <code>rect</code> at the center of a 2D map. But, the challenge I had in getting the axis tick values irrespective of zoom/pan levels.</p>
-<p>To get the data of the axis, the following piece of code is enough:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xAxisTickValues = d3.select(<span class="string">'axis axis--x g'</span>).data();</span><br><span class="line"><span class="keyword">const</span> yAxisTickValues = d3.select(<span class="string">'axis axis--y g'</span>).data();</span><br></pre></td></tr></table></figure>
-<p>Using the <code>d3.quantile</code> function we can get the center values as follows:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> minX = d3.quantile(xAxisTickValues, <span class="number">.25</span>);</span><br><span class="line"><span class="keyword">const</span> maxX = d3.quantile(xAxisTickValues, <span class="number">.75</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> minY = d3.quantile(yAxisTickValues, <span class="number">.25</span>);</span><br><span class="line"><span class="keyword">const</span> maxY = d3.quantile(yAxisTickValues, <span class="number">.75</span>);</span><br></pre></td></tr></table></figure>
+                    <p>I have recently added <a href="https://web.dev/learn/pwa/service-workers/" target="_blank" rel="noopener">Service Worker</a> for <a href="/2022/01/08/How-to-add-cache-to-your-site-to-make-it-available-offline/">this blog</a> in order to make use of the <a href="https://web.dev/learn/pwa" target="_blank" rel="noopener">PWA features</a> and offline mode.</p>
+<h2 id="Fix"><a href="#Fix" class="headerlink" title="Fix"></a>Fix</h2><p>If one of the urls mentioned below returns <em>404</em> error, then you get <strong>Fix: Uncaught (in promise) TypeError: Failed to execute ‘Cache’ on ‘addAll’: Request failed</strong> error.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cache.addAll([</span><br><span class="line">  <span class="string">'http://unpkg.com/tachyons@4.10.0/css/tachyons.min.css'</span>,</span><br><span class="line">  <span class="string">'http://use.fontawesome.com/releases/v5.7.2/css/all.css'</span>,</span><br><span class="line">  <span class="string">'http://fonts.googleapis.com/css?family=Cookie'</span>,</span><br><span class="line">  <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2'</span>,</span><br><span class="line">  <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2'</span>,</span><br><span class="line">  <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-brands-400.woff2'</span>,</span><br><span class="line">  <span class="string">'http://fonts.gstatic.com/s/cookie/v12/syky-y18lb0tSbf9kgqS.woff2'</span>,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>So make sure all of those resources are available properly. Sometimes a typo could mess it up.</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/d3/">#d3</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/Fix/">#Fix</a> <a class="fw3 ph1 dib" href="/tags/CacheAPI/">#CacheAPI</a> <a class="fw3 ph1 dib" href="/tags/PWA/">#PWA</a>
                         </div>
                     
 

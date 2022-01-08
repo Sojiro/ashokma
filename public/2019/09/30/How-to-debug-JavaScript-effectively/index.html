@@ -3,67 +3,66 @@
 
 <!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Description-->
+  
+  <meta name="description" content="I work with the frontend of the application more than the backend as many of us nowadays. So, it helps to know the better way of debugging in JavaScri">
+  
 
-    <!--Description-->
-    
-    <meta name="description" content="I work with the frontend of the application more than the backend as many of us nowadays. So, it helps to know the better way of debugging in JavaScri">
-    
+  <!--Author-->
+  
+  <meta name="author" content="Ashok M A">
+  
 
-    <!--Author-->
-    
-    <meta name="author" content="Ashok M A">
-    
+  <!--Open Graph Title-->
+  
+  <meta property="og:title" content="How to debug JavaScript effectively">
+  
 
-    <!--Open Graph Title-->
-    
-    <meta property="og:title" content="How to debug JavaScript effectively">
-    
+  <!--Open Graph Description-->
+  
 
-    <!--Open Graph Description-->
-    
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="AshKeys">
 
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="AshKeys">
+  <!--Type page-->
+  
+  <meta property="og:type" content="article">
+  
 
-    <!--Type page-->
-    
-    <meta property="og:type" content="article">
-    
+  <!--Page Cover-->
+  
 
-    <!--Page Cover-->
-    
+  <meta name="twitter:card" content="summary">
+  
 
-    <meta name="twitter:card" content="summary">
-    
+  <!-- Title -->
+  
+  <title>How to debug JavaScript effectively - AshKeys</title>
 
-    <!-- Title -->
-    
-    <title>How to debug JavaScript effectively - AshKeys</title>
+  <link rel="icon" href="/ashkeys.png">
 
-    <link rel="icon" href="/ashkeys.png">
+  <!-- Tachyons Core CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
 
-    <!-- Tachyons Core CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Google Analytics -->
-    
+  <!-- Google Analytics -->
+  
 <script>
   (function (i, s, o, g, r, a, m) {
     i["GoogleAnalyticsObject"] = r;
@@ -102,8 +101,8 @@
 </script>
 
 
-    <!-- Google AdSense -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Google AdSense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-1544182531179563",
@@ -111,7 +110,22 @@
   });
 </script>
 
+  <!-- Service Worker -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js', { scope: '/' })
+      .then(function (registration) {
+        console.log('Service Worker Registered');
+      });
+    navigator.serviceWorker.ready.then(function (registration) {
+      console.log('Service Worker Ready');
+    });
+  }
+</script>
+
 </head>
+
 
 <body>
 
@@ -379,7 +393,7 @@
       
     </div>
     <div class="f6 f5-ns center tc white pt2 fw3">
-      &copy; 2022 — Ashok M A | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
+      &copy; 2022 — Ashok M A | Theme by <a class="link dim white" href="//github.com/klugjo">Jonathan Klughertz</a> | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
     </div>
   </div>
 </div>

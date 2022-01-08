@@ -54,4 +54,4 @@ social_platforms:
       fa_icon: fab fa-stack-overflow
 
 # Footer about
-footer_about: "Ashok M A | Powered by <a class='link dim white' href='//hexo.io/'>Hexo</a>"
+footer_about: "Ashok M A | Theme by <a class='link dim white' href='//github.com/klugjo'>Jonathan Klughertz</a> | Powered by <a class='link dim white' href='//hexo.io/'>Hexo</a>"

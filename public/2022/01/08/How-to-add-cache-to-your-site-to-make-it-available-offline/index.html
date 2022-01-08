@@ -9,8 +9,9 @@
 
   <!--Description-->
   
-  <meta name="description" content="To flat an array is easy in JavaScript using the  flat  array method.
-123const names = [&#39;AshKeys&#39;, [&#39;Sojiro&#39;, [&#39;Seta&#39;]]];console.log(names.flat(2)); /">
+  <meta name="description" content="It is really simple to add some cache to your site in order to make it available offline.
+
+It should be a Jamstack or a simple static site that solely">
   
 
   <!--Author-->
@@ -20,7 +21,7 @@
 
   <!--Open Graph Title-->
   
-  <meta property="og:title" content="How to flatten an array in JavaScript">
+  <meta property="og:title" content="How to add cache to your site to make it available offline">
   
 
   <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
   <!-- Title -->
   
-  <title>How to flatten an array in JavaScript - AshKeys</title>
+  <title>How to add cache to your site to make it available offline - AshKeys</title>
 
   <link rel="icon" href="/ashkeys.png">
 
@@ -196,8 +197,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">How to flatten an array in JavaScript</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2020-02-19</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to add cache to your site to make it available offline</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2022-01-08</p>
             
         </div>
     </div>
@@ -205,7 +206,7 @@
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-js-square"></i>
+        <i class="header-icon fas fa-blog"></i>
     </div>
 </div>
 
@@ -219,23 +220,29 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
+                                <a class="fw3 ph1 dib" href="/tags/CacheAPI/">#CacheAPI</a> <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>To flat an array is easy in JavaScript using the <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat"> <code>flat</code> </a> array method.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> names = [<span class="string">'AshKeys'</span>, [<span class="string">'Sojiro'</span>, [<span class="string">'Seta'</span>]]];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(names.flat(<span class="number">2</span>)); <span class="comment">// ['AshKeys', 'Sojiro', 'Seta']</span></span><br></pre></td></tr></table></figure>
-<p>By default, it flattens to 1 depth but we do can supply the depth level to be flattened.</p>
-<p>If you do not know the depth you want, then it is better to give the max depth possible.<a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity">Infinity</a></p>
-<p><strong>Note:</strong> <code>flat</code> method is quite new to JS as it is specified in ES2019. I had to code the snippet in chrome console./O\</p>
+                    <p>It is really simple to add some <a href="https://web.dev/learn/pwa/caching/#downloading-and-storing-assets" target="_blank" rel="noopener">cache</a> to your site in order to make it available offline.</p>
+<blockquote>
+<p>It should be a <a href="https://jamstack.org/" target="_blank" rel="noopener">Jamstack</a> or a simple static site that solely relies on some static files alone.</p>
+</blockquote>
+<h2 id="Introduce-Service-Worker"><a href="#Introduce-Service-Worker" class="headerlink" title="Introduce Service Worker"></a>Introduce <a href="https://web.dev/learn/pwa/service-workers/" target="_blank" rel="noopener">Service Worker</a></h2><p>If the browser supports it, register our <code>sw.js</code> first.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">  navigator.serviceWorker</span><br><span class="line">    .register(<span class="string">'/sw.js'</span>, &#123; <span class="attr">scope</span>: <span class="string">'/'</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'Service Worker Registered'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  navigator.serviceWorker.ready.then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Service Worker Ready'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>By default it works under the loaded context (<strong>‘/‘ - here</strong>) but we can also specify the same using the config object while registering <code>{ scope: &#39;/&#39; }</code>.</p>
+<h2 id="Write-sw-js-with-caching-options"><a href="#Write-sw-js-with-caching-options" class="headerlink" title="Write sw.js with caching options"></a>Write <code>sw.js</code> with caching options</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> version = <span class="string">'1'</span>;</span><br><span class="line"><span class="keyword">const</span> cacheName = <span class="string">`site-cache-<span class="subst">$&#123;version&#125;</span>`</span>;</span><br><span class="line"><span class="comment">// Opens the cache on SW install event.</span></span><br><span class="line">self.addEventListener(<span class="string">'install'</span>, (e) =&gt; &#123;</span><br><span class="line">  e.waitUntil(</span><br><span class="line">    caches.open(cacheName).then(<span class="function">(<span class="params">cache</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// Add all of static needed to run the site.</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        cache</span><br><span class="line">          .addAll([</span><br><span class="line">            <span class="string">'http://unpkg.com/tachyons@4.10.0/css/tachyons.min.css'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/css/all.css'</span>,</span><br><span class="line">            <span class="string">'http://fonts.googleapis.com/css?family=Cookie'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-brands-400.woff2'</span>,</span><br><span class="line">            <span class="string">'http://fonts.gstatic.com/s/cookie/v12/syky-y18lb0tSbf9kgqS.woff2'</span>,</span><br><span class="line">          ])</span><br><span class="line">          <span class="comment">// Just update it right away.</span></span><br><span class="line">          .then(<span class="function"><span class="params">()</span> =&gt;</span> self.skipWaiting())</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">'activate'</span>, (event) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Claim for all the clients to start using it right away.</span></span><br><span class="line">  event.waitUntil(self.clients.claim());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">'fetch'</span>, (event) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Intercept all fetch and return with cache when available.</span></span><br><span class="line">  event.respondWith(</span><br><span class="line">    caches</span><br><span class="line">      .open(cacheName)</span><br><span class="line">      .then(<span class="function">(<span class="params">cache</span>) =&gt;</span> cache.match(event.request, &#123; <span class="attr">ignoreSearch</span>: <span class="literal">true</span> &#125;))</span><br><span class="line">      .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> response || fetch(event.request);</span><br><span class="line">      &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Tip:</strong> You can also add your UI frame libs to the cache as well.</p>
+</blockquote>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Arrays/">#Arrays</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/CacheAPI/">#CacheAPI</a> <a class="fw3 ph1 dib" href="/tags/Blog/">#Blog</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a>
                         </div>
                     
 

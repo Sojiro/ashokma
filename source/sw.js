@@ -1,7 +1,6 @@
 const version = '5';
 const cacheName = `ashokma-com-${version}`;
 self.addEventListener('install', (e) => {
-  console.log('SW v%s installed!', version);
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
       return cache
@@ -26,11 +25,9 @@ self.addEventListener('install', (e) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(self.clients.claim());
-  console.log('SW v%s activated!', version);
 });
 
 self.addEventListener('fetch', (event) => {
-  console.log(event.request.url);
   event.respondWith(
     caches
       .open(cacheName)

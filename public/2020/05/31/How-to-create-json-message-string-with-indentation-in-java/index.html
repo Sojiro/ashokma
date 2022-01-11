@@ -2,87 +2,202 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!--Description-->
   
-  <meta name="description" content="Recently I came across an ugly string concatenation in one of our legacy codebase or the one I did not came across for a long time.
-The string concate">
+  <meta
+    name="description"
+    content="Recently I came across an ugly string concatenation in one of our legacy codebase or the one I did not came across for a long time.
+The string concate"
+  />
   
 
   <!--Author-->
   
-  <meta name="author" content="Ashok M A">
+  <meta name="author" content="Ashok M A" />
   
 
   <!--Open Graph Title-->
   
-  <meta property="og:title" content="How to create json message string with indentation in java">
+  <meta property="og:title" content="How to create json message string with indentation in java" />
   
 
   <!--Open Graph Description-->
   
 
   <!--Open Graph Site Name-->
-  <meta property="og:site_name" content="AshKeys">
+  <meta property="og:site_name" content="AshKeys" />
 
   <!--Type page-->
   
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="article" />
   
 
   <!--Page Cover-->
   
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary" />
   
 
   <!-- Title -->
   
   <title>How to create json message string with indentation in java - AshKeys</title>
 
-  <link rel="icon" href="/ashkeys.png">
+  <link rel="icon" href="/ashkeys.png" />
 
   <!-- Tachyons Core CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+  />
 
   <!-- Custom Fonts -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#29c6cd">
-  <link rel="apple-touch-icon" href="images/apple-icon-180.png">
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#29c6cd" />
+  <link rel="apple-touch-icon" href="images/apple-icon-180.png" />
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-2732.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2732-2048.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2388.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2388-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1536-2048.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-1536.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2224.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2224-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1620-2160.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2160-1620.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1284-2778.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2778-1284.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1170-2532.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2532-1170.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1125-2436.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2436-1125.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2688.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2688-1242.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-828-1792.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1792-828.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2208.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2208-1242.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-750-1334.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1334-750.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-640-1136.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1136-640.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -92,7 +207,9 @@ The string concate">
   <![endif]-->
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
 
   <!-- Google Analytics -->
   
@@ -122,7 +239,10 @@ The string concate">
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115413748-1"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-115413748-1"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -157,7 +277,7 @@ The string concate">
   }
 </script>
 
-</head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
@@ -168,7 +288,8 @@ The string concate">
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
+           title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -198,27 +319,39 @@ The string concate">
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/"
+               title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://fullstacker.nl" title="Portfolio">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               target="_blank" rel="noopener" href="https://fullstacker.nl"
+               title="Portfolio">
                 Portfolio
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://ashokma.com/nfts/" title="Sharmi&#39;s NFTs">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="https://ashokma.com/nfts/"
+               title="Sharmi&#39;s NFTs">
                 Sharmi&#39;s NFTs
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/archives"
+               title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/tags"
+               title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/me"
+               title="About">
                 About
             </a>
             
@@ -261,11 +394,15 @@ The string concate">
 <p>The string concatenation was there to construct as JSON string. The JSON string was then parsed as a message template for MQTT topics.</p>
 <p>At first sight, I knew it gotta go and something bit more cleaner piece of code should replace it. So I was looking for options to do a better job. Then I found something below:</p>
 <h2 id="org-json-library"><a href="#org-json-library" class="headerlink" title="org.json library"></a><code>org.json</code> library</h2><h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.json<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>json<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>20090211<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">"org.json:json:20090211"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">&quot;org.json:json:20090211&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>Using the <code>JSONObject</code> of this library I was able to replace the ugly string concatenation with something like below:</p>
-<h2 id="JSONObject-in-action"><a href="#JSONObject-in-action" class="headerlink" title="JSONObject in action"></a><code>JSONObject</code> in action</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> JSONObject()</span><br><span class="line">   .put(<span class="string">"name"</span>, <span class="string">"Ashok M A"</span>)</span><br><span class="line">   .put(<span class="string">"website"</span>, <span class="string">"https://ashokma.com"</span>)</span><br><span class="line">   .put(<span class="string">"address"</span>, <span class="keyword">new</span> JSONObject()</span><br><span class="line">	.put(<span class="string">"houseNumber"</span>, <span class="string">"1234"</span>)</span><br><span class="line">   	.put(<span class="string">"street"</span>, <span class="string">"Woonboulevard"</span>)</span><br><span class="line">   	.put(<span class="string">"city"</span>, <span class="string">"Utrecht"</span>)</span><br><span class="line">   	.put(<span class="string">"country"</span>, <span class="string">"The Netherlands"</span>)</span><br><span class="line">   )</span><br><span class="line">   .put(<span class="string">"skills"</span>, <span class="keyword">new</span> JSONArray(Arrays.asList(<span class="string">"Angular"</span>, <span class="string">"Spring Boot"</span>)))</span><br><span class="line">   .toString(<span class="number">4</span>); <span class="comment">// indentation</span></span><br></pre></td></tr></table></figure>
+<h2 id="JSONObject-in-action"><a href="#JSONObject-in-action" class="headerlink" title="JSONObject in action"></a><code>JSONObject</code> in action</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> JSONObject()</span><br><span class="line">   .put(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;Ashok M A&quot;</span>)</span><br><span class="line">   .put(<span class="string">&quot;website&quot;</span>, <span class="string">&quot;https://ashokma.com&quot;</span>)</span><br><span class="line">   .put(<span class="string">&quot;address&quot;</span>, <span class="keyword">new</span> JSONObject()</span><br><span class="line">	.put(<span class="string">&quot;houseNumber&quot;</span>, <span class="string">&quot;1234&quot;</span>)</span><br><span class="line">   	.put(<span class="string">&quot;street&quot;</span>, <span class="string">&quot;Woonboulevard&quot;</span>)</span><br><span class="line">   	.put(<span class="string">&quot;city&quot;</span>, <span class="string">&quot;Utrecht&quot;</span>)</span><br><span class="line">   	.put(<span class="string">&quot;country&quot;</span>, <span class="string">&quot;The Netherlands&quot;</span>)</span><br><span class="line">   )</span><br><span class="line">   .put(<span class="string">&quot;skills&quot;</span>, <span class="keyword">new</span> JSONArray(Arrays.asList(<span class="string">&quot;Angular&quot;</span>, <span class="string">&quot;Spring Boot&quot;</span>)))</span><br><span class="line">   .toString(<span class="number">4</span>); <span class="comment">// indentation</span></span><br></pre></td></tr></table></figure>
+
 <p>The above beautiful piece of code gives us the below JSON string.</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"address"</span>: &#123;</span><br><span class="line">        <span class="attr">"city"</span>: <span class="string">"Utrecht"</span>,</span><br><span class="line">        <span class="attr">"country"</span>: <span class="string">"The Netherlands"</span>,</span><br><span class="line">        <span class="attr">"houseNumber"</span>: <span class="string">"1234"</span>,</span><br><span class="line">        <span class="attr">"street"</span>: <span class="string">"Woonboulevard"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"Ashok M A"</span>,</span><br><span class="line">    <span class="attr">"skills"</span>: [<span class="string">"Angular"</span>, <span class="string">"Spring Boot"</span>],</span><br><span class="line">    <span class="attr">"website"</span>: <span class="string">"https://ashokma.com"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;address&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;city&quot;</span>: <span class="string">&quot;Utrecht&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;country&quot;</span>: <span class="string">&quot;The Netherlands&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;houseNumber&quot;</span>: <span class="string">&quot;1234&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;street&quot;</span>: <span class="string">&quot;Woonboulevard&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Ashok M A&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;skills&quot;</span>: [<span class="string">&quot;Angular&quot;</span>, <span class="string">&quot;Spring Boot&quot;</span>],</span><br><span class="line">    <span class="attr">&quot;website&quot;</span>: <span class="string">&quot;https://ashokma.com&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>Tip:</strong> Yes, you can also construct by nesting arrays into objects and vice versa. \O/</p>
 </blockquote>
@@ -288,7 +425,7 @@ The string concate">
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -297,12 +434,12 @@ The string concate">
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 2: Categories -->
                     
@@ -386,38 +523,56 @@ The string concate">
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 <a class="bmc-button" target="_blank" href="https://buymeacoffee.com/ashkeys">
-    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
+    <img
+         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
+         alt="Buy me a coffee...">
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
     <div class="center tc pt2">
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//twitter.com/AshokMA9" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//twitter.com/AshokMA9"
+          target="_blank"
+        >
           <i class="fab fa-twitter"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//www.linkedin.com/in/ashok-m-a-full-stack-dev/" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//www.linkedin.com/in/ashok-m-a-full-stack-dev/"
+          target="_blank"
+        >
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//github.com/Sojiro" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//github.com/Sojiro"
+          target="_blank"
+        >
           <i class="fab fa-github"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//stackoverflow.com/users/1197396/ashok-m-a" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//stackoverflow.com/users/1197396/ashok-m-a"
+          target="_blank"
+        >
           <i class="fab fa-stack-overflow"></i>
         </a>
       </div>
       
     </div>
     <div class="f6 f5-ns center tc white pt2 fw3">
-      &copy; 2022 — Ashok M A | Theme by <a class="link dim white" href="//github.com/klugjo">Jonathan Klughertz</a> | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
+      &copy; 2022 — Ashok M A | Theme by <a class='link dim white' target="_blank" rel="noopener" href='//github.com/klugjo'>Jonathan Klughertz</a> | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
     </div>
   </div>
 </div>

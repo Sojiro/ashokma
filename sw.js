@@ -8,6 +8,7 @@ self.addEventListener('install', (e) => {
           `/`,
           `/index.html`,
           '/ashkeys.png',
+          '/me/index/index.html',
           '/me/index/avatar.jpeg',
           '/css/style.css',
           'http://unpkg.com/tachyons@4.10.0/css/tachyons.min.css',

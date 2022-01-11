@@ -2,88 +2,203 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!--Description-->
   
-  <meta name="description" content="It is really simple to add some cache to your site in order to make it available offline.
+  <meta
+    name="description"
+    content="It is really simple to add some cache to your site in order to make it available offline.
 
-It should be a Jamstack or a simple static site that solely">
+It should be a Jamstack or a simple static site that solely"
+  />
   
 
   <!--Author-->
   
-  <meta name="author" content="Ashok M A">
+  <meta name="author" content="Ashok M A" />
   
 
   <!--Open Graph Title-->
   
-  <meta property="og:title" content="How to add cache to your site to make it available offline">
+  <meta property="og:title" content="How to add cache to your site to make it available offline" />
   
 
   <!--Open Graph Description-->
   
 
   <!--Open Graph Site Name-->
-  <meta property="og:site_name" content="AshKeys">
+  <meta property="og:site_name" content="AshKeys" />
 
   <!--Type page-->
   
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="article" />
   
 
   <!--Page Cover-->
   
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary" />
   
 
   <!-- Title -->
   
   <title>How to add cache to your site to make it available offline - AshKeys</title>
 
-  <link rel="icon" href="/ashkeys.png">
+  <link rel="icon" href="/ashkeys.png" />
 
   <!-- Tachyons Core CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+  />
 
   <!-- Custom Fonts -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#29c6cd">
-  <link rel="apple-touch-icon" href="images/apple-icon-180.png">
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#29c6cd" />
+  <link rel="apple-touch-icon" href="images/apple-icon-180.png" />
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-2732.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2732-2048.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2388.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2388-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1536-2048.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-1536.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2224.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2224-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1620-2160.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2160-1620.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1284-2778.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2778-1284.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1170-2532.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2532-1170.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1125-2436.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2436-1125.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2688.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2688-1242.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-828-1792.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1792-828.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2208.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2208-1242.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-750-1334.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1334-750.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-640-1136.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1136-640.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -93,7 +208,9 @@ It should be a Jamstack or a simple static site that solely">
   <![endif]-->
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
 
   <!-- Google Analytics -->
   
@@ -123,7 +240,10 @@ It should be a Jamstack or a simple static site that solely">
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115413748-1"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-115413748-1"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -158,7 +278,7 @@ It should be a Jamstack or a simple static site that solely">
   }
 </script>
 
-</head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
@@ -169,7 +289,8 @@ It should be a Jamstack or a simple static site that solely">
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
+           title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -199,27 +320,39 @@ It should be a Jamstack or a simple static site that solely">
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/"
+               title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://fullstacker.nl" title="Portfolio">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               target="_blank" rel="noopener" href="https://fullstacker.nl"
+               title="Portfolio">
                 Portfolio
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://ashokma.com/nfts/" title="Sharmi&#39;s NFTs">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="https://ashokma.com/nfts/"
+               title="Sharmi&#39;s NFTs">
                 Sharmi&#39;s NFTs
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/archives"
+               title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/tags"
+               title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/me"
+               title="About">
                 About
             </a>
             
@@ -258,14 +391,16 @@ It should be a Jamstack or a simple static site that solely">
                     
 
                     <!-- Main Post Content -->
-                    <p>It is really simple to add some <a href="https://web.dev/learn/pwa/caching/#downloading-and-storing-assets" target="_blank" rel="noopener">cache</a> to your site in order to make it available offline.</p>
+                    <p>It is really simple to add some <a target="_blank" rel="noopener" href="https://web.dev/learn/pwa/caching/#downloading-and-storing-assets">cache</a> to your site in order to make it available offline.</p>
 <blockquote>
-<p>It should be a <a href="https://jamstack.org/" target="_blank" rel="noopener">Jamstack</a> or a simple static site that solely relies on some static files alone.</p>
+<p>It should be a <a target="_blank" rel="noopener" href="https://jamstack.org/">Jamstack</a> or a simple static site that solely relies on some static files alone.</p>
 </blockquote>
-<h2 id="Introduce-Service-Worker"><a href="#Introduce-Service-Worker" class="headerlink" title="Introduce Service Worker"></a>Introduce <a href="https://web.dev/learn/pwa/service-workers/" target="_blank" rel="noopener">Service Worker</a></h2><p>If the browser supports it, register our <code>sw.js</code> first.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">  navigator.serviceWorker</span><br><span class="line">    .register(<span class="string">'/sw.js'</span>, &#123; <span class="attr">scope</span>: <span class="string">'/'</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'Service Worker Registered'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  navigator.serviceWorker.ready.then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Service Worker Ready'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>By default it works under the loaded context (<strong>‘/‘ - here</strong>) but we can also specify the same using the config object while registering <code>{ scope: &#39;/&#39; }</code>.</p>
-<h2 id="Write-sw-js-with-caching-options"><a href="#Write-sw-js-with-caching-options" class="headerlink" title="Write sw.js with caching options"></a>Write <code>sw.js</code> with caching options</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> version = <span class="string">'1'</span>;</span><br><span class="line"><span class="keyword">const</span> cacheName = <span class="string">`site-cache-<span class="subst">$&#123;version&#125;</span>`</span>;</span><br><span class="line"><span class="comment">// Opens the cache on SW install event.</span></span><br><span class="line">self.addEventListener(<span class="string">'install'</span>, (e) =&gt; &#123;</span><br><span class="line">  e.waitUntil(</span><br><span class="line">    caches.open(cacheName).then(<span class="function">(<span class="params">cache</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// Add all of static needed to run the site.</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        cache</span><br><span class="line">          .addAll([</span><br><span class="line">            <span class="string">'http://unpkg.com/tachyons@4.10.0/css/tachyons.min.css'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/css/all.css'</span>,</span><br><span class="line">            <span class="string">'http://fonts.googleapis.com/css?family=Cookie'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2'</span>,</span><br><span class="line">            <span class="string">'http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-brands-400.woff2'</span>,</span><br><span class="line">            <span class="string">'http://fonts.gstatic.com/s/cookie/v12/syky-y18lb0tSbf9kgqS.woff2'</span>,</span><br><span class="line">          ])</span><br><span class="line">          <span class="comment">// Just update it right away.</span></span><br><span class="line">          .then(<span class="function"><span class="params">()</span> =&gt;</span> self.skipWaiting())</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">'activate'</span>, (event) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Claim for all the clients to start using it right away.</span></span><br><span class="line">  event.waitUntil(self.clients.claim());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">'fetch'</span>, (event) =&gt; &#123;</span><br><span class="line">  <span class="comment">// Intercept all fetch and return with cache when available.</span></span><br><span class="line">  event.respondWith(</span><br><span class="line">    caches</span><br><span class="line">      .open(cacheName)</span><br><span class="line">      .then(<span class="function">(<span class="params">cache</span>) =&gt;</span> cache.match(event.request, &#123; <span class="attr">ignoreSearch</span>: <span class="literal">true</span> &#125;))</span><br><span class="line">      .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> response || fetch(event.request);</span><br><span class="line">      &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Introduce-Service-Worker"><a href="#Introduce-Service-Worker" class="headerlink" title="Introduce Service Worker"></a>Introduce <a target="_blank" rel="noopener" href="https://web.dev/learn/pwa/service-workers/">Service Worker</a></h2><p>If the browser supports it, register our <code>sw.js</code> first.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">&#x27;serviceWorker&#x27;</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">  navigator.serviceWorker</span><br><span class="line">    .register(<span class="string">&#x27;/sw.js&#x27;</span>, &#123; <span class="attr">scope</span>: <span class="string">&#x27;/&#x27;</span> &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;Service Worker Registered&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  navigator.serviceWorker.ready.then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;Service Worker Ready&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>By default it works under the loaded context (<strong>‘/‘ - here</strong>) but we can also specify the same using the config object while registering <code>&#123; scope: &#39;/&#39; &#125;</code>.</p>
+<h2 id="Write-sw-js-with-caching-options"><a href="#Write-sw-js-with-caching-options" class="headerlink" title="Write sw.js with caching options"></a>Write <code>sw.js</code> with caching options</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> version = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> cacheName = <span class="string">`site-cache-<span class="subst">$&#123;version&#125;</span>`</span>;</span><br><span class="line"><span class="comment">// Opens the cache on SW install event.</span></span><br><span class="line">self.addEventListener(<span class="string">&#x27;install&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  e.waitUntil(</span><br><span class="line">    caches.open(cacheName).then(<span class="function">(<span class="params">cache</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// Add all of static needed to run the site.</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        cache</span><br><span class="line">          .addAll([</span><br><span class="line">            <span class="string">&#x27;http://unpkg.com/tachyons@4.10.0/css/tachyons.min.css&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;http://use.fontawesome.com/releases/v5.7.2/css/all.css&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;http://fonts.googleapis.com/css?family=Cookie&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;http://use.fontawesome.com/releases/v5.7.2/webfonts/fa-brands-400.woff2&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;http://fonts.gstatic.com/s/cookie/v12/syky-y18lb0tSbf9kgqS.woff2&#x27;</span>,</span><br><span class="line">          ])</span><br><span class="line">          <span class="comment">// Just update it right away.</span></span><br><span class="line">          .then(<span class="function">() =&gt;</span> self.skipWaiting())</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">&#x27;activate&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Claim for all the clients to start using it right away.</span></span><br><span class="line">  event.waitUntil(self.clients.claim());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">&#x27;fetch&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Intercept all fetch and return with cache when available.</span></span><br><span class="line">  event.respondWith(</span><br><span class="line">    caches</span><br><span class="line">      .open(cacheName)</span><br><span class="line">      .then(<span class="function">(<span class="params">cache</span>) =&gt;</span> cache.match(event.request, &#123; <span class="attr">ignoreSearch</span>: <span class="literal">true</span> &#125;))</span><br><span class="line">      .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> response || fetch(event.request);</span><br><span class="line">      &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>Tip:</strong> You can also add your UI frame libs to the cache as well.</p>
 </blockquote>
@@ -286,7 +421,7 @@ It should be a Jamstack or a simple static site that solely">
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -295,12 +430,12 @@ It should be a Jamstack or a simple static site that solely">
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 2: Categories -->
                     
@@ -384,38 +519,56 @@ It should be a Jamstack or a simple static site that solely">
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 <a class="bmc-button" target="_blank" href="https://buymeacoffee.com/ashkeys">
-    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
+    <img
+         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
+         alt="Buy me a coffee...">
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
     <div class="center tc pt2">
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//twitter.com/AshokMA9" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//twitter.com/AshokMA9"
+          target="_blank"
+        >
           <i class="fab fa-twitter"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//www.linkedin.com/in/ashok-m-a-full-stack-dev/" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//www.linkedin.com/in/ashok-m-a-full-stack-dev/"
+          target="_blank"
+        >
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//github.com/Sojiro" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//github.com/Sojiro"
+          target="_blank"
+        >
           <i class="fab fa-github"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//stackoverflow.com/users/1197396/ashok-m-a" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//stackoverflow.com/users/1197396/ashok-m-a"
+          target="_blank"
+        >
           <i class="fab fa-stack-overflow"></i>
         </a>
       </div>
       
     </div>
     <div class="f6 f5-ns center tc white pt2 fw3">
-      &copy; 2022 — Ashok M A | Theme by <a class="link dim white" href="//github.com/klugjo">Jonathan Klughertz</a> | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
+      &copy; 2022 — Ashok M A | Theme by <a class='link dim white' target="_blank" rel="noopener" href='//github.com/klugjo'>Jonathan Klughertz</a> | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
     </div>
   </div>
 </div>

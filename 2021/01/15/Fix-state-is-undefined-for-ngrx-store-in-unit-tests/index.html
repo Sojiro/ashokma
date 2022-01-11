@@ -2,87 +2,202 @@
 <html lang="en">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!--Description-->
   
-  <meta name="description" content="Go to fix
-I use @ngrx/store at my day-to-day development. This post is not to share the benefits of using a state-management library. Instead, to shar">
+  <meta
+    name="description"
+    content="Go to fix
+I use @ngrx/store at my day-to-day development. This post is not to share the benefits of using a state-management library. Instead, to shar"
+  />
   
 
   <!--Author-->
   
-  <meta name="author" content="Ashok M A">
+  <meta name="author" content="Ashok M A" />
   
 
   <!--Open Graph Title-->
   
-  <meta property="og:title" content="Fix: state is undefined for @ngrx/store in unit tests">
+  <meta property="og:title" content="Fix: state is undefined for @ngrx/store in unit tests" />
   
 
   <!--Open Graph Description-->
   
 
   <!--Open Graph Site Name-->
-  <meta property="og:site_name" content="AshKeys">
+  <meta property="og:site_name" content="AshKeys" />
 
   <!--Type page-->
   
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="article" />
   
 
   <!--Page Cover-->
   
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary" />
   
 
   <!-- Title -->
   
   <title>Fix: state is undefined for @ngrx/store in unit tests - AshKeys</title>
 
-  <link rel="icon" href="/ashkeys.png">
+  <link rel="icon" href="/ashkeys.png" />
 
   <!-- Tachyons Core CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+  />
 
   <!-- Custom Fonts -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#29c6cd">
-  <link rel="apple-touch-icon" href="images/apple-icon-180.png">
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#29c6cd" />
+  <link rel="apple-touch-icon" href="images/apple-icon-180.png" />
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="images/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-2732.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2732-2048.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2388.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2388-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1536-2048.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-1536.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2224.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2224-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1620-2160.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2160-1620.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1284-2778.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2778-1284.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1170-2532.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2532-1170.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1125-2436.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2436-1125.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2688.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2688-1242.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-828-1792.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1792-828.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2208.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2208-1242.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-750-1334.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1334-750.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-640-1136.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1136-640.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -92,7 +207,9 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
   <![endif]-->
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
 
   <!-- Google Analytics -->
   
@@ -122,7 +239,10 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115413748-1"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-115413748-1"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
@@ -157,7 +277,7 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
   }
 </script>
 
-</head>
+<meta name="generator" content="Hexo 6.0.0"></head>
 
 
 <body>
@@ -168,7 +288,8 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
 
     <nav class="db dt-l w-100 mw8 center border-box">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="AshKeys">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
+           title="AshKeys">
             <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
@@ -198,27 +319,39 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
     })();
 </script>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/" title="Home">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/"
+               title="Home">
                 Home
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://fullstacker.nl" title="Portfolio">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               target="_blank" rel="noopener" href="https://fullstacker.nl"
+               title="Portfolio">
                 Portfolio
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="https://ashokma.com/nfts/" title="Sharmi&#39;s NFTs">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="https://ashokma.com/nfts/"
+               title="Sharmi&#39;s NFTs">
                 Sharmi&#39;s NFTs
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/archives" title="Archives">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/archives"
+               title="Archives">
                 Archives
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/tags" title="Tags">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/tags"
+               title="Tags">
                 Tags
             </a>
             
-            <a class="link dim f6 f5-l dib mr3 mr4-l white" href="/me" title="About">
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/me"
+               title="About">
                 About
             </a>
             
@@ -258,16 +391,19 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
 
                     <!-- Main Post Content -->
                     <p><a href="#Fix-state-is-undefined">Go to fix</a></p>
-<p>I use <a href="//ngrx.io/guide/store"><code>@ngrx/store</code></a> at my day-to-day development. This post is not to share the benefits of using a state-management library. Instead, to share a fix for a possible unit tests mess up we might make along the way of using such libraries.</p>
+<p>I use <a target="_blank" rel="noopener" href="//ngrx.io/guide/store"><code>@ngrx/store</code></a> at my day-to-day development. This post is not to share the benefits of using a state-management library. Instead, to share a fix for a possible unit tests mess up we might make along the way of using such libraries.</p>
 <h2 id="MockStore"><a href="#MockStore" class="headerlink" title="MockStore"></a><code>MockStore</code></h2><p>In unit tests, we usually set our initial state as follows:</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> initialState: AppState = &#123;</span><br><span class="line">    title: <span class="string">'AshKeys'</span>,</span><br><span class="line">    name: <span class="string">'Sojiro De Tenken'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">TestBed.configureTestingModule(&#123;</span><br><span class="line">    imports: [TestModule],</span><br><span class="line">    declarations: [AshKeysComponent],</span><br><span class="line">    providers: [provideMockStore(&#123; initialState &#125;)],</span><br><span class="line">&#125;)</span><br><span class="line">    .overrideTemplate(AshKeysComponent, <span class="string">''</span>)</span><br><span class="line">    .compileComponents();</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> initialState: AppState = &#123;</span><br><span class="line">    <span class="attr">title</span>: <span class="string">&#x27;AshKeys&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Sojiro De Tenken&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">TestBed.configureTestingModule(&#123;</span><br><span class="line">    <span class="attr">imports</span>: [TestModule],</span><br><span class="line">    <span class="attr">declarations</span>: [AshKeysComponent],</span><br><span class="line">    <span class="attr">providers</span>: [provideMockStore(&#123; initialState &#125;)],</span><br><span class="line">&#125;)</span><br><span class="line">    .overrideTemplate(AshKeysComponent, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    .compileComponents();</span><br></pre></td></tr></table></figure>
+
 <p>This is good as long as we are fine writing units with the initial state values.</p>
 <h2 id="Updating-the-state-in-an-iteration"><a href="#Updating-the-state-in-an-iteration" class="headerlink" title="Updating the state in an iteration"></a>Updating the state in an iteration</h2><p>There comes a scenario where we might have to update the said state for an iteration as follows:</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mockStore.setState(&#123;</span><br><span class="line">    title: <span class="string">'ashokma.com'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mockStore.setState(&#123;</span><br><span class="line">    <span class="attr">title</span>: <span class="string">&#x27;ashokma.com&#x27;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>As you might have guessed it already, this overrides the <code>initialState</code> and in turn we loose a property called <code>name</code>. &gt;_O</p>
-<h2 id="Fix-state-is-undefined"><a href="#Fix-state-is-undefined" class="headerlink" title="Fix: state is undefined"></a>Fix: state is undefined</h2><p>Imagine <code>name</code> property as a state for some cases and there is a <a href="//ngrx.io/guide/store/selectors"><code>selector</code></a> referring that particular state. In those cases, due to the above overriding, we encounter <strong>State is undefined</strong> error.</p>
+<h2 id="Fix-state-is-undefined"><a href="#Fix-state-is-undefined" class="headerlink" title="Fix: state is undefined"></a>Fix: state is undefined</h2><p>Imagine <code>name</code> property as a state for some cases and there is a <a target="_blank" rel="noopener" href="//ngrx.io/guide/store/selectors"><code>selector</code></a> referring that particular state. In those cases, due to the above overriding, we encounter <strong>State is undefined</strong> error.</p>
 <p>What I forgot to do is the following:</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mockStore.setState(&#123;</span><br><span class="line">    ...initialState,</span><br><span class="line">    title: <span class="string">'ashokma.com'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mockStore.setState(&#123;</span><br><span class="line">    ...initialState,</span><br><span class="line">    <span class="attr">title</span>: <span class="string">&#x27;ashokma.com&#x27;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>In this way, we keep whatever we had in the <code>initialState</code> undisturbed and update the ones we bother. \O/</p>
 
                     
@@ -286,7 +422,7 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
                 </div>
                 <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
                     
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 1: About -->
                     <div class="mt5 mt0-l">
@@ -295,12 +431,12 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
             <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
         </div>
         <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
-            <b>About Ashok:</b><br> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
         </div>
     </article>
 </div>
 
-                    <hr class="dn-l mw4 black-50 mt5">
+                    <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 2: Categories -->
                     
@@ -384,38 +520,56 @@ I use @ngrx/store at my day-to-day development. This post is not to share the be
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 <a class="bmc-button" target="_blank" href="https://buymeacoffee.com/ashkeys">
-    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee...">
+    <img
+         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
+         alt="Buy me a coffee...">
     <span style="margin-left:5px">Buy me a coffee...</span>
 </a></div>
     <div class="center tc pt2">
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//twitter.com/AshokMA9" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//twitter.com/AshokMA9"
+          target="_blank"
+        >
           <i class="fab fa-twitter"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//www.linkedin.com/in/ashok-m-a-full-stack-dev/" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//www.linkedin.com/in/ashok-m-a-full-stack-dev/"
+          target="_blank"
+        >
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//github.com/Sojiro" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//github.com/Sojiro"
+          target="_blank"
+        >
           <i class="fab fa-github"></i>
         </a>
       </div>
       
       <div class="dib mh3">
-        <a class="f3 f2-ns white dim" href="//stackoverflow.com/users/1197396/ashok-m-a" target="_blank">
+        <a
+          class="f3 f2-ns white dim"
+          href="//stackoverflow.com/users/1197396/ashok-m-a"
+          target="_blank"
+        >
           <i class="fab fa-stack-overflow"></i>
         </a>
       </div>
       
     </div>
     <div class="f6 f5-ns center tc white pt2 fw3">
-      &copy; 2022 — Ashok M A | Theme by <a class="link dim white" href="//github.com/klugjo">Jonathan Klughertz</a> | Powered by <a class="link dim white" href="//hexo.io/">Hexo</a>
+      &copy; 2022 — Ashok M A | Theme by <a class='link dim white' target="_blank" rel="noopener" href='//github.com/klugjo'>Jonathan Klughertz</a> | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
     </div>
   </div>
 </div>

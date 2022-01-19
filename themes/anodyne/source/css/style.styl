@@ -119,3 +119,19 @@ body {
     }
   }
 }
+
+mark {
+  padding: 5px;
+  background:
+     linear-gradient(
+       to bottom,
+       $gradient-color-1 0%,
+       $gradient-color-2 100%
+     );
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 0;
+  animation marker 1s ease-in-out infinite;
+}
+
+@keyframes marker { to { background-size: 100%; color: #fff } }

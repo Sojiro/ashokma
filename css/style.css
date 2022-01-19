@@ -425,3 +425,35 @@ body.night-mode img {
 .slider.round i {
   border-radius: 50%;
 }
+mark {
+  padding: 5px;
+  background: linear-gradient(to bottom, #36b1da 0%, #29c6cd 100%);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 0;
+  animation: marker 1s ease-in-out infinite;
+}
+@-moz-keyframes marker {
+  to {
+    background-size: 100%;
+    color: #fff;
+  }
+}
+@-webkit-keyframes marker {
+  to {
+    background-size: 100%;
+    color: #fff;
+  }
+}
+@-o-keyframes marker {
+  to {
+    background-size: 100%;
+    color: #fff;
+  }
+}
+@keyframes marker {
+  to {
+    background-size: 100%;
+    color: #fff;
+  }
+}

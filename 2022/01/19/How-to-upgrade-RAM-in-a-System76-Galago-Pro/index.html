@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--Description-->
+  
+  <meta
+    name="description"
+    content="I have waited for some time to upgrade the RAM memory of my System76 Galago Pro. I had bought this laptop with 16GB of memory and it was working way g"
+  />
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Ashok M A" />
+  
+
+  <!--Open Graph Title-->
+  
+  <meta property="og:title" content="How to upgrade RAM in a System76 Galago Pro" />
+  
+
+  <!--Open Graph Description-->
+  
+
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="AshKeys" />
+
+  <!--Type page-->
+  
+  <meta property="og:type" content="article" />
+  
+
+  <!--Page Cover-->
+  
+
+  <meta name="twitter:card" content="summary" />
+  
+
+  <!-- Title -->
+  
+  <title>How to upgrade RAM in a System76 Galago Pro - AshKeys</title>
+
+  <link rel="icon" href="/ashkeys.png" />
+
+  <!-- Tachyons Core CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+  />
+
+  <!-- Custom Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#29c6cd" />
+  <link rel="apple-touch-icon" href="images/apple-icon-180.png" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-2732.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2732-2048.jpg"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2388.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2388-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1536-2048.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2048-1536.jpg"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1668-2224.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2224-1668.jpg"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1620-2160.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2160-1620.jpg"
+    media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1284-2778.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2778-1284.jpg"
+    media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1170-2532.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2532-1170.jpg"
+    media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1125-2436.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2436-1125.jpg"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2688.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2688-1242.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-828-1792.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1792-828.jpg"
+    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1242-2208.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-2208-1242.jpg"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-750-1334.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1334-750.jpg"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-640-1136.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  />
+  <link
+    rel="apple-touch-startup-image"
+    href="images/apple-splash-1136-640.jpg"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+  />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <!-- Google Analytics -->
+  
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-115413748-1", "auto");
+  ga("send", "pageview");
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-115413748-1"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-115413748-1");
+</script>
+
+
+  <!-- Google AdSense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1544182531179563",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <!-- Service Worker -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js', { scope: '/' })
+      .then(function (registration) {
+        console.log('Service Worker Registered');
+      });
+    navigator.serviceWorker.ready.then(function (registration) {
+      console.log('Service Worker Ready');
+    });
+  }
+</script>
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+
+    <!-- Main Content -->
+    <!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+
+    <nav class="db dt-l w-100 mw8 center border-box">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/"
+           title="AshKeys">
+            <img src="/ashkeys.png" class="dib h3" alt="AshKeys">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            <!-- night-mode -->
+<script>
+    function toggle(nightMode) {
+        nightMode === "true" || nightMode === true ? document.body.classList.add("night-mode") :
+            document.body.classList.remove("night-mode");
+        window.localStorage.setItem('ashokma.com.nightmode', nightMode);
+    }
+
+    toggle(window.localStorage.getItem('ashokma.com.nightmode'));
+
+</script>
+
+<label class="switch link dim f6 f5-l dib mr3 mr4-l white">
+    <input type="checkbox" onchange="toggle(this.checked);" id="nightModeIndicator">
+    <span class="slider round">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </span>
+</label>
+
+<script>
+    (function () {
+        document.getElementById('nightModeIndicator').checked = window.localStorage.getItem('ashokma.com.nightmode') === "true"
+    })();
+</script>
+            
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/"
+               title="Home">
+                Home
+            </a>
+            
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               target="_blank" rel="noopener" href="https://fullstacker.nl"
+               title="Portfolio">
+                Portfolio
+            </a>
+            
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="https://ashokma.com/nfts/"
+               title="Sharmi&#39;s NFTs">
+                Sharmi&#39;s NFTs
+            </a>
+            
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/archives"
+               title="Archives">
+                Archives
+            </a>
+            
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/tags"
+               title="Tags">
+                Tags
+            </a>
+            
+            <a class="link dim f6 f5-l dib mr3 mr4-l white"
+               href="/me"
+               title="About">
+                About
+            </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-25 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to upgrade RAM in a System76 Galago Pro</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2022-01-19</p>
+            
+        </div>
+    </div>
+    
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fas fa-laptop-code"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/System76/">#System76</a> <a class="fw3 ph1 dib" href="/tags/Galago-pro/">#Galago pro</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <p>I have waited for some time to upgrade the RAM memory of my <a href="/2019/02/20/My-new-laptop-System76-Galago-Pro/">System76 Galago Pro</a>. I had bought this laptop with 16GB of memory and it was working way good for its capacity for sure.</p>
+<p>Lately, with the loaded application work, takes a toll on the performance for sure. It does not hang but I could see some lag in the command response.</p>
+<p>I realized that I am reaching its limits to perform well under complex operations.</p>
+<h2 id="Service-manual"><a href="#Service-manual" class="headerlink" title="Service manual"></a>Service manual</h2><p>System76 has a very good <a target="_blank" rel="noopener" href="https://support.system76.com/service-manuals/pdfs/Galago/galp3-service-manual.pdf">service manual</a> available to all in order to do their own DIY maintenance.</p>
+<p>I just followed the steps mentioend there to the screw. ^_^</p>
+<h2 id="Removing-the-backcase-screws"><a href="#Removing-the-backcase-screws" class="headerlink" title="Removing the backcase screws"></a>Removing the backcase screws</h2><p><img src="backside.jpg" alt="Bottomside view"></p>
+<p>As per the manual, I had removed the perimeter screws as well as the keyboard screws. Followed the guide to pop the keyboard up after placing the laptop on the side opened.</p>
+<h2 id="Popped-keyboard"><a href="#Popped-keyboard" class="headerlink" title="Popped keyboard"></a>Popped keyboard</h2><p><img src="below_keyboard_wide.jpg" alt="Popped out keyboard wide"></p>
+<p>As you can see here, the keyboard is popped out and placed on the mouse track pad.</p>
+<p><img src="below_keyboard.jpg" alt="Popped out keyboard close look"></p>
+<h2 id="Removing-the-three-backlid-screws"><a href="#Removing-the-three-backlid-screws" class="headerlink" title="Removing the three backlid screws"></a>Removing the three backlid screws</h2><p>It is really nice that they have introduced screws from both sides to hold the chasis down. My laptop is three years old now and there were some screws on the bottom lid were already coming out loose (I should have checked them periodically).</p>
+<p>The three screws from below the keyboard was probably holding most of it /O\</p>
+<h2 id="Placing-the-keyboard-back-momentarily"><a href="#Placing-the-keyboard-back-momentarily" class="headerlink" title="Placing the keyboard back(momentarily)"></a>Placing the keyboard back(momentarily)</h2><p>After removing those three screws, I placed the keyboard back again without locking it, of course, just as it is suggested in the <a target="_blank" rel="noopener" href="https://support.system76.com/service-manuals/pdfs/Galago/galp3-service-manual.pdf">service manual</a>.</p>
+<p><img src="placed_keyboard.jpg" alt="Placed keyboard"></p>
+<h2 id="Opened-bottom-lid"><a href="#Opened-bottom-lid" class="headerlink" title="Opened bottom lid"></a>Opened bottom lid</h2><p>Now, I closed the laptop lid and turned it over to remove the bottom lid as shown below.</p>
+<p><img src="backlid_opened.jpg" alt="Opened bottom lid"></p>
+<p>Its beautiful! Isn’t it!! 😍</p>
+<h2 id="Pop-the-old-8GB-RAMs-out"><a href="#Pop-the-old-8GB-RAMs-out" class="headerlink" title="Pop the old 8GB RAMs out"></a>Pop the old 8GB RAMs out</h2><p>As expected, there were two 8GB RAMs installed covering the two RAM slots.</p>
+<p><img src="old_rams.jpg" alt="Old 8GB RAMs"></p>
+<p>I popped the slots out.</p>
+<h2 id="Placing-the-new-16GB-RAMs"><a href="#Placing-the-new-16GB-RAMs" class="headerlink" title="Placing the new 16GB RAMs"></a>Placing the new 16GB RAMs</h2><p>I had placed the two of my new 16GB RAMs in those slots totaling 32GB of RAM memory for my beast!</p>
+<p><img src="new_rams.jpg" alt="New 16GB RAMs"></p>
+<blockquote>
+<p>Now, carefully followed the above steps back to assemble the laptop into one. \O/</p>
+</blockquote>
+<h2 id="Htop-overview"><a href="#Htop-overview" class="headerlink" title="Htop overview"></a><a target="_blank" rel="noopener" href="https://htop.dev/">Htop</a> overview</h2><p>After the successful boot up (which is nothing in Pop!_OS terms), I launched the <a target="_blank" rel="noopener" href="https://htop.dev/">htop</a> to get the overview of the system.</p>
+<p><img src="htop_overview.jpg" alt="Htop Overview"></p>
+<blockquote>
+<p>Memory - <em>1.21G/31.1G</em> 😱</p>
+</blockquote>
+<h2 id="Setting-overview"><a href="#Setting-overview" class="headerlink" title="Setting overview"></a>Setting overview</h2><p>I just wanted to view it in the settings page as well.</p>
+<p><img src="settings_about.jpg" alt="Setting memory view"></p>
+<p>I knew it was going to be easy following <a target="_blank" rel="noopener" href="https://support.system76.com/service-manuals/pdfs/Galago/galp3-service-manual.pdf">System76 manual</a> and it was. \O/</p>
+<p><mark>Happy Coding!!!</mark></p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/System76/">#System76</a> <a class="fw3 ph1 dib" href="/tags/Galago-pro/">#Galago pro</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="/me/index/avatar.jpeg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="Ashok M A">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            <b>About Ashok:</b><br/> Started as <code>Java</code> but mutated myself with some frontend scripting skills and boom Javascript guy too. Still evolving in the vast <code>NodeJS</code> eco-system. <ul> <li> Backpacker with a bike </li> <li> Trying hard to be a violinist </li> <li> Reads Medium to know the buzz words and follows developer memes. </li> </ul>
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2022/01/19/How-to-upgrade-RAM-in-a-System76-Galago-Pro/">How to upgrade RAM in a System76 Galago Pro</a>
+        </p>
+    
+        <p>
+            <a href="/2022/01/19/How-to-monitor-query-execution-time-in-postgres/">How to monitor query execution time in postgres</a>
+        </p>
+    
+        <p>
+            <a href="/2022/01/13/How-to-ssh-tunnel-to-a-remote-server-in-linux/">How to ssh tunnel to a remote server in linux</a>
+        </p>
+    
+        <p>
+            <a href="/2022/01/08/PWA-Fix-Uncaught-in-promise-TypeError-Failed-to-execute-Cache-on-addAll-Request-failed/">PWA Fix: Uncaught (in promise) TypeError: Failed t</a>
+        </p>
+    
+        <p>
+            <a href="/2022/01/08/How-to-add-cache-to-your-site-to-make-it-available-offline/">How to add cache to your site to make it available</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <div class="bg-1 ph2 ph5-ns pv5">
+  <div class="mv8">
+    <div class="center tc"><style>
+    .bmc-button img {
+        width: 27px !important;
+        margin-bottom: 1px !important;
+        box-shadow: none !important;
+        border: none !important;
+        vertical-align: middle !important;
+    }
+
+    .bmc-button {
+        line-height: 36px !important;
+        height: 37px !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        color: #ffffff !important;
+        background-color: transparent !important;
+        border-radius: 3px !important;
+        border: 1px solid transparent !important;
+        padding: 1px 9px !important;
+        font-size: 22px !important;
+        letter-spacing: 0.6px !important;
+        margin: 0 auto !important;
+        font-family: 'Cookie', cursive !important;
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        -o-transition: 0.3s all linear !important;
+        -webkit-transition: 0.3s all linear !important;
+        -moz-transition: 0.3s all linear !important;
+        -ms-transition: 0.3s all linear !important;
+        transition: 0.3s all linear !important;
+    }
+
+    .bmc-button:hover,
+    .bmc-button:active,
+    .bmc-button:focus {
+        -webkit-box-shadow: 0px 1px 2px 2px #36b1da !important;
+        text-decoration: none !important;
+        box-shadow: 0px 1px 2px 2px #36b1da !important;
+        opacity: 0.85 !important;
+        color: #ffffff !important;
+    }
+</style>
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<a class="bmc-button" target="_blank" href="https://buymeacoffee.com/ashkeys">
+    <img
+         src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg"
+         alt="Buy me a coffee...">
+    <span style="margin-left:5px">Buy me a coffee...</span>
+</a></div>
+    <div class="center tc pt2">
+      
+      <div class="dib mh3">
+        <a
+          class="f3 f2-ns white dim"
+          href="//twitter.com/AshokMA9"
+          target="_blank"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      
+      <div class="dib mh3">
+        <a
+          class="f3 f2-ns white dim"
+          href="//www.linkedin.com/in/ashok-m-a-full-stack-dev/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      
+      <div class="dib mh3">
+        <a
+          class="f3 f2-ns white dim"
+          href="//github.com/Sojiro"
+          target="_blank"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      
+      <div class="dib mh3">
+        <a
+          class="f3 f2-ns white dim"
+          href="//stackoverflow.com/users/1197396/ashok-m-a"
+          target="_blank"
+        >
+          <i class="fab fa-stack-overflow"></i>
+        </a>
+      </div>
+      
+    </div>
+    <div class="f6 f5-ns center tc white pt2 fw3">
+      &copy; 2022 — Ashok M A | Theme by <a class='link dim white' target="_blank" rel="noopener" href='//github.com/klugjo'>Jonathan Klughertz</a> | Powered by <a class='link dim white' target="_blank" rel="noopener" href='//hexo.io/'>Hexo</a>
+    </div>
+  </div>
+</div>
+
+
+    <!-- After Footer -->
+    <!-- Disqus Comments -->
+
+
+
+    <script src="//instant.page/2.0.0" type="module" defer
+            integrity="sha384-D7B5eODAUd397+f4zNFAVlnDNDtO1ppV8rPnfygILQXhqu3cUndgHvlcJR2Bhig8"></script>
+</body>
+
+</html>

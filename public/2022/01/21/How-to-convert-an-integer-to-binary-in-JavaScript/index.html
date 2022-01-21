@@ -11,13 +11,8 @@
   
   <meta
     name="description"
-    content="Start by updating the packages list by typing:
-1$ sudo apt update
-
-Install nodejs using the apt package manager:
-1$ sudo apt install nodejs npm
-
-The N"
+    content="Sometimes we have to play with binaries to get quick and fast results. Let’s see how can we convert one.
+Unsigned right shift (&amp;gt;&amp;gt;&amp;gt;)In order t"
   />
   
 
@@ -28,7 +23,7 @@ The N"
 
   <!--Open Graph Title-->
   
-  <meta property="og:title" content="Install nodejs and npm in Pop!_OS" />
+  <meta property="og:title" content="How to convert an integer to binary in JavaScript" />
   
 
   <!--Open Graph Description-->
@@ -50,7 +45,7 @@ The N"
 
   <!-- Title -->
   
-  <title>Install nodejs and npm in Pop!_OS - AshKeys</title>
+  <title>How to convert an integer to binary in JavaScript - AshKeys</title>
 
   <link rel="icon" href="/ashkeys.png" />
 
@@ -366,8 +361,8 @@ The N"
     <!-- Title -->
     <div class="w-100 mw8 center vh-25 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Install nodejs and npm in Pop!_OS</h1>
-            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2019-02-18</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">How to convert an integer to binary in JavaScript</h1>
+            <p class="f4 fw3 pab-50px tc tc-m tl-ns">2022-01-21</p>
             
         </div>
     </div>
@@ -375,7 +370,7 @@ The N"
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fab fa-node fa-npm"></i>
+        <i class="header-icon fab fa-js-square"></i>
     </div>
 </div>
 
@@ -389,29 +384,26 @@ The N"
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a> <a class="fw3 ph1 dib" href="/tags/npm/">#npm</a>
+                                <a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Conversion/">#Conversion</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Start by updating the packages list by typing:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update</span><br></pre></td></tr></table></figure>
+                    <p>Sometimes we have to play with binaries to get quick and fast results. Let’s see how can we convert one.</p>
+<h2 id="Unsigned-right-shift-gt-gt-gt"><a href="#Unsigned-right-shift-gt-gt-gt" class="headerlink" title="Unsigned right shift (&gt;&gt;&gt;)"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift">Unsigned right shift (&gt;&gt;&gt;)</a></h2><p>In order to work also with negative numbers, we use the <em>Unsigned right shift</em> operator first to convert it to the non-negative integer.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toBinary</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> numberToBinary &gt;&gt;&gt; <span class="number">0</span>; <span class="comment">// does not shift any bits, number stays the same.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Install <code>nodejs</code> using the <code>apt</code> package manager:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install nodejs npm</span><br></pre></td></tr></table></figure>
+<p><em>We are not done yet!</em></p>
+<h2 id="ToString-to-the-rescue"><a href="#ToString-to-the-rescue" class="headerlink" title="ToString to the rescue"></a>ToString to the rescue</h2><p>We still need to convert it to the binaries. We can do that by simply making use of the <code>ToString</code> method.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toBinary</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (numberToBinary &gt;&gt;&gt; <span class="number">0</span>).toString(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>The Node.js executable from the Ubuntu repositories is named <code>nodejs</code> instead of node because of a conflict with another package.</p>
-<p>To launch the <a target="_blank" rel="noopener" href="//www.tutorialspoint.com/nodejs/nodejs_repl_terminal.htm">REPL Terminal</a>: (Pressing <code>Ctrl + C</code> twice exits!)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nodejs</span><br></pre></td></tr></table></figure>
 
-<p>To verify the installation execute the following command:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v &amp;&amp; npm -v </span><br></pre></td></tr></table></figure>
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/nodejs/">#nodejs</a> <a class="fw3 ph1 dib" href="/tags/Pop-OS/">#Pop!_OS</a> <a class="fw3 ph1 dib" href="/tags/Tutorial/">#Tutorial</a> <a class="fw3 ph1 dib" href="/tags/Setup/">#Setup</a> <a class="fw3 ph1 dib" href="/tags/npm/">#npm</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/How-to/">#How to</a> <a class="fw3 ph1 dib" href="/tags/JS/">#JS</a> <a class="fw3 ph1 dib" href="/tags/Conversion/">#Conversion</a>
                         </div>
                     
 
